@@ -545,9 +545,15 @@ blockquote {
   height: 26px;
   position: absolute;
   right: 6px;
+  transition: .2s right ease-in-out;
+  -webkit-transition: .2s right ease-in-out;
+  -moz-transition: .2s right ease-in-out;
+  -ms-transition: .2s right ease-in-out;
   top: 4px;
   width: 36px;
   z-index: 9; }
+  .button:hover {
+    right: 3px; }
 
 #mc_embed_signup_scroll {
   position: relative; }
