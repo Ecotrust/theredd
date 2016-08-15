@@ -205,13 +205,6 @@ blockquote {
 	width: 10%;
 }
 
-#stage_two {
-
-	.btn {
-		margin-bottom: 1rem;
-	}
-}
-
 .btn,
 #mce-EMAIL {
 	display: block;
@@ -219,6 +212,7 @@ blockquote {
 	color: $black;
 	font-size: 1em;
 	line-height: 1.3125em;
+	margin-bottom: 1rem;
 	padding: .25em;
 	width: 100%;
 }
