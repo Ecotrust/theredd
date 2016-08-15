@@ -112,7 +112,13 @@ img {
 }
 
 a {
+	opacity: 1;
 	text-decoration: none;
+	transition: 0.2s opacity ease-in-out;
+
+	&:hover {
+		opacity: .65;
+	}
 }
 
 p {
@@ -304,5 +310,40 @@ blockquote {
 
 	a {
 		color: $primaryColor;
+	}
+}
+
+// scroll nav colors
+
+.fp-viewing-stageone,
+.fp-viewing-stagetwo {
+	#fp-nav ul li a, .fp-slidesNav ul li a {
+		span {
+			background: rgba($white,0.1);
+			border: 1px solid $white;
+			height: 6px;
+			width: 6px;
+		}
+
+		&.active span {
+			background: $white;
+			margin: -5px 0 0 -5px;
+		}
+	}
+}
+
+.fp-viewing-stagethree {
+	#fp-nav ul li a, .fp-slidesNav ul li a {
+		span {
+			background: rgba($primaryColor,0.1);
+			border: 1px solid $primaryColor;
+			height: 6px;
+			width: 6px;
+		}
+
+		&.active span {
+			background: $primaryColor;
+			margin: -5px 0 0 -5px;
+		}
 	}
 }

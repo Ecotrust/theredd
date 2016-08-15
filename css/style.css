@@ -450,7 +450,11 @@ img {
   clear: both; }
 
 a {
-  text-decoration: none; }
+  opacity: 1;
+  text-decoration: none;
+  transition: 0.2s opacity ease-in-out; }
+  a:hover {
+    opacity: .65; }
 
 p {
   color: #fff;
@@ -608,6 +612,28 @@ blockquote {
     margin-bottom: .25rem; }
   .social a {
     color: #ff4338; }
+
+.fp-viewing-stageone #fp-nav ul li a span, .fp-viewing-stageone .fp-slidesNav ul li a span,
+.fp-viewing-stagetwo #fp-nav ul li a span,
+.fp-viewing-stagetwo .fp-slidesNav ul li a span {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  height: 6px;
+  width: 6px; }
+.fp-viewing-stageone #fp-nav ul li a.active span, .fp-viewing-stageone .fp-slidesNav ul li a.active span,
+.fp-viewing-stagetwo #fp-nav ul li a.active span,
+.fp-viewing-stagetwo .fp-slidesNav ul li a.active span {
+  background: #fff;
+  margin: -5px 0 0 -5px; }
+
+.fp-viewing-stagethree #fp-nav ul li a span, .fp-viewing-stagethree .fp-slidesNav ul li a span {
+  background: rgba(255, 67, 56, 0.1);
+  border: 1px solid #ff4338;
+  height: 6px;
+  width: 6px; }
+.fp-viewing-stagethree #fp-nav ul li a.active span, .fp-viewing-stagethree .fp-slidesNav ul li a.active span {
+  background: #ff4338;
+  margin: -5px 0 0 -5px; }
 
 /*!
  * fullPage 2.8.3
