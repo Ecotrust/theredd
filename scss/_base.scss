@@ -13,8 +13,6 @@ html {
 body {
 	font-style: normal;
 	font-weight: normal;
-	margin: 0;
-	padding: 0;
 }
 
 ::-moz-selection {
@@ -254,7 +252,7 @@ blockquote {
 	background-position: 50% 50%;
 	border-radius: 50%;
 	bottom: 7.5%;
-	display: block;
+	display: none;
 	height: 42px;
 	left: 50%;
 	margin-bottom: -21px;
@@ -321,7 +319,9 @@ blockquote {
 
 		&.active span {
 			background: $white;
-			margin: -5px 0 0 -5px;
+			height: 10px;
+			margin: -4px 0 0 -4px;
+			width: 10px;
 		}
 	}
 }
@@ -337,7 +337,9 @@ blockquote {
 
 		&.active span {
 			background: $primaryColor;
-			margin: -5px 0 0 -5px;
+			height: 10px;
+			margin: -4px 0 0 -4px;
+			width: 10px;
 		}
 	}
 }
