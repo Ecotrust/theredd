@@ -1,5 +1,12 @@
 @media only screen and (min-width: 72em) {	
 
+    .stage_wrap {
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        max-width: 46em;
+    }
+
 	p {
     	font-size: 1.3125em;
     	line-height: 1.5em;
@@ -30,7 +37,7 @@
 	blockquote {
 		display: block;
 		margin: $margin auto;
-		max-width: 90%;
+		max-width: 80%;
 
 		p {
     		font-size: 2.5em;
@@ -38,7 +45,7 @@
     	}
 
     	cite {
-    		font-size: 1.3125em;
+    		font-size: .9375em;
     		line-height: 1.5em;
     	}
 	}

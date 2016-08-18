@@ -134,6 +134,10 @@ body {
 	font-family: $sans;
 }
 
+main {
+	font-size: .875em;
+}
+
 ::-webkit-input-placeholder {
    color: $black;
 }
@@ -224,7 +228,7 @@ blockquote {
 	border: none;
 	color: transparent;
 	display: block;
-	height: 26px;
+	height: 20px;
 	position: absolute;
 	right: 6px;
 	transition: .2s right ease-in-out;
@@ -232,7 +236,7 @@ blockquote {
 	-moz-transition: .2s right ease-in-out;
 	-ms-transition: .2s right ease-in-out;
 	top: 4px;
-	width: 36px;
+	width: 30px;
 	z-index: 9;
 
 	&:hover {

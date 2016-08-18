@@ -695,6 +695,9 @@ body {
   background: #ff4338;
   font-family: "Verlag A", "Verlag B", Arial, sans-serif; }
 
+main {
+  font-size: .875em; }
+
 ::-webkit-input-placeholder {
   color: #000; }
 
@@ -771,7 +774,7 @@ blockquote {
   border: none;
   color: transparent;
   display: block;
-  height: 26px;
+  height: 20px;
   position: absolute;
   right: 6px;
   transition: .2s right ease-in-out;
@@ -779,7 +782,7 @@ blockquote {
   -moz-transition: .2s right ease-in-out;
   -ms-transition: .2s right ease-in-out;
   top: 4px;
-  width: 36px;
+  width: 30px;
   z-index: 9; }
   .button:hover {
     right: 3px; }
@@ -864,8 +867,20 @@ blockquote {
   margin: -4px 0 0 -4px;
   width: 10px; }
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */ }
+@media only screen and (min-width: 20em) and (min-height: 32em) {
+  main {
+    font-size: 1em; }
+
+  .button {
+    height: 26px;
+    width: 36px; } }
+@media only screen and (min-width: 26em) {
+  main {
+    font-size: 1em; }
+
+  .button {
+    height: 26px;
+    width: 36px; } }
 @media only screen and (min-height: 38em) {
   .next_section {
     display: block; } }
@@ -942,6 +957,12 @@ blockquote {
       display: inline-block;
       margin: 0 2rem 0 0; } }
 @media only screen and (min-width: 72em) {
+  .stage_wrap {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    max-width: 46em; }
+
   p {
     font-size: 1.3125em;
     line-height: 1.5em;
@@ -967,12 +988,12 @@ blockquote {
   blockquote {
     display: block;
     margin: 2rem auto;
-    max-width: 90%; }
+    max-width: 80%; }
     blockquote p {
       font-size: 2.5em;
       line-height: 1.25em; }
     blockquote cite {
-      font-size: 1.3125em;
+      font-size: .9375em;
       line-height: 1.5em; }
 
   .logo_wrap {
@@ -995,7 +1016,7 @@ blockquote {
   blockquote p {
     font-size: 2.75em; }
   blockquote cite {
-    font-size: 1.375em;
+    font-size: 1em;
     line-height: 1.875em; }
 
   .social p {
