@@ -852,9 +852,9 @@ blockquote {
 .fp-viewing-stagetwo #fp-nav ul li a.active span,
 .fp-viewing-stagetwo .fp-slidesNav ul li a.active span {
   background: #fff;
-  height: 10px;
-  margin: -4px 0 0 -4px;
-  width: 10px; }
+  height: 6px;
+  margin: -2px 0 0 -2px;
+  width: 6px; }
 
 .fp-viewing-stagethree #fp-nav ul li a span, .fp-viewing-stagethree .fp-slidesNav ul li a span {
   background: rgba(255, 67, 56, 0.1);
@@ -863,9 +863,9 @@ blockquote {
   width: 6px; }
 .fp-viewing-stagethree #fp-nav ul li a.active span, .fp-viewing-stagethree .fp-slidesNav ul li a.active span {
   background: #ff4338;
-  height: 10px;
-  margin: -4px 0 0 -4px;
-  width: 10px; }
+  height: 6px;
+  margin: -2px 0 0 -2px;
+  width: 6px; }
 
 @media only screen and (min-width: 20em) and (min-height: 32em) {
   main {
@@ -961,7 +961,7 @@ blockquote {
     display: block;
     margin: 0 auto;
     position: relative;
-    max-width: 46em; }
+    max-width: 54em; }
 
   p {
     font-size: 1.3125em;
@@ -988,7 +988,7 @@ blockquote {
   blockquote {
     display: block;
     margin: 2rem auto;
-    max-width: 80%; }
+    max-width: 70%; }
     blockquote p {
       font-size: 2.5em;
       line-height: 1.25em; }
