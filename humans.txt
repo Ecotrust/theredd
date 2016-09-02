@@ -3,5 +3,5 @@
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
+    CSS3, HTML5, SCSS
     Apache Server Configs, jQuery, Modernizr, Normalize.css

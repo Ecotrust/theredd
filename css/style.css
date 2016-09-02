@@ -867,6 +867,9 @@ blockquote {
   margin: -2px 0 0 -2px;
   width: 6px; }
 
+@media handheld and (orientation: landscape), screen and (orientation: landscape) and (max-width: 736px) {
+  #logo_redd {
+    margin: -20% auto 0; } }
 @media only screen and (min-width: 20em) and (min-height: 32em) {
   main {
     font-size: 1em; }
@@ -876,7 +879,7 @@ blockquote {
     width: 36px; } }
 @media only screen and (min-width: 26em) {
   main {
-    font-size: 1em; }
+    font-size: 1.0625em; }
 
   .button {
     height: 26px;
@@ -885,6 +888,9 @@ blockquote {
   .next_section {
     display: block; } }
 @media only screen and (min-width: 48em) {
+  main {
+    font-size: 1em; }
+
   p {
     font-size: 1.125em;
     line-height: 1.375em;
