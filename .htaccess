@@ -847,11 +847,11 @@ FileETag None
 <IfModule mod_expires.c>
 
     ExpiresActive on
-    ExpiresDefault                                      "access plus 1 year"
+    ExpiresDefault                                      "access plus 1 month"
 
   # CSS
 
-    ExpiresByType text/css                              "access plus 1 year"
+    ExpiresByType text/css                              "access plus 1 month"
 
 
   # Data interchange
@@ -870,40 +870,40 @@ FileETag None
 
   # Favicon (cannot be renamed!) and cursor images
 
-    ExpiresByType image/vnd.microsoft.icon              "access plus 1 year"
-    ExpiresByType image/x-icon                          "access plus 1 year"
+    ExpiresByType image/vnd.microsoft.icon              "access plus 1 month"
+    ExpiresByType image/x-icon                          "access plus 1 month"
 
   # HTML
 
-    ExpiresByType text/html                             "access plus 60 seconds"
+    ExpiresByType text/html                             "access plus 0 seconds"
 
 
   # JavaScript
 
-    ExpiresByType application/javascript                "access plus 1 year"
-    ExpiresByType application/x-javascript              "access plus 1 year"
-    ExpiresByType text/javascript                       "access plus 1 year"
+    ExpiresByType application/javascript                "access plus 1 month"
+    ExpiresByType application/x-javascript              "access plus 1 month"
+    ExpiresByType text/javascript                       "access plus 1 month"
 
 
   # Manifest files
 
-    ExpiresByType application/manifest+json             "access plus 1 week"
-    ExpiresByType application/x-web-app-manifest+json   "access plus 1 week"
-    ExpiresByType text/cache-manifest                   "access plus 60 seconds"
+    ExpiresByType application/manifest+json             "access plus 1 month"
+    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
 
 
   # Media files
 
-    ExpiresByType audio/ogg                             "access plus 1 year"
-    ExpiresByType image/bmp                             "access plus 1 year"
-    ExpiresByType image/gif                             "access plus 1 year"
-    ExpiresByType image/jpeg                            "access plus 1 year"
-    ExpiresByType image/png                             "access plus 1 year"
-    ExpiresByType image/svg+xml                         "access plus 1 year"
-    ExpiresByType image/webp                            "access plus 1 year"
-    ExpiresByType video/mp4                             "access plus 1 year"
-    ExpiresByType video/ogg                             "access plus 1 year"
-    ExpiresByType video/webm                            "access plus 1 year"
+    ExpiresByType audio/ogg                             "access plus 1 month"
+    ExpiresByType image/bmp                             "access plus 1 month"
+    ExpiresByType image/gif                             "access plus 1 month"
+    ExpiresByType image/jpeg                            "access plus 1 month"
+    ExpiresByType image/png                             "access plus 1 month"
+    ExpiresByType image/svg+xml                         "access plus 1 month"
+    ExpiresByType image/webp                            "access plus 1 month"
+    ExpiresByType video/mp4                             "access plus 1 month"
+    ExpiresByType video/ogg                             "access plus 1 month"
+    ExpiresByType video/webm                            "access plus 1 month"
 
 
   # Web fonts
@@ -925,13 +925,13 @@ FileETag None
 
     # Web Open Font Format (WOFF) 2.0
     ExpiresByType application/font-woff2                "access plus 1 year"
-    ExpiresByType application/x-font-woff2               "access plus 1 year"
-    ExpiresByType font/woff2                             "access plus 1 year"
+    ExpiresByType application/x-font-woff2              "access plus 1 year"
+    ExpiresByType font/woff2                            "access plus 1 year"
 
 
   # Other
 
-    ExpiresByType text/x-cross-domain-policy            "access plus 1 year"
+    ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
 
 </IfModule>
 
