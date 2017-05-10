@@ -1,4 +1,4 @@
-/* 	============================= 
+/* 	=============================
 Best Practice Base Styles =====================	*/
 
 * {
@@ -126,7 +126,7 @@ p {
 	margin: 0 0 1.5rem;
 }
 
-/* 	============================= 
+/* 	=============================
 Project Base styles =====================	*/
 
 body {
@@ -143,15 +143,15 @@ main {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: $black;  
+   color: $black;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: $black;  
+   color: $black;
 }
 
-:-ms-input-placeholder {  
-   color: $black;  
+:-ms-input-placeholder {
+   color: $black;
 }
 
 blockquote {
@@ -188,10 +188,10 @@ blockquote {
 }
 
 #stage_one {
-	background-image: url('../img/TheREDD_interior-rendering_20150716_2560px_wide.jpg');
+	background-image: url('../img/theredd_bg.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center bottom;
+	background-position: 50%;
 }
 
 #logo_redd {
@@ -251,9 +251,9 @@ blockquote {
 .next_section {
 	background-color: $white;
 	background-image: url('../img/down_arrow.svg');
-	background-size: 84.8% auto;
+	background-size: 80%;
 	background-repeat: no-repeat;
-	background-position: 50% 50%;
+	background-position: 50% 58%;
 	border-radius: 50%;
 	bottom: 7.5%;
 	display: none;

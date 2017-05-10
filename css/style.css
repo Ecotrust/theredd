@@ -582,7 +582,7 @@ td,
 th {
   padding: 0; }
 
-/* 	============================= 
+/* 	=============================
 Best Practice Base Styles =====================	*/
 * {
   box-sizing: border-box; }
@@ -689,7 +689,7 @@ p {
   line-height: 1.3125em;
   margin: 0 0 1.5rem; }
 
-/* 	============================= 
+/* 	=============================
 Project Base styles =====================	*/
 body {
   background: #ff4338;
@@ -738,10 +738,10 @@ blockquote {
   text-align: center; }
 
 #stage_one {
-  background-image: url("../img/TheREDD_interior-rendering_20150716_2560px_wide.jpg");
+  background-image: url("../img/theredd_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center bottom; }
+  background-position: 50%; }
 
 #logo_redd {
   display: block;
@@ -793,9 +793,9 @@ blockquote {
 .next_section {
   background-color: #fff;
   background-image: url("../img/down_arrow.svg");
-  background-size: 84.8% auto;
+  background-size: 80%;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 58%;
   border-radius: 50%;
   bottom: 7.5%;
   display: none;
@@ -877,6 +877,9 @@ blockquote {
   .button {
     height: 26px;
     width: 36px; } }
+@media only screen and (min-width: 64em) and (min-height: 24em) {
+  .next_section {
+    display: block; } }
 @media only screen and (min-width: 26em) {
   main {
     font-size: 1.0625em; }
@@ -906,11 +909,11 @@ blockquote {
   #mc_embed_signup {
     display: inline-block;
     margin: 1rem -3px;
-    width: 47.5%;
+    width: 45%;
     vertical-align: middle; }
 
   .btn {
-    margin-right: 5%; }
+    margin-right: 7.5%; }
 
   #mce-EMAIL {
     padding-left: 2rem; }
