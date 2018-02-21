@@ -9,3 +9,9 @@ config.codekit
 favicon.ico
 
 config.codekit
+
+license.txt
+readme.html
+wp-config.php
+wp-content/
+wp-includes/
