@@ -1,0 +1,212 @@
+*** Haven Changelog ***
+
+ 2018.02.07 - version 1.0.4
+ * Minor fix for PHP < 5.5 version
+	haven/framework-customizations/extensions/portfolio/helpers.php
+
+ 2018.02.05 - version 1.0.3
+ * Improvements to the theme install process
+	haven/framework-customizations/theme/manifest.php
+	haven/theme-includes/helpers.php
+	haven/theme-includes/hooks.php
+	haven/theme-includes/includes/sub-includes/auto-setup/class-fw-auto-install.php
+	haven/theme-includes/includes/sub-includes/auto-setup/config/config.php
+	haven/theme-includes/init.php
+	haven/theme-includes/static.php
+	haven/theme-includes/theme-functions.php
+ * Minor fix for search on mobile
+	haven/js/general.js
+ * Added options for sticky header
+	haven/dynamic-css/fw-admin-styling.php
+	haven/theme-includes/helpers.php
+	haven/theme-includes/static.php
+	haven/dynamic-css/fw-admin-styling.php
+	haven/dynamic-css/fw-theme/headers/header-1.php
+	haven/dynamic-css/fw-theme/headers/header-2.php
+	haven/dynamic-css/fw-theme/headers/header-3.php
+	haven/dynamic-css/fw-theme/headers/header-4.php
+	haven/dynamic-css/fw-theme/headers/header-5.php
+	haven/dynamic-css/fw-theme/headers/header.php
+	haven/dynamic-css/fw-theme/headers/top-nav-menu.php
+	haven/dynamic-css/fw-variables.php
+	haven/js/general.js
+ * Added stars to Testimonials Shortcode
+	haven/framework-customizations/extensions/shortcodes/shortcodes/testimonials/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/testimonials/views/view.php
+	haven/dynamic-css/fw-theme/shortcodes/testimonials.php
+	haven/theme-includes/hooks.php
+ * Minor fix for portfolio filter
+	haven/framework-customizations/extensions/portfolio/helpers.php
+ * Added Gravity Forms shortcode in Builder
+	haven/framework-customizations/extensions/shortcodes/hooks.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/fw-gravityforms/
+ * Added Footer Widgets Title typography
+	haven/css/theme-admin.css
+	haven/dynamic-css/fw-admin-styling.php
+	haven/framework-customizations/theme/options/settings.php
+	haven/theme-includes/helpers.php
+	haven/theme-includes/hooks.php
+	haven/theme-includes/includes/option-types/color-palette/static/css/style.css
+	haven/theme-includes/includes/sub-includes/auto-setup/class-fw-auto-install.php
+ * Minor fix for safari page loading
+	haven/js/page-transition.js
+ * Add 4 columns for Latest Posts Shortcode
+	haven/framework-customizations/extensions/shortcodes/shortcodes/latest-posts/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/latest-posts/views/view.php
+	haven/theme-includes/helpers.php
+ * New features for mobile menu - possibility to set screen size when you start work mobile menu
+	haven/dynamic-css/fw-admin-styling.php
+	haven/dynamic-css/fw-theme/headers/mobile-menu.php
+	haven/dynamic-css/fw-variables.php
+	haven/framework-customizations/theme/options/settings.php
+	haven/js/general.js
+	haven/theme-includes/static.php
+ * Minor fix for parallax in firefox
+	haven/js/jquery.parallax.js
+ * Added TF Plugin Updates module
+	haven/theme-includes/includes/sub-includes/auto-setup/class-fw-auto-install.php
+	haven/theme-includes/includes/sub-includes/auto-setup/js/plugins_install.js
+	haven/theme-includes/includes/sub-includes/auto-setup/views/install_setup.php
+ * Fixed bug for icon-title
+	haven/dynamic-css/fw-theme/shortcodes/icon-title.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/icon/views/view.php
+	haven/theme-includes/hooks.php
+ * Changed the logo from General tab in Header tab
+	haven/framework-customizations/theme/options/settings.php
+ * Minor fix for parallax
+	haven/js/jquery.parallax.js
+ * Added the possibility to customize position & animation for mobile menu
+	haven/dynamic-css/fw-theme/headers/mobile-menu.php
+	haven/framework-customizations/theme/options/settings.php
+	haven/js/general.js
+	haven/theme-includes/hooks.php
+	haven/theme-includes/static.php
+ * Added filter for google fonts asynchrone loading
+	haven/theme-includes/hooks.php
+ * Changed the library for smooth scroll
+	haven/dynamic-css/fw-theme/general.php
+	haven/js/jquery.easeScroll.js
+	haven/theme-includes/static.php
+ * Fixed external booking shortcode date in safari browser
+	haven/framework-customizations/extensions/shortcodes/shortcodes/fw-external-booking/static/js/script.js
+ * Space custom shortcode name
+	haven/framework-customizations/extensions/shortcodes/shortcodes/space/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/space/options.php
+ * Fixed bug for mini search
+	haven/dynamic-css/fw-theme/headers/header-search.php
+	haven/dynamic-css/fw-theme/headers/header-6.php
+	haven/js/general.js
+ * Add filter for main menu depth
+	haven/theme-includes/menus.php
+	haven/dynamic-css/fw-theme/headers/top-nav-menu.php
+
+ 2017.11.15 - version 1.0.2
+ * Added Smart Slider & TranslatePress plugins
+	haven/theme-includes/includes/sub-includes/auto-setup/config/config.php
+ * Styles for new Gallery widget WP 4.9
+	haven/dynamic-css/fw-theme/posts/posts-format.php
+ * Add margin options to Column shortcode
+	haven/css/theme-admin.css
+	haven/dynamic-css/fw-theme/content.php
+	haven/dynamic-css/fw-theme/shortcodes/map.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/column/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/column/views/view.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/section/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/section/views/view.php
+	haven/js/jquery.parallax.js
+	haven/theme-includes/hooks.php
+ * Minor fix for anchor on mobile devices
+	haven/js/general.js
+ * Minor fix for translate Back button
+	haven/js/general.js
+	haven/theme-includes/static.php
+ * Load google fonts asyncrone
+	haven/theme-includes/helpers.php
+	haven/theme-includes/hooks.php
+ * Minor fix for Mobile Menu (only on some servers was this problem)
+	haven/theme-includes/helpers.php
+	haven/theme-includes/menus.php
+ * Added 1,2,5,6 columns in footer widgets
+	haven/framework-customizations/extensions/shortcodes/shortcodes/fw-breadcrumbs/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/fw-breadcrumbs/static/img/page_builder.png
+	haven/framework-customizations/theme/options/settings.php
+	haven/templates/footers/footer-widgets.php
+ * Add custom value for content density
+	haven/dynamic-css/fw-theme.php
+	haven/framework-customizations/theme/options/settings.php
+	haven/theme-includes/helpers.php
+	haven/theme-includes/hooks.php
+ * Changed revslider and layerslider to demo-install
+	haven/theme-includes/includes/sub-includes/auto-setup/class-fw-auto-install.php
+	haven/theme-includes/includes/sub-includes/auto-setup/config/config.php
+ * Fixed logo translations with WPML (string translations)
+	haven/theme-includes/helpers.php
+	haven/theme-includes/hooks.php
+	haven/wpml-config.xml
+ * Minor fix for external booking custom URL
+	haven/framework-customizations/extensions/shortcodes/shortcodes/fw-external-booking/views/view.php
+	haven/theme-includes/helpers.php
+ * Added Hebrew translations
+	haven/framework-customizations/extensions/shortcodes/shortcodes/section/config.php
+	haven/languages/he_IL.mo
+	haven/languages/he_IL.po
+	haven/languages/he_IL.pot
+ * Minor changes for auto-setup
+	haven/theme-includes/includes/sub-includes/auto-setup/class-fw-auto-install.php
+	haven/theme-includes/includes/sub-includes/auto-setup/js/super_admin_auto_install.js
+ * Minor fix for learning plugin
+	haven/framework-customizations/theme/options/settings.php
+	haven/theme-includes/helpers.php
+	haven/theme-includes/hooks.php
+
+ 2017.09.14 - version 1.0.1
+ * Added possibility to name the shortcodes suggestive in the dashboard
+	haven/framework-customizations/extensions/shortcodes/shortcodes/accordion/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/accordion/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/button/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/flip-box/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/fw-raw-code/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/fw-raw-code/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/icon-box/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/icon/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/image-box/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/list/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/list/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/media-image/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/media-video/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/media-video/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/portfolio/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/portfolio/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/quote/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/special-heading/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/tabs/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/tabs/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/team-member/config.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/text-block/config.php
+ * Added breadcrumbs shortcode
+	haven/framework-customizations/extensions/shortcodes/hooks.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/fw-breadcrumbs/...
+ * Minor fix for wp-shortcodes
+	haven/framework-customizations/extensions/shortcodes/hooks.php
+ * Minor fix for image box shortcode - empty icon on btn
+	haven/framework-customizations/extensions/shortcodes/shortcodes/image-box/views/view.php
+ * Improvements for RTL
+	haven/css/theme-admin.css
+	haven/dynamic-css/fw-theme/rtl/buttons/buttons.php
+	haven/dynamic-css/fw-theme/rtl/posts/posts-type-2.php
+	haven/dynamic-css/fw-theme/rtl/shortcodes/testimonial.php
+	haven/dynamic-css/fw-theme/shortcodes/testimonials.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/button/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php
+	haven/framework-customizations/extensions/shortcodes/shortcodes/testimonials/options.php
+ * Minor fix for image preload for social networks
+	haven/theme-includes/helpers.php
+	haven/theme-includes/menus.php
+ * Fixed portfolio & latest posts shortcode on the same page
+	haven/framework-customizations/extensions/shortcodes/shortcodes/portfolio/static.php
+ * Minor fix for Icon Shortcode
+	haven/dynamic-css/fw-theme/shortcodes/icon-title.php
+
+ 2017.22.05 - version 1.0
+ * First release!
