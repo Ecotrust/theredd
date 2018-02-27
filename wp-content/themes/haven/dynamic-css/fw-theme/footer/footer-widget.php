@@ -40,6 +40,7 @@
   font-size: <?php echo floatval($the_core_less_variables['font-size-base'])*0.9; ?>px;
 }
 
+
 /* Responsive */
 /* Screen 768px */
 @media(max-width:991px){
@@ -58,4 +59,3 @@
     padding-bottom: <?php echo ceil(floatval($the_core_less_variables['fw-footer-widgets-padding-bot'])*0.5); ?>px;
   }
 }
-

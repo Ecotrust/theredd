@@ -481,7 +481,7 @@ $options = array(
 	),
 	'zindex' => array(
 		'label' => __( 'Z-index', 'the-core' ),
-		'desc'  => __( "Enter a number for the column's z-index", "the-core" ),
+		'desc'  => __( "Enter a number fot the column's z-index", "the-core" ),
 		'help'  => sprintf( __( 'Specifies the stack order of an element for overlapping elements. An element with greater stack order is always in front of an element with a lower stack order. Find out more %shere%s', 'the-core' ), '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index" target="_blank">', '</a>'),
 		'type'  => 'short-text',
 		'value' => ''

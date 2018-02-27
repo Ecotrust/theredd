@@ -337,6 +337,95 @@ $options = array(
 									)
 								)
 							),
+							'logo_settings' => array(
+								'type' => 'multi',
+								'label' => false,
+								'attr' => array(
+									'class' => 'fw-option-type-multi-show-borders',
+								),
+								'inner-options' => array(
+									'logo' => array(
+										'type' => 'multi-picker',
+										'label' => false,
+										'desc' => false,
+										'picker' => array(
+											'selected_value' => array(
+												'label' => __('Logo Type', 'the-core'),
+												'desc' => __('Select the logo type', 'the-core'),
+												'attr' => array('class' => 'fw-checkbox-float-left'),
+												'value' => 'text',
+												'type' => 'radio',
+												'choices' => array(
+													'text' => __('Text', 'the-core'),
+													'image' => __('Image', 'the-core'),
+												),
+											)
+										),
+										'choices' => array(
+											'text' => array(
+												'title' => array(
+													'label' => __('Title', 'the-core'),
+													'desc' => __('Enter the title', 'the-core'),
+													'type' => 'short-text',
+													'value' => get_bloginfo('name')
+												),
+												'logo_title_font' => array(
+													'label' => '',
+													'desc' => __('Choose the title font', 'the-core'),
+													'type' => 'tf-typography',
+													'value' => array(
+														'family' => 'Playfair Display',
+														'size' => 20,
+														'line-height' => 30,
+														'style' => '400',
+														'letter-spacing' => 1,
+													)
+												),
+												'subtitle' => array(
+													'label' => __('Subtitle', 'the-core'),
+													'desc' => __('Enter the subtitle', 'the-core'),
+													'type' => 'short-text',
+													'value' => '',
+												),
+												'logo_subtitle_font' => array(
+													'label' => '',
+													'desc' => __('Choose the subtitle font', 'the-core'),
+													'type' => 'tf-typography',
+													'value' => array(
+														'family' => 'Playfair Display',
+														'size' => 10,
+														'line-height' => 10,
+														'style' => '400',
+														'letter-spacing' => 1,
+													)
+												),
+											),
+											'image' => array(
+												'image_logo' => array(
+													'label' => '',
+													'desc' => __('Upload logo image', 'the-core'),
+													'type' => 'upload'
+												),
+												'retina_logo' => array(
+													'type' => 'switch',
+													'label' => '',
+													'desc' => __('Use logo as retina?', 'the-core'),
+													'left-choice' => array(
+														'value' => 'fw-logo-no-retina',
+														'label' => __('No', 'the-core'),
+													),
+													'right-choice' => array(
+														'value' => 'fw-logo-retina',
+														'label' => __('Yes', 'the-core'),
+													),
+													'value' => 'fw-logo-no-retina'
+												),
+											),
+										),
+										'show_borders' => false,
+									),
+								),
+							),
 							'section_spacing' => array(
 								'label' => __('Content Density', 'the-core'),
 								'desc' => __('Select the spacing between content sections', 'the-core'),
@@ -2671,99 +2760,10 @@ $options = array(
 		'title' => __('Header', 'the-core'),
 		'type' => 'tab',
 		'options' => array(
-			'header-box' => array(
+			'footer-box' => array(
 				'title' => __('Header', 'the-core'),
 				'type' => 'box',
 				'options' => array(
-					'logo_settings' => array(
-						'type' => 'multi',
-						'label' => false,
-						'attr' => array(
-							'class' => 'fw-option-type-multi-show-borders',
-						),
-						'inner-options' => array(
-							'logo' => array(
-								'type' => 'multi-picker',
-								'label' => false,
-								'desc' => false,
-								'picker' => array(
-									'selected_value' => array(
-										'label' => __('Logo Type', 'the-core'),
-										'desc' => __('Select the logo type', 'the-core'),
-										'attr' => array('class' => 'fw-checkbox-float-left'),
-										'value' => 'text',
-										'type' => 'radio',
-										'choices' => array(
-											'text' => __('Text', 'the-core'),
-											'image' => __('Image', 'the-core'),
-										),
-									)
-								),
-								'choices' => array(
-									'text' => array(
-										'title' => array(
-											'label' => __('Title', 'the-core'),
-											'desc' => __('Enter the title', 'the-core'),
-											'type' => 'short-text',
-											'value' => get_bloginfo('name')
-										),
-										'logo_title_font' => array(
-											'label' => '',
-											'desc' => __('Choose the title font', 'the-core'),
-											'type' => 'tf-typography',
-											'value' => array(
-												'family' => 'Playfair Display',
-												'size' => 20,
-												'line-height' => 30,
-												'style' => '400',
-												'letter-spacing' => 1,
-											)
-										),
-										'subtitle' => array(
-											'label' => __('Subtitle', 'the-core'),
-											'desc' => __('Enter the subtitle', 'the-core'),
-											'type' => 'short-text',
-											'value' => '',
-										),
-										'logo_subtitle_font' => array(
-											'label' => '',
-											'desc' => __('Choose the subtitle font', 'the-core'),
-											'type' => 'tf-typography',
-											'value' => array(
-												'family' => 'Playfair Display',
-												'size' => 10,
-												'line-height' => 10,
-												'style' => '400',
-												'letter-spacing' => 1,
-											)
-										),
-									),
-									'image' => array(
-										'image_logo' => array(
-											'label' => '',
-											'desc' => __('Upload logo image', 'the-core'),
-											'type' => 'upload'
-										),
-										'retina_logo' => array(
-											'type' => 'switch',
-											'label' => '',
-											'desc' => __('Use logo as retina?', 'the-core'),
-											'left-choice' => array(
-												'value' => 'fw-logo-no-retina',
-												'label' => __('No', 'the-core'),
-											),
-											'right-choice' => array(
-												'value' => 'fw-logo-retina',
-												'label' => __('Yes', 'the-core'),
-											),
-											'value' => 'fw-logo-no-retina'
-										),
-									),
-								),
-								'show_borders' => false,
-							),
-						),
-					),
 					'header_settings' => array(
 						'type' => 'multi',
 						'label' => false,
@@ -3505,333 +3505,6 @@ $options = array(
 									),
 								)
 							),
-							'mobile_menu_options' => array(
-								'type'   => 'popup',
-								'label'  => __('Mobile Menu', 'the-core'),
-								'desc'   => __('Change the mobile menu options', 'the-core'),
-								'button' => __('Mobile Menu Options', 'the-core'),
-								'size'   => 'small',
-								'popup-options' => array(
-									'mobile_screen' => array(
-										'label'      => __( 'Burger Menu', 'the-core' ),
-										'desc'       => __( 'Select the resolution for when the burger menu to appear', 'the-core' ),
-										'type'       => 'slider',
-										'value'      => 1199,
-										'properties' => array(
-											'min'  => 480,
-											'max'  => 1300,
-											'step' => 1,
-										),
-									),
-									'menu_typography' => array(
-										'label' => __( 'Items Typography', 'the-core' ),
-										'type'  => 'tf-typography',
-										'value' => array(
-											'family'         => 'Helvetica',
-											'size'           => 14,
-											'line-height'    => 22,
-											'letter-spacing' => 0,
-										)
-									),
-									'menu_items_alignment' => array(
-										'label' => __('Items Alignment', 'the-core'),
-										'desc' => __('Choose the menu items alignment', 'the-core'),
-										'type' => 'image-picker',
-										'value' => is_rtl() ? 'mobile-menu-item-align-right' : 'mobile-menu-item-align-left',
-										'choices' => array(
-											'mobile-menu-item-align-left' => array(
-												'small' => array(
-													'height' => 50,
-													'src' => $the_core_template_directory . '/images/image-picker/left-position.jpg',
-													'title' => __('Left', 'the-core')
-												),
-											),
-											'mobile-menu-item-align-center' => array(
-												'small' => array(
-													'height' => 50,
-													'src' => $the_core_template_directory . '/images/image-picker/center-position.jpg',
-													'title' => __('Center', 'the-core')
-												),
-											),
-											'mobile-menu-item-align-right' => array(
-												'small' => array(
-													'height' => 50,
-													'src' => $the_core_template_directory . '/images/image-picker/right-position.jpg',
-													'title' => __('Right', 'the-core')
-												),
-											),
-										),
-									),
-									'effect_panels' => array(
-										'label' => __('Panel Animation', 'the-core'),
-										'desc' => __('Select the menu panel animation', 'the-core'),
-										'help' => __('This option applies only to menus that contain secondary level items (aka dropdown items)', 'the-core'),
-										'type' => 'short-select',
-										'value' => 'mm-effect-panels-left-right',
-										'choices' => array(
-											'mm-effect-panels-left-right' => __('Slide', 'the-core'),
-											'effect-panels-zoom' => __('Zoom', 'the-core'),
-											'effect-panels-fadeIn' => __('Fade In', 'the-core'),
-										),
-									),
-									'page_dim' => array(
-										'label' => __('Page Dim', 'the-core'),
-										'desc' => __('Select the menu page dim', 'the-core'),
-										'help' => __('When the Menu panel is opened the page will dim to the selected color', 'the-core'),
-										'type' => 'short-select',
-										'value' => 'page-dim-none',
-										'choices' => array(
-											'page-dim-none' => __('None', 'the-core'),
-											'pagedim-white' => __('White', 'the-core'),
-											'pagedim-black' => __('Black', 'the-core'),
-										),
-									),
-									'menu_align' => array(
-										'label' => __('Tray Position', 'the-core'),
-										'desc'  => __('Select your prefered menu tray position', 'the-core'),
-										'type'  => 'short-select',
-										'value' => 'left',
-										'choices' => array(
-											'top'    => __('Top', 'the-core'),
-											'bottom' => __('Bottom', 'the-core'),
-											'left'   => __('Left', 'the-core'),
-											'right'  => __('Right', 'the-core'),
-										),
-									),
-									'border' => array(
-										'type' => 'multi-picker',
-										'label' => false,
-										'desc' => false,
-										'picker' => array(
-											'selected' => array(
-												'type' => 'switch',
-												'value' => 'yes',
-												'label' => __('Border', 'the-core'),
-												'desc' => __('Add a border?', 'the-core'),
-												'left-choice' => array(
-													'value' => 'no',
-													'label' => __('No', 'the-core'),
-												),
-												'right-choice' => array(
-													'value' => 'yes',
-													'label' => __('Yes', 'the-core'),
-												)
-											),
-										),
-										'choices' => array(
-											'yes' => array(
-												'border_style' => array(
-													'label' => '',
-													'desc'  => __('Select the border style', 'the-core'),
-													'type'  => 'short-select',
-													'choices' => array(
-														'indent' => __('Indent', 'the-core'),
-														'border-full' => __('Full', 'the-core'),
-														'border-offset' => __('Offset', 'the-core'),
-													),
-													'value' => 'indent'
-												),
-												'border_size' => array(
-													'label' => __('', 'the-core'),
-													'desc' => __('Border size in pixels', 'the-core'),
-													'type' => 'short-text',
-													'value' => '',
-												),
-												'border_color' => array(
-													'label' => __('', 'the-core'),
-													'desc' => __('Select the border color', 'the-core'),
-													'help' => __('The default color palette can be changed from the', 'the-core') . ' <a target="_blank" href="' . $the_core_admin_url . 'themes.php?page=fw-settings&_focus_tab=fw-options-tab-colors_tab">' . __('Colors section', 'the-core') . '</a> ' . __('found in the Theme Settings page', 'the-core'),
-													'value' => '',
-													'choices' => $the_core_color_settings,
-													'type' => 'color-palette'
-												),
-											),
-										),
-									),
-									'mobile_menu_socials' => array(
-										'type' => 'multi-picker',
-										'label' => false,
-										'desc' => false,
-										'picker' => array(
-											'selected_value' => array(
-												'label' => __('Social Icons', 'the-core'),
-												'desc' => __('Enable social icons?', 'the-core'),
-												'help' => sprintf("%s", __('Your social links can be set from the', 'the-core') . ' <a target="_blank" href="' . $the_core_admin_url . 'themes.php?page=fw-settings#fw-options-tab-social-options">' . __('Social Profiles', 'the-core') . '</a> ' . __('section under the General tab.', 'the-core')),
-												'type' => 'switch',
-												'right-choice' => array(
-													'value' => 'yes',
-													'label' => __('Yes', 'the-core')
-												),
-												'left-choice' => array(
-													'value' => 'no',
-													'label' => __('No', 'the-core')
-												),
-												'value' => 'yes',
-											)
-										),
-										'choices' => array(
-											'yes' => array(
-												'mobile_menu_socials_color' => array(
-													'label' => '',
-													'desc' => __('Select the social icons color', 'the-core'),
-													'help' => __('The default color palette can be changed from the', 'the-core') . ' <a target="_blank" href="' . $the_core_admin_url . 'themes.php?page=fw-settings&_focus_tab=fw-options-tab-colors_tab">' . __('Colors section', 'the-core') . '</a> ' . __('found in the Theme Settings page', 'the-core'),
-													'value' => $the_core_color_settings['color_3'],
-													'choices' => $the_core_color_settings,
-													'type' => 'color-palette'
-												),
-												'mobile_menu_icon_size' => array(
-													'type' => 'short-text',
-													'label' => __('Icon Size', 'the-core'),
-													'desc' => __('Enter icon size in pixels. Ex: 16', 'the-core'),
-													'value' => '16',
-												),
-											),
-											'no' => array(),
-										),
-										'show_borders' => false,
-									),
-									'background_options' => array(
-										'type' => 'multi-picker',
-										'label' => false,
-										'desc' => false,
-										'picker' => array(
-											'background' => array(
-												'label' => __('Background', 'the-core'),
-												'attr' => array('class' => 'fw-checkbox-float-left'),
-												'type' => 'radio',
-												'choices' => array(
-													'color' => __('Color', 'the-core'),
-													'image' => __('Image', 'the-core'),
-												),
-												'value' => 'color'
-											),
-										),
-										'choices' => array(
-											'color' => array(
-												'background_color' => array(
-													'label' => '',
-													'help' => __('The default color palette can be changed from the', 'the-core') . ' <a target="_blank" href="' . $the_core_admin_url . 'themes.php?page=fw-settings&_focus_tab=fw-options-tab-colors_tab">' . __('Colors section', 'the-core') . '</a> ' . __('found in the Theme Settings page', 'the-core'),
-													'desc' => __('Select the background color', 'the-core'),
-													'value' => '',
-													'choices' => $the_core_color_settings,
-													'type' => 'color-palette'
-												),
-											),
-											'image' => array(
-												'background_image' => array(
-													'label' => '',
-													'type' => 'background-image',
-													'choices' => array(//	in future may will set predefined images
-													)
-												),
-												'background_color' => array(
-													'label' => '',
-													'help' => __('The default color palette can be changed from the', 'the-core') . ' <a target="_blank" href="' . $the_core_admin_url . 'themes.php?page=fw-settings&_focus_tab=fw-options-tab-colors_tab">' . __('Colors section', 'the-core') . '</a> ' . __('found in the Theme Settings page', 'the-core'),
-													'desc' => __('Select the background color', 'the-core'),
-													'value' => '',
-													'choices' => $the_core_color_settings,
-													'type' => 'color-palette'
-												),
-												'repeat' => array(
-													'label' => '',
-													'desc' => __('Select how will the background repeat', 'the-core'),
-													'type' => 'short-select',
-													'attr' => array('class' => 'fw-checkbox-float-left'),
-													'value' => 'no-repeat',
-													'choices' => array(
-														'no-repeat' => __('No-Repeat', 'the-core'),
-														'repeat' => __('Repeat', 'the-core'),
-														'repeat-x' => __('Repeat-X', 'the-core'),
-														'repeat-y' => __('Repeat-Y', 'the-core'),
-													)
-												),
-												'bg_position_x' => array(
-													'label' => __('Position', 'the-core'),
-													'desc' => __('Select the horizontal background position', 'the-core'),
-													'type' => 'short-select',
-													'attr' => array('class' => 'fw-checkbox-float-left'),
-													'value' => '',
-													'choices' => array(
-														'left' => __('Left', 'the-core'),
-														'center' => __('Center', 'the-core'),
-														'right' => __('Right', 'the-core'),
-													)
-												),
-												'bg_position_y' => array(
-													'label' => '',
-													'desc' => __('Select the vertical background position', 'the-core'),
-													'type' => 'short-select',
-													'attr' => array('class' => 'fw-checkbox-float-left'),
-													'value' => '',
-													'choices' => array(
-														'top' => __('Top', 'the-core'),
-														'center' => __('Center', 'the-core'),
-														'bottom' => __('Bottom', 'the-core'),
-													)
-												),
-												'bg_size' => array(
-													'label' => __('Size', 'the-core'),
-													'desc' => __('Select the background size', 'the-core'),
-													'help' => __('<strong>Auto</strong> - Default value, the background image has the original width and height.<br><br><strong>Cover</strong> - Scale the background image so that the background area is completely covered by the image.<br><br><strong>Contain</strong> - Scale the image to the largest size such that both its width and height can fit inside the content area.', 'the-core'),
-													'type' => 'short-select',
-													'attr' => array('class' => 'fw-checkbox-float-left'),
-													'value' => '',
-													'choices' => array(
-														'auto' => __('Auto', 'the-core'),
-														'cover' => __('Cover', 'the-core'),
-														'contain' => __('Contain', 'the-core'),
-													)
-												),
-												'overlay_options' => array(
-													'type' => 'multi-picker',
-													'label' => false,
-													'desc' => false,
-													'picker' => array(
-														'overlay' => array(
-															'type' => 'switch',
-															'label' => __('Overlay Color', 'the-core'),
-															'desc' => __('Enable image overlay color?', 'the-core'),
-															'value' => 'no',
-															'right-choice' => array(
-																'value' => 'yes',
-																'label' => __('Yes', 'the-core'),
-															),
-															'left-choice' => array(
-																'value' => 'no',
-																'label' => __('No', 'the-core'),
-															),
-														),
-													),
-													'choices' => array(
-														'no' => array(),
-														'yes' => array(
-															'background' => array(
-																'label' => '',
-																'help' => __('The default color palette can be changed from the', 'the-core') . ' <a target="_blank" href="' . $the_core_admin_url . 'themes.php?page=fw-settings&_focus_tab=fw-options-tab-colors_tab">' . __('Colors section', 'the-core') . '</a> ' . __('found in the Theme Settings page', 'the-core'),
-																'desc' => __('Select the overlay color', 'the-core'),
-																'value' => '',
-																'choices' => $the_core_color_settings,
-																'type' => 'color-palette'
-															),
-															'overlay_opacity_image' => array(
-																'type' => 'short-slider',
-																'value' => 80,
-																'properties' => array(
-																	'min' => 0,
-																	'max' => 100,
-																	'sep' => 1,
-																),
-																'label' => '',
-																'desc' => __('Select the overlay color opacity in %', 'the-core'),
-															)
-														),
-													),
-												),
-											)
-										)
-									)
-								)
-							),
 							'boxed_header' => array(
 								'type'    => 'multi-picker',
 								'label'   => false,
@@ -3902,127 +3575,20 @@ $options = array(
 								),
 								'show_borders' => false,
 							),
-							'sticky_header_group' => array(
-								'type'    => 'group',
-								'options' => array(
-									'sticky_header_styling' => array(
-										'attr'          => array(
-											'data-advanced-for' => 'advanced-sticky-header',
-											'class'             => 'fw-advanced-button'
-										),
-										'type'          => 'popup',
-										'label'         => __( 'Sticky Header', 'the-core' ),
-										'button'        => __( 'Styling', 'the-core' ),
-										'size'          => 'medium',
-										'popup-options' => array(
-											'sticky_logo_group' => array(
-												'type'    => 'group',
-												'options' => array(
-													'sticky_bg_group'    => array(
-														'type'    => 'group',
-														'options' => array(
-															'bg_color'   => array(
-																'label'   => __( 'Background', 'the-core' ),
-																'desc'    => __( "Select the background color", "the-core" ),
-																'help'    => __( 'The default color palette can be changed from the', 'the-core' ) . ' <a target="_blank" href="' . $the_core_admin_url . 'themes.php?page=fw-settings&_focus_tab=fw-options-tab-colors_tab">' . __( 'Colors section', 'the-core' ) . '</a> ' . __( 'found in the Theme Settings page', 'the-core' ),
-																'value'   => '',
-																'choices' => $the_core_color_settings,
-																'type'    => 'color-palette'
-															),
-															'bg_opacity' => array(
-																'type'       => 'slider',
-																'value'      => 100,
-																'properties' => array(
-																	'min' => 0,
-																	'max' => 100,
-																	'sep' => 1,
-																),
-																'label'      => __( '', 'the-core' ),
-																'desc'       => __( 'Select the overlay color opacity in %', 'the-core' ),
-															)
-														)
-													),
-													'logo'               => array(
-														'label' => __( 'Logo', 'the-core' ),
-														'desc'  => __( "Select a logo for sticky header", "the-core" ),
-														'help'  => __( "The logo is not working for header type 3 & 4", "the-core" ),
-														'type'  => 'upload'
-													),
-													'sticky_logo_retina' => array(
-														'type' => 'switch',
-														'label' => '',
-														'desc' => __('Use logo as retina?', 'the-core'),
-														'left-choice' => array(
-															'value' => 'fw-sticky-logo-no-retina',
-															'label' => __('No', 'the-core'),
-														),
-														'right-choice' => array(
-															'value' => 'fw-sticky-logo-retina',
-															'label' => __('Yes', 'the-core'),
-														),
-														'value' => 'fw-sticky-logo-no-retina'
-													),
-												)
-											),
-											'sticky_color_group' => array(
-												'type'    => 'group',
-												'options' => array(
-													'menu_color'       => array(
-														'label'   => __( 'Menu Color', 'the-core' ),
-														'desc'    => __( "Select the menu color", "the-core" ),
-														'help'    => __( 'The default color palette can be changed from the', 'the-core' ) . ' <a target="_blank" href="' . $the_core_admin_url . 'themes.php?page=fw-settings&_focus_tab=fw-options-tab-colors_tab">' . __( 'Colors section', 'the-core' ) . '</a> ' . __( 'found in the Theme Settings page', 'the-core' ),
-														'value'   => '',
-														'choices' => $the_core_color_settings,
-														'type'    => 'color-palette'
-													),
-													'menu_hover_color' => array(
-														'label'   => __( '', 'the-core' ),
-														'desc'    => __( "Select the menu hover color", "the-core" ),
-														'help'    => __( 'The default color palette can be changed from the', 'the-core' ) . ' <a target="_blank" href="' . $the_core_admin_url . 'themes.php?page=fw-settings&_focus_tab=fw-options-tab-colors_tab">' . __( 'Colors section', 'the-core' ) . '</a> ' . __( 'found in the Theme Settings page', 'the-core' ),
-														'value'   => '',
-														'choices' => $the_core_color_settings,
-														'type'    => 'color-palette'
-													),
-												)
-											),
-											'padding'            => array(
-												'label' => __( 'Spacing', 'the-core' ),
-												'desc'  => __( "Select the top & bottom spacing in pixels", "the-core" ),
-												'value' => '',
-												'type'  => 'short-text'
-											),
-											'sticky_screen' => array(
-												'label'      => __( 'Mobile Display', 'the-core' ),
-												'desc'       => __( 'Display the sticky header on mobile?', 'the-core' ),
-												'type' => 'switch',
-												'left-choice' => array(
-													'value' => '767',
-													'label' => __('No', 'the-core'),
-												),
-												'right-choice' => array(
-													'value' => '300',
-													'label' => __('Yes', 'the-core'),
-												),
-												'value' => '767'
-											),
-										)
-									),
-									'enable_sticky_header'  => array(
-										'attr'         => array( 'class' => 'advanced-sticky-header' ),
-										'type'         => 'switch',
-										'value'        => '',
-										'label'        => __( 'Sticky Header', 'the-core' ),
-										'desc'         => __( 'Make the header stick with the scroll?', 'the-core' ),
-										'left-choice'  => array(
-											'value' => '',
-											'label' => __( 'No', 'the-core' ),
-										),
-										'right-choice' => array(
-											'value' => 'fw-header-sticky',
-											'label' => __( 'Yes', 'the-core' ),
-										),
-									),
-								)
+							'enable_sticky_header' => array(
+								'type' => 'switch',
+								'value' => '',
+								'attr' => array(),
+								'label' => __('Sticky Header', 'the-core'),
+								'desc' => __('Make the header stick with the scroll?', 'the-core'),
+								'left-choice' => array(
+									'value' => '',
+									'label' => __('No', 'the-core'),
+								),
+								'right-choice' => array(
+									'value' => 'fw-header-sticky',
+									'label' => __('Yes', 'the-core'),
+								),
 							),
 							'enable_header_top_bar' => array(
 								'type' => 'multi-picker',

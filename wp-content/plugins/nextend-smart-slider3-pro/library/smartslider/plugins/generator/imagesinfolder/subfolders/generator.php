@@ -20,21 +20,20 @@ class N2GeneratorInFolderSubfolders extends N2GeneratorAbstract {
     }
 
     protected function _getData($count, $startIndex) {
-        $root   = N2Filesystem::getImagesFolder();
+        $root       = N2Filesystem::getImagesFolder();
         $source = $this->data->get('sourcefolder', '');
         if (substr($source, 0, 1) == '*') {
             $source = substr($source, 1);
             if (!N2Filesystem::existsFolder($source)) {
                 N2Message::error(n2_('Wrong path. This is the default image folder path, so try to navigate from here:') . '<br>*' . $root);
-
                 return null;
             } else {
-                $root = '';
+                $root   = '';
             }
         }
         $baseFolder = N2Filesystem::realpath($root . '/' . ltrim(rtrim($source, '/'), '/'));
 
-        $folders = $this->getSubFolders(array($baseFolder));
+        $folders = $this->getSubFolders(array( $baseFolder ));
 
         $allFiles = array();
         foreach ($folders AS $f) {
@@ -63,20 +62,15 @@ class N2GeneratorInFolderSubfolders extends N2GeneratorAbstract {
                     'title'      => $files[$i],
                     'name'       => preg_replace('/\\.[^.\\s]{3,4}$/', '', $files[$i]),
                     'folder'     => $folder,
-                    'foldername' => basename($folder),
-                    'created'    => filemtime($folder . '/' . $files[$i])
+					'foldername' => basename($folder),
+					'created'    => filemtime($folder . '/' . $files[$i])
                 );
                 if ($IPTC) {
                     $properties = @exif_read_data($folder . '/' . $files[$i]);
                     if ($properties) {
                         foreach ($properties AS $key => $property) {
                             if (!is_array($property) && $property != '' && preg_match('/^[a-zA-Z]+$/', $key)) {
-                                preg_match('/([2-9][0-9]*)\/([0-9]+)/', $property, $matches);
-                                if (empty($matches)) {
-                                    $data[$i][$key] = $property;
-                                } else {
-                                    $data[$i][$key] = round($matches[1] / $matches[2], 2);
-                                }
+                                $data[$i][$key] = $property;
                             }
                         }
                     }
@@ -85,34 +79,34 @@ class N2GeneratorInFolderSubfolders extends N2GeneratorAbstract {
             $return = array_merge($return, $data);
         }
         $return = array_slice($return, $startIndex, $count);
-        $order  = explode("|*|", $this->data->get('order', '0|*|asc'));
+        $order = explode("|*|", $this->data->get('order', '0|*|asc'));
         switch ($order[0]) {
             case 1:
                 usort($return, 'N2GeneratorInFolderSubfolders::' . $order[1]);
                 break;
             case 2:
                 usort($return, 'N2GeneratorInFolderSubfolders::orderByDate_' . $order[1]);
-                break;
+                break;  
             default:
                 break;
         }
 
         return $return;
     }
-
-    public static function asc($a, $b) {
+    
+    public static function asc($a, $b){
         return (strtolower($b['title']) < strtolower($a['title']) ? 1 : -1);
     }
-
-    public static function desc($a, $b) {
+    
+    public static function desc($a, $b){
         return (strtolower($a['title']) < strtolower($b['title']) ? 1 : -1);
     }
-
+    
     public static function orderByDate_asc($a, $b) {
-        return ($b['created'] < $a['created'] ? 1 : -1);
+        return ($b['created'] < $a['created'] ? 1 : -1); 
     }
 
-    public static function orderByDate_desc($a, $b) {
+    public static function orderByDate_desc($a, $b){
         return ($a['created'] < $b['created'] ? 1 : -1);
     }
 }

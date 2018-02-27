@@ -66,7 +66,7 @@ $args = array(
 	<div id="comments" class="comments-area <?php echo esc_attr($the_core_comments_type); ?> <?php if ( is_user_logged_in() ) {echo 'user-is-logged';} ?>">
 		<h3 class="comments-title">
             <?php if($the_core_comments_type == 'comments-template-1' ) : ?>
-			    <strong><?php comments_number( '', esc_html__( '1 reply added', 'the-core' ), esc_html__( '% replies added', 'the-core' ) ); ?></strong>
+			    <strong><?php comments_number( esc_html__( 'no replies', 'the-core' ), esc_html__( '1 reply added', 'the-core' ), esc_html__( '% replies added', 'the-core' ) ); ?></strong>
             <?php else: ?>
                 <strong><?php comments_number( esc_html__( '0 Comments', 'the-core' ), esc_html__( '1 Comment', 'the-core' ), esc_html__( '% Comments', 'the-core' ) ); ?></strong>
             <?php endif; ?>

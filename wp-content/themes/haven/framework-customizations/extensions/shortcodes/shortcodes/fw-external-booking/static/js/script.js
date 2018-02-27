@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
             var date = new Date( $thisInput.val() );
 
             if( $thisInput.val() ) {
-                externalBookingData.empty().append(arrSplit[2]);
+                externalBookingData.empty().append(arrSplit[0]);
                 var month_text = $.fn.datetimepicker.defaults.i18n[lang].months[date.getMonth()];
                 if( month_text != undefined ) {
                     /* get translation of the month */
@@ -31,7 +31,7 @@ jQuery(document).ready(function() {
                 else {
                     externalBookingMonth.empty().append('/ ' + arrSplit[1]);
                 }
-                externalBookingYear.empty().append(', ' + arrSplit[0]);
+                externalBookingYear.empty().append(', ' + arrSplit[2]);
             }
         }
 
@@ -41,7 +41,7 @@ jQuery(document).ready(function() {
             scrollMonth: false,
             minDate: 0,
             lang: lang,
-            format: 'Y/m/d',
+            format: 'd/F/Y',
             onGenerate: function(){
                 splitDate();
             }
@@ -53,7 +53,7 @@ jQuery(document).ready(function() {
 
             current_input.datetimepicker({
                 lang: lang,
-                format: 'Y/m/d',
+                format: 'd/F/Y',
                 value: currentDay,
                 closeOnDateSelect: true,
                 onChangeDateTime: function($current_time, $input) {
@@ -62,9 +62,9 @@ jQuery(document).ready(function() {
                     var outDate = external_booking_date_format(current_input.parents('.fw-external-booking').find('.fw-external-booking-out').val(), 'ymd', '/');
                     outDate = new Date(outDate);
 
-                    var args = { lang: lang, format: 'Y/m/d', minDate: inDate };
+                    var args = { lang: lang, format: 'd/F/Y', minDate: inDate };
                     if ( inDate > outDate ) {
-                        args = { lang: lang, format: 'Y/m/d', minDate: inDate, value: $input.val() };
+                        args = { lang: lang, format: 'd/F/Y', minDate: inDate, value: $input.val() };
                     }
 
                     current_input.parents('.fw-external-booking').find('.fw-external-booking-out').datetimepicker(args);
@@ -74,7 +74,7 @@ jQuery(document).ready(function() {
         else if($thisInput.hasClass('fw-external-booking-out')) {
             $(this).datetimepicker({
                 lang: lang,
-                format: 'Y/m/d',
+                format: 'd/F/Y',
                 value: dayTomorrow,
                 closeOnDateSelect: true,
             });

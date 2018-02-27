@@ -39,13 +39,7 @@ class N2SmartSliderFeatureSlideBackground {
 
     private function getBackgroundStyle($slide) {
         $style    = '';
-        $color    = $slide->fill($slide->parameters->get('backgroundColor', ''));
-        if(strlen($color) > 0 && $color[0] == '#'){
-	        $color = substr($color, 1);
-	        if(strlen($color) == 6){
-		        $color .= 'ff';
-	        }
-        }
+        $color    = $slide->parameters->get('backgroundColor', '');
         $gradient = $slide->parameters->get('backgroundGradient', 'off');
 
         if (!class_exists('N2Color')) {
@@ -53,13 +47,7 @@ class N2SmartSliderFeatureSlideBackground {
         }
 
         if ($gradient != 'off') {
-            $colorEnd = $slide->fill($slide->parameters->get('backgroundColorEnd', 'ffffff00'));
-	        if(strlen($colorEnd) > 0 && $colorEnd[0] == '#'){
-		        $colorEnd = substr($colorEnd, 1);
-		        if(strlen($colorEnd) == 6){
-			        $colorEnd .= 'ff';
-		        }
-	        }
+            $colorEnd = $slide->parameters->get('backgroundColorEnd', 'ffffff00');
             switch ($gradient) {
                 case 'horizontal':
                     $style .= 'background:#' . substr($color, 0, 6) . ';';

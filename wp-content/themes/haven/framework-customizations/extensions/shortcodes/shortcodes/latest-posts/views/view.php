@@ -7,7 +7,7 @@
 }
 
 $term_id = (int)$atts['category'];
-$the_core_blog_view = isset( $atts['blog_view']['selected'] ) ? $atts['blog_view']['selected'] : '';
+$the_core_blog_view = @$atts['blog_view']['selected'];
 $blog_type = !empty($atts['blog_type']) ? $atts['blog_type'] : 'blog-1';
 
 $posts_per_page = (int)$atts['posts_number'];
@@ -40,7 +40,7 @@ $query = new WP_Query($args);
 
 // set sidebar position for 3 columns full, and function get the specific wrap
 $the_core_sidebar_position = (isset($atts['blog_view']['grid']['columns']) && $atts['blog_view']['grid']['columns'] == 'fw-portfolio-cols-3') ? 'full' : 'right';
-$the_core_wrap_div = the_core_get_blog_wrap($the_core_blog_view, $the_core_sidebar_position, $atts['blog_view']['grid']['columns'] );
+$the_core_wrap_div = the_core_get_blog_wrap($the_core_blog_view, $the_core_sidebar_position);
 
 if ($the_core_blog_view == 'grid') {
 	$the_core_template_directory_uri = get_template_directory_uri();
@@ -138,4 +138,4 @@ if (isset($atts['animation_group'])) {
 		get_template_part('content', 'none');
 	endif; ?>
 </div>
-<?php wp_reset_postdata();
+<?php wp_reset_postdata(); ?>

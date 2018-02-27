@@ -51,10 +51,6 @@
 .fw-header-sticky .fw-sticky-menu .fw-top-bar {
   display: none;
 }
-.fw-header.fw-sticky-menu .fw-header-main {
-  background: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-bg']); ?>;
-  background: <?php echo the_core_hex2rgba( $the_core_less_variables['fw-sticky-menu-bg'], floatval($the_core_less_variables['fw-sticky-menu-bg-opacity'])/100 ); ?>;
-}
 .fw-absolute-header.fw-header-sticky .fw-sticky-menu.fw-sticky-menu-open {
   top: 0 !important;
 }
@@ -78,7 +74,7 @@
   background: <?php echo the_core_hex2rgba( $the_core_less_variables['fw-top-menu-bg'], floatval($the_core_less_variables['fw-header-absolute-opacity'])/100 ); ?>;
 }
 .fw-absolute-header .fw-sticky-menu-open .fw-header-main {
-  background: <?php echo the_core_hex2rgba( $the_core_less_variables['fw-sticky-menu-bg'], floatval($the_core_less_variables['fw-sticky-menu-bg-opacity'])/100 ); ?>;
+  background-color: <?php echo esc_js($the_core_less_variables['fw-top-menu-bg']); ?>;
 }
 /* top bar on */
 .fw-top-bar-on.fw-absolute-header .site-main {
@@ -117,9 +113,6 @@
 @media(max-width: 991px){
   /* Top Bar */
   .search-in-top-bar .fw-search.fw-mini-search {
-    display: block;
-    position: relative;
-    top: 0 !important;
     border: none !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -147,6 +140,14 @@
     padding: 0 !important;
     margin: 0 !important;
   }
+  .search-in-top-bar .fw-search.fw-mini-search {
+    display: block;
+    position: relative;
+    top: 0 !important;
+    left: 50%;
+    margin: 0 !important;
+    padding-left: 10px !important;
+  }
   .search-in-top-bar .fw-search.fw-mini-search .fw-wrap-search-form {
     right: 0;
   }
@@ -164,9 +165,6 @@
 @media(max-width:767px){
   .fw-absolute-header .fw-header .fw-header-main {
     background: <?php echo esc_js($the_core_less_variables['fw-top-menu-bg']); ?>;
-  }
-  .fw-absolute-header .fw-sticky-menu-open .fw-header-main {
-    background: <?php echo the_core_hex2rgba( $the_core_less_variables['fw-sticky-menu-bg'], floatval($the_core_less_variables['fw-sticky-menu-bg-opacity'])/100 ); ?>;
   }
   .fw-absolute-header .fw-header {
     position: relative;

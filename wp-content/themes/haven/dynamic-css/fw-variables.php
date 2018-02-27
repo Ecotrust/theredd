@@ -159,7 +159,7 @@ $the_core_less_variables['input-padding-x'] = '15px';
 $the_core_less_variables['input-padding-y'] = '12px';
 
 // Default '.form-control' height
-$the_core_less_variables['input-height-base'] = ( (int)$the_core_less_variables['input-padding-x'] * 2 ) . 'px'; // from default value
+$the_core_less_variables['input-height-base'] = ( $the_core_less_variables['input-padding-x'] * 2 ) . 'px'; // from default value
 
 // Fonts variables for all labels form themes
 $the_core_less_variables['form-label-font-family']    = $the_core_less_variables['font-family-1']; // from default value
@@ -175,25 +175,8 @@ $the_core_less_variables['form-label-text-transform'] = 'uppercase';
 $the_core_less_variables['panel-icon-size'] = '17px';
 
 // Mobile menu
-$the_core_less_variables['fw-mobile-menu-screen-size']      = '1199';
-$the_core_less_variables['fw-mobile-menu-font-family']      = "'Helvetica'";
-$the_core_less_variables['fw-mobile-menu-font-size']        = '14px';
-$the_core_less_variables['fw-mobile-menu-line-height']      = '22px';
-$the_core_less_variables['fw-mobile-menu-font-weight']      = 'normal';
-$the_core_less_variables['fw-mobile-menu-font-style']       = 'normal';
-$the_core_less_variables['fw-mobile-menu-letter-spacing']   = '0';
-$the_core_less_variables['fw-mobile-menu-color']            = 'rgba(255, 255, 255, 0.6)';
-$the_core_less_variables['fw-mobile-menu-bg-color']         = '#333333';
-$the_core_less_variables['fw-mobile-menu-bg-repeat']        = 'no-repeat';
-$the_core_less_variables['fw-mobile-menu-bg-position-x']    = 'center';
-$the_core_less_variables['fw-mobile-menu-bg-position-y']    = 'center';
-$the_core_less_variables['fw-mobile-menu-bg-size']          = 'cover';
-$the_core_less_variables['fw-mobile-menu-bg-image']         = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 $the_core_less_variables['fw-icon-font-size-mobile-menu']   = '28px';
-$the_core_less_variables['fw-icon-line-height-mobile-menu'] = ( (int)$the_core_less_variables['fw-icon-font-size-mobile-menu'] - 7 ) . 'px'; // from default value
-$the_core_less_variables['fw-mobile-menu-border-color']     = 'inherit';
-$the_core_less_variables['fw-mobile-menu-border-size']      = '1px';
-
+$the_core_less_variables['fw-icon-line-height-mobile-menu'] = ( $the_core_less_variables['fw-icon-font-size-mobile-menu'] - 7 ) . 'px'; // from default value
 
 // Menu item hover color (header & footer menu)
 $the_core_less_variables['fw-top-menu-item-color-hover']    = $the_core_less_variables['theme-color-2']; // rewrite in admin-styling
@@ -221,8 +204,8 @@ $the_core_less_variables['fw-content-density-lg'] = '15px';
 $the_core_less_variables['fw-content-density']    = $the_core_less_variables['fw-content-density-md']; // from default value
 
 $the_core_less_variables['fw-top-menu-bg']                 = 'transparent';
-$the_core_less_variables['fw-header-padding-top']          = ( (int)$the_core_less_variables['fw-content-density'] * 4 ) . 'px';
-$the_core_less_variables['fw-header-padding-bot']          = ( (int)$the_core_less_variables['fw-content-density'] * 4 ) . 'px';
+$the_core_less_variables['fw-header-padding-top']          = ( $the_core_less_variables['fw-content-density'] * 4 ) . 'px';
+$the_core_less_variables['fw-header-padding-bot']          = ( $the_core_less_variables['fw-content-density'] * 4 ) . 'px';
 $the_core_less_variables['fw-logo-wrap-height']            = '160px';
 $the_core_less_variables['fw-header-absolute-opacity']     = '90%';
 $the_core_less_variables['fw-header-2-padding-logo']       = '50px'; // logo's margin left & right
@@ -271,14 +254,6 @@ $the_core_less_variables['fw-header-6-overlay-transparent']     = '0';
 $the_core_less_variables['fw-header-6-menu-social-color']       = $the_core_less_variables['theme-color-1']; // rewrite in admin-styling
 $the_core_less_variables['fw-header-6-menu-social-color-hover'] = $the_core_less_variables['theme-color-2']; // rewrite in admin-styling
 $the_core_less_variables['fw-header-6-menu-social-size']        = '16px';
-
-// Header Sticky
-$the_core_less_variables['fw-sticky-menu-padding']          = ceil(floatval( (int)$the_core_less_variables['fw-header-padding-top'] * 0.87 ));
-$the_core_less_variables['fw-sticky-menu-item-color']       = $the_core_less_variables['fw-top-menu-color'];
-$the_core_less_variables['fw-sticky-menu-item-color-hover'] = $the_core_less_variables['fw-top-menu-item-color-hover'];
-$the_core_less_variables['fw-sticky-menu-bg']               = $the_core_less_variables['fw-top-menu-bg'];
-$the_core_less_variables['fw-sticky-menu-bg-opacity']       = '1';
-$the_core_less_variables['fw-menu-sticky-logo-width']       = '300px';
 
 // Bottom menu
 $the_core_less_variables['fw-bottom-menu-font-family']    = $the_core_less_variables['fw-menu-font-family']; // rewrite in admin-styling
@@ -390,9 +365,9 @@ $the_core_less_variables['fw-footer-logo-max-height'] = '100px';
 // Padding top & bottom in all sections
 $the_core_less_variables['fw-section-padding'] = $the_core_less_variables['fw-space-between-elements-md']; // from default value
 
-$the_core_less_variables['fw-section-padding-sm'] = (int)$the_core_less_variables['fw-section-padding'] * 0.6 . 'px'; // from default value
+$the_core_less_variables['fw-section-padding-sm'] = $the_core_less_variables['fw-section-padding'] * 0.6 . 'px'; // from default value
 $the_core_less_variables['fw-section-padding-md'] = $the_core_less_variables['fw-section-padding']; // from default value
-$the_core_less_variables['fw-section-padding-lg'] = (int)$the_core_less_variables['fw-section-padding'] * 1.4 . 'px'; // from default value
+$the_core_less_variables['fw-section-padding-lg'] = $the_core_less_variables['fw-section-padding'] * 1.4 . 'px'; // from default value
 
 // Core Shortcodes
 // buttons font-family & font-weight
@@ -501,8 +476,8 @@ the_core_render_view( get_template_directory() . '/dynamic-css/fw-admin-styling.
 $the_core_less_variables['font-family-2']   = $the_core_less_variables['font-family-base'];
 
 // font size base
-$the_core_less_variables['font-size-large'] = ceil( (int)$the_core_less_variables['font-size-base'] * 1.15 ) . 'px';
-$the_core_less_variables['font-size-small'] = ceil( (int)$the_core_less_variables['font-size-base'] * 0.85 ) . 'px';
+$the_core_less_variables['font-size-large'] = ceil( $the_core_less_variables['font-size-base'] * 1.15 ) . 'px';
+$the_core_less_variables['font-size-small'] = ceil( $the_core_less_variables['font-size-base'] * 0.85 ) . 'px';
 
 // Computed 'line-height' ('font-size' * 'line-height') for use with 'margin', 'padding', etc
 $the_core_less_variables['line-height-computed'] = $the_core_less_variables['font-size-base'];
@@ -520,8 +495,6 @@ $the_core_less_variables['fw-dropdown-font-family']      = $the_core_less_variab
 $the_core_less_variables['fw-dropdown-letter-spacing']      = $the_core_less_variables['fw-menu-letter-spacing'];
 $the_core_less_variables['fw-dropdown-bg-color-hover']   = the_core_hex2rgba( the_core_adjustColorLightenDarken( $the_core_less_variables['fw-dropdown-bg-color'], 30 ), 0.94 );
 $the_core_less_variables['fw-header-5-menu-icon-height'] = ( floatval( $the_core_less_variables['fw-header-5-menu-icon-size'] ) - 6 ) . 'px';
-
-// Header Sticky
 
 // Search form
 $the_core_less_variables['fw-header-search-input-icon-color-hover'] = the_core_adjustColorLightenDarken( $the_core_less_variables['fw-header-search-input-icon-color'], - 10 );

@@ -1,12 +1,48 @@
 <?php if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
 }
-
 return array(
 	/**
 	 * Array for demos
 	 */
-	'demos'              => the_core_get_the_demo_required_plugins(),
+	'demos'              => array(
+		'the-lavish'    => array(
+			array(
+				'name'   => 'Revolution Slider',
+				'slug'   => 'revslider',
+				'source' => 'http://updates.themefuse.com/plugins/revslider.zip'
+			),
+			array(
+				'name'   => 'LayerSlider WP',
+				'slug'   => 'LayerSlider',
+				'source' => 'http://updates.themefuse.com/plugins/LayerSlider.zip'
+			),
+		),
+		'beach-resort'    => array(
+			array(
+				'name'   => 'Revolution Slider',
+				'slug'   => 'revslider',
+				'source' => 'http://updates.themefuse.com/plugins/revslider.zip'
+			),
+			array(
+				'name'   => 'LayerSlider WP',
+				'slug'   => 'LayerSlider',
+				'source' => 'http://updates.themefuse.com/plugins/LayerSlider.zip'
+			),
+		),
+		'alpine-lodge'    => array(
+			array(
+				'name'   => 'Revolution Slider',
+				'slug'   => 'revslider',
+				'source' => 'http://updates.themefuse.com/plugins/revslider.zip'
+			),
+			array(
+				'name'   => 'LayerSlider WP',
+				'slug'   => 'LayerSlider',
+				'source' => 'http://updates.themefuse.com/plugins/LayerSlider.zip'
+			),
+		),
+	),
 	'plugins'            => array(
 		array(
 			'name'   => 'Smart Slider 3 Pro',
@@ -14,11 +50,22 @@ return array(
 			'source' => 'http://updates.themefuse.com/plugins/nextend-smart-slider3-pro.zip'
 		),
 		array(
-			'name' => 'TranslatePress',
-			'slug' => 'translatepress-multilingual',
+			'name'   => 'TranslatePress',
+			'slug'   => 'translatepress-multilingual',
 		),
+		/* moved to demo install */
+		/*array(
+			'name'   => 'Revolution Slider',
+			'slug'   => 'revslider',
+			'source' => 'http://updates.themefuse.com/plugins/revslider.zip'
+		),
+		array(
+			'name'   => 'LayerSlider WP',
+			'slug'   => 'LayerSlider',
+			'source' => 'http://updates.themefuse.com/plugins/LayerSlider.zip'
+		),*/
 	),
-	'theme_id'           => the_core_get_the_theme_id(),
-	'child_theme_source' => 'http://updates.themefuse.com/plugins/' . the_core_get_the_theme_id() . '-child.zip',
+	'theme_id'           => 'haven',
+	'child_theme_source' => 'http://updates.themefuse.com/plugins/haven-child.zip',
 	'has_demo_content'   => true
 );

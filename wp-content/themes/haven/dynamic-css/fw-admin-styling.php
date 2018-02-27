@@ -272,81 +272,6 @@ if ( isset( $the_core_typography_settings['header_menu_hover']['id'] ) && $the_c
 	$the_core_less_variables['fw-top-menu-line-color'] = $the_core_less_variables['fw-top-menu-item-color-hover'] = $the_core_color_settings[ $the_core_typography_settings['header_menu_hover']['id'] ];
 }
 
-// mobile menu
-if ( isset( $the_core_header_settings['mobile_menu_options']['mobile_screen'] ) ) {
-	$the_core_less_variables['fw-mobile-menu-screen-size'] = (int) $the_core_header_settings['mobile_menu_options']['mobile_screen'];
-}
-
-if ( isset( $the_core_header_settings['mobile_menu_options']['border']['selected'] ) && 'yes' == $the_core_header_settings['mobile_menu_options']['border']['selected'] ) {
-	if( !empty($the_core_header_settings['mobile_menu_options']['border']['yes']['border_size']) ) {
-		$the_core_less_variables['fw-mobile-menu-border-size'] = $the_core_header_settings['mobile_menu_options']['border']['yes']['border_size']. 'px';
-	}
-
-	$border_color = the_core_get_color_palette_color_and_class( $the_core_header_settings['mobile_menu_options']['border']['yes']['border_color'], array( 'return_color' => true ) );
-	if ( ! empty( $border_color['color'] ) ) {
-		$the_core_less_variables['fw-mobile-menu-border-color'] = $border_color['color'];
-	}
-}
-
-// mobile menu socials
-if ( isset( $the_core_header_settings['mobile_menu_options']['mobile_menu_socials']['selected_value'] ) && 'yes' == $the_core_header_settings['mobile_menu_options']['mobile_menu_socials']['selected_value'] ) {
-	$the_core_less_variables['fw-mobile-menu-social-size']  = $the_core_header_settings['mobile_menu_options']['mobile_menu_socials']['yes']['mobile_menu_icon_size'];
-	$socials_color = the_core_get_color_palette_color_and_class( $the_core_header_settings['mobile_menu_options']['mobile_menu_socials']['yes']['mobile_menu_socials_color'], array( 'return_color' => true ) );
-	if ( ! empty( $socials_color['color'] ) ) {
-		$the_core_less_variables['fw-mobile-menu-social-color'] = $socials_color['color'];
-	}
-}
-
-// mobile menu typography
-if ( isset( $the_core_header_settings['mobile_menu_options']['menu_typography'] ) ) {
-	$font_styles                                           = the_core_get_font_array( $the_core_header_settings['mobile_menu_options']['menu_typography'], $the_core_color_settings );
-	$the_core_less_variables['fw-mobile-menu-font-family'] = $font_styles['font-family'];
-	( $font_styles['font-size'] != 'px' ) ? $the_core_less_variables['fw-mobile-menu-font-size'] = $font_styles['font-size'] : '';
-	( $font_styles['line-height'] != 'px' ) ? $the_core_less_variables['fw-mobile-menu-line-height'] = $font_styles['line-height'] : '';
-	( $font_styles['letter-spacing'] != 'px' ) ? $the_core_less_variables['fw-mobile-menu-letter-spacing'] = $font_styles['letter-spacing'] : '';
-	! empty( $font_styles['color'] ) ? $the_core_less_variables['fw-mobile-menu-color'] = $font_styles['color'] : '';
-	$the_core_less_variables['fw-mobile-menu-font-style']  = $font_styles['font-style'];
-	$the_core_less_variables['fw-mobile-menu-font-weight'] = $font_styles['font-weight'];
-}
-
-// mobile menu background
-if ( isset( $the_core_header_settings['mobile_menu_options']['background_options'] ) ) {
-	if ( 'color' == $the_core_header_settings['mobile_menu_options']['background_options']['background'] ) {
-		$mobile_bg_color = the_core_get_color_palette_color_and_class( $the_core_header_settings['mobile_menu_options']['background_options']['color']['background_color'], array( 'return_color' => true ) );
-		if ( ! empty( $mobile_bg_color['color'] ) ) {
-			$the_core_less_variables['fw-mobile-menu-bg-color'] = $mobile_bg_color['color'];
-		}
-	} elseif ( 'image' == $the_core_header_settings['mobile_menu_options']['background_options']['background'] ) {
-		// color
-		$mobile_bg_color = the_core_get_color_palette_color_and_class( $the_core_header_settings['mobile_menu_options']['background_options']['image']['background_color'], array( 'return_color' => true ));
-		if ( ! empty( $mobile_bg_color['color'] ) ) {
-			$the_core_less_variables['fw-mobile-menu-bg-color'] = $mobile_bg_color['color'];
-		}
-
-		// image
-		if ( !empty( $the_core_header_settings['mobile_menu_options']['background_options']['image']['background_image'] ) && isset( $the_core_header_settings['mobile_menu_options']['background_options']['image']['background_image']['data']['icon'] ) ) {
-			$the_core_less_variables['fw-mobile-menu-bg-image'] = $the_core_header_settings['mobile_menu_options']['background_options']['image']['background_image']['data']['icon'];
-		}
-
-		// repeat options
-		$the_core_less_variables['fw-mobile-menu-bg-repeat'] = $the_core_header_settings['mobile_menu_options']['background_options']['image']['repeat'];
-		$the_core_less_variables['fw-mobile-menu-bg-position-x'] = $the_core_header_settings['mobile_menu_options']['background_options']['image']['bg_position_x'];
-		$the_core_less_variables['fw-mobile-menu-bg-position-y'] = $the_core_header_settings['mobile_menu_options']['background_options']['image']['bg_position_y'];
-		$the_core_less_variables['fw-mobile-menu-bg-size'] = $the_core_header_settings['mobile_menu_options']['background_options']['image']['bg_size'];
-
-		// overlay options
-		if ( 'yes' == $the_core_header_settings['mobile_menu_options']['background_options']['image']['overlay_options']['overlay'] ) {
-			$mobile_opacity_color = the_core_get_color_palette_color_and_class( $the_core_header_settings['mobile_menu_options']['background_options']['image']['overlay_options']['yes']['background'], array( 'return_color' => true ));
-			if ( ! empty( $mobile_opacity_color['color'] ) ) {
-				$the_core_less_variables['fw-mobile-menu-overlay-color'] = $mobile_opacity_color['color'];
-			}
-
-			// opacity
-			$the_core_less_variables['fw-mobile-menu-overlay-opacity'] = (int)$the_core_header_settings['mobile_menu_options']['background_options']['image']['overlay_options']['yes']['overlay_opacity_image'] / 100;
-		}
-	}
-}
-
 // footer menu
 if ( isset( $the_core_typography_settings['footer_menu'] ) ) {
 	$font_styles                                           = the_core_get_font_array( $the_core_typography_settings['footer_menu'], $the_core_color_settings );
@@ -488,9 +413,6 @@ if ( isset( $the_core_header_settings['header_bg_color']['id'] ) && $the_core_he
 	}
 } elseif ( isset( $the_core_header_settings['header_bg_color']['id'] ) ) {
 	$the_core_less_variables['fw-top-menu-bg'] = $the_core_color_settings[ $the_core_header_settings['header_bg_color']['id'] ];
-}
-else {
-	$the_core_less_variables['fw-top-menu-bg'] = 'transparent';
 }
 
 // header menu color
@@ -789,57 +711,6 @@ if ( $the_core_header_settings['header_type_picker']['header_type'] == 'header-6
 		if ( ! empty( $the_core_header_settings['header_type_picker']['header-6']['enable_header_socials']['yes']['header_icon_size'] ) ) {
 			$the_core_less_variables['fw-header-6-menu-social-size'] = $the_core_header_settings['header_type_picker']['header-6']['enable_header_socials']['yes']['header_icon_size'] . 'px';
 		}
-	}
-}
-
-// sticky header
-if ( isset( $the_core_header_settings['enable_sticky_header'] ) && $the_core_header_settings['enable_sticky_header'] != '' ) {
-	// sticky logo image width
-	if ( ! empty( $the_core_header_settings['sticky_header_styling']['logo'] ) && isset($the_core_header_settings['sticky_header_styling']['logo']['attachment_id']) ) {
-		$sticky_logo_image = wp_get_attachment_image_src( $the_core_header_settings['sticky_header_styling']['logo']['attachment_id'], 'full' );
-		if ( isset( $sticky_logo_image['1'] ) ) {
-			$the_core_less_variables['fw-menu-sticky-logo-width'] = $sticky_logo_image['1'];
-		}
-	}
-
-	if ( isset( $the_core_header_settings['sticky_header_styling'] ) ) {
-		// padding
-		if ( ! empty( $the_core_header_settings['sticky_header_styling']['padding'] ) ) {
-			$the_core_less_variables['fw-sticky-menu-padding'] = $the_core_header_settings['sticky_header_styling']['padding'];
-		}
-		// menu color
-		$menu_color = the_core_get_color_palette_color_and_class( $the_core_header_settings['sticky_header_styling']['menu_color'], array( 'return_color' => true ) );
-		if ( ! empty( $menu_color['color'] ) ) {
-			$the_core_less_variables['fw-sticky-menu-item-color'] = $menu_color['color'];
-		}
-		else {
-			// only for header 5 if sticky color is empty
-			if ( $the_core_header_settings['header_type_picker']['header_type'] == 'header-5' ) {
-				$the_core_less_variables['fw-sticky-menu-item-color'] = $the_core_less_variables['fw-header-5-menu-icon-color'];
-			}
-		}
-
-		// menu hover color
-		$menu_hover_color = the_core_get_color_palette_color_and_class( $the_core_header_settings['sticky_header_styling']['menu_hover_color'], array( 'return_color' => true ) );
-		if ( ! empty( $menu_hover_color['color'] ) ) {
-			$the_core_less_variables['fw-sticky-menu-item-color-hover'] = $menu_hover_color['color'];
-		}
-		else {
-			// only for header 5 if sticky color is empty
-			if ( $the_core_header_settings['header_type_picker']['header_type'] == 'header-5' ) {
-				$the_core_less_variables['fw-sticky-menu-item-color-hover'] = $the_core_less_variables['fw-header-5-menu-icon-color-hover'];
-			}
-		}
-		// background sticky
-		$menu_bg_color = the_core_get_color_palette_color_and_class( $the_core_header_settings['sticky_header_styling']['bg_color'], array( 'return_color' => true ) );
-		if ( ! empty( $menu_bg_color['color'] ) ) {
-			$the_core_less_variables['fw-sticky-menu-bg'] = $menu_bg_color['color'];
-		}
-		else {
-			$the_core_less_variables['fw-sticky-menu-bg'] = $the_core_less_variables['fw-top-menu-bg'];
-		}
-		// background sticky opacity
-		$the_core_less_variables['fw-sticky-menu-bg-opacity'] = (int) $the_core_header_settings['sticky_header_styling']['bg_opacity'];
 	}
 }
 

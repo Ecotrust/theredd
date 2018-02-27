@@ -105,6 +105,10 @@ if( isset($atts['responsive']['smartphone_display']['selected']) && $atts['respo
 // for unique id
 if (isset($atts['unique_id'])) {
 	$class .= ' tf-sh-' . esc_attr( $atts['unique_id'] );
+	$id = 'column-'.$atts['unique_id'];
+}
+else{
+	$id = uniqid( 'column-' );
 }
 
 $class .= ' ' . esc_attr( $atts['class'] ) . ' ' . esc_attr( $atts['default_padding'] );
@@ -114,7 +118,7 @@ if( !empty($column_style) ) {
 	$column_style = 'style="' . $column_style . '"';
 }
 ?>
-<div id="<?php echo esc_attr( uniqid( 'column-' ) ); ?>" class="<?php echo trim($class); ?>" <?php echo trim($data_animation); ?>>
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo trim($class); ?>" <?php echo trim($data_animation); ?>>
 	<div class="fw-wrap-col-inner clearfix <?php echo $border_class; ?> <?php echo $wrap_col_inner_class; ?>" <?php echo $column_style;?> <?php echo ($data_parallax); ?> >
 		<?php if( $atts['background_options']['background'] == 'image' && $atts['background_options']['image']['overlay_options']['overlay'] == 'yes' ) : ?>
 			<div class="fw-main-row-overlay"></div>

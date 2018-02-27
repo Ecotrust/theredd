@@ -77,12 +77,7 @@ class N2SmartSliderTypeAccordion extends N2SmartSliderType {
                     </div>
                 </div>
             <?php echo N2Html::closeTag('div'); ?>
-
-            <?php
-            echo N2Html::openTag('div', N2Html::mergeAttributes(array(
-                    'class' => 'n2-accordion-slide n2-ow',
-                    'style' => $slide->style), $slide->linkAttributes));
-            ?>
+            <div class="n2-accordion-slide n2-ow" style="<?php echo $slide->style; ?>">
                     <?php
                     echo N2Html::tag('div', array(
                         'class' => 'n2-ss-canvas n2-ow',

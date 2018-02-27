@@ -16,8 +16,7 @@ $megamenu = fw()->extensions->get( 'megamenu' );
 $icon_class = '';
 if ( $megamenu->show_icon() ) {
 	if ( $icon = fw_mega_menu_get_meta( $item, 'icon' ) ) {
-		$class = isset( $attributes['class'] ) ? $attributes['class'] : '';
-		$icon_class = '<i class="' . trim( $class . " $icon" ) . '"></i>';
+		$icon_class = '<i class="' . trim( @$attributes['class'] . " $icon" ) . '"></i>';
 	}
 }
 

@@ -194,25 +194,21 @@ function fw_hide_data_for_header( src ) {
 
 	var header_5_elements = jQuery('#fw-backend-option-fw-option-header_settings-dropdown_bg_color, #fw-backend-option-fw-option-header_settings-dropdown_links_color');
 	var header_6_elements = jQuery('#fw-backend-option-fw-option-header_settings-boxed_header, #fw-backend-option-fw-option-header_settings-enable_absolute_header, #fw-backend-option-fw-option-header_settings-enable_sticky_header, #fw-backend-option-fw-option-header_settings-dropdown_bg_color, #fw-backend-option-fw-option-header_settings-dropdown_links_color, #fw-backend-option-fw-option-header_settings-header_bg_color');
-	var header_bg_color     = jQuery('#fw-backend-option-fw-option-header_settings-header_bg_color');
-	/*var social_icon_size    = jQuery('#fw-option-header_settings-header_type_picker-header-6-enable_header_socials');*/
-	var mobile_menu_options = jQuery('#fw-backend-option-fw-option-header_settings-mobile_menu_options');
+	var header_bg_color   = jQuery('#fw-backend-option-fw-option-header_settings-header_bg_color');
+	var social_icon_size  = jQuery('#fw-option-header_settings-header_type_picker-header-6-enable_header_socials');
 	if( src.indexOf("header-type5" ) > -1 ) {
 		header_6_elements.show();
 		header_5_elements.hide();
-		mobile_menu_options.hide();
 		header_bg_color.addClass('fw-padding-bottom');
 	}
 	else if( src.indexOf("header-type6" ) > -1 ) {
 		header_6_elements.hide();
-		mobile_menu_options.hide();
-		/*social_icon_size.addClass('fw-padding-bottom');*/
+		social_icon_size.addClass('fw-padding-bottom');
 	}
 	else {
 		header_6_elements.show();
-		mobile_menu_options.show();
 		header_bg_color.removeClass('fw-padding-bottom');
-		/*social_icon_size.removeClass('fw-padding-bottom');*/
+		social_icon_size.removeClass('fw-padding-bottom');
 	}
 }
 

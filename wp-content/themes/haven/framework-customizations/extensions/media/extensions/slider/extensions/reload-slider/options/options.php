@@ -39,7 +39,8 @@ $options = array(
 			'none'  => array(),
 			'color' => array(
 				'background_color' => array(
-					'label'   => '',
+					'label'   => false,
+					'help'    => __( 'The default color palette can be changed from the', 'the-core' ) . ' <a target="_blank" href="' . $the_core_admin_url . 'themes.php?page=fw-settings&_focus_tab=fw-options-tab-colors_tab">' . __( 'Colors section', 'the-core' ) . '</a> ' . __( 'found in the Theme Settings page', 'the-core' ),
 					'desc'    => __( 'Select the background color', 'the-core' ),
 					'value'   => '',
 					'choices' => $the_core_color_settings,

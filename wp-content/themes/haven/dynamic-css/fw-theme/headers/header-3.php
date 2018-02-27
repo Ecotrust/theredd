@@ -65,6 +65,9 @@
 .header-3.fw-header-boxed.fw-header-sticky .fw-sticky-menu .fw-nav-wrap .fw-container {
   padding-top: <?php echo ceil(floatval($the_core_less_variables['fw-header-padding-bot'])*0.87); ?>px;
 }
+.header-3 .fw-sticky-menu .fw-header-main .fw-wrap-logo {
+  display: none;
+}
 .header-3.search-in-menu .fw-search {
   display: table-cell;
   width: 1%;
@@ -72,15 +75,6 @@
 }
 .header-3.search-in-menu .fw-mini-search {
   position: relative;
-}
-
-/* Sticky Header */
-.header-3 .fw-sticky-menu .fw-header-main .fw-wrap-logo {
-  display: none;
-}
-.header-3 .fw-sticky-menu .fw-header-main {
-  padding-top: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-padding']); ?>px;
-  padding-bottom: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-padding']); ?>px;
 }
 
 /* Screen 568px */

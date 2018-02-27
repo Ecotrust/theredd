@@ -10,7 +10,7 @@
 
 	// menu bar overlay
 	$the_core_overlay_style_menu_bar = '';
-	if ( isset( $the_core_footer_settings['show_menu_bar']['yes']['menu_bar_bg']['image']['overlay_options']['overlay'] ) && $the_core_footer_settings['show_menu_bar']['yes']['menu_bar_bg']['image']['overlay_options']['overlay'] == 'yes' && isset($the_core_footer_settings['show_menu_bar']['yes']['menu_bar_bg']['background']) &&  $the_core_footer_settings['show_menu_bar']['yes']['menu_bar_bg']['background'] == 'image') {
+	if ( isset( $the_core_footer_settings['show_menu_bar']['yes']['menu_bar_bg']['image']['overlay_options']['overlay'] ) && $the_core_footer_settings['show_menu_bar']['yes']['menu_bar_bg']['image']['overlay_options']['overlay'] == 'yes' && @$the_core_footer_settings['show_menu_bar']['yes']['menu_bar_bg']['background'] == 'image') {
 		$the_core_overlay_bg = $the_core_footer_settings['show_menu_bar']['yes']['menu_bar_bg']['image']['overlay_options']['yes']['background']['id'];
 		$the_core_opacity    = ( $the_core_footer_settings['show_menu_bar']['yes']['menu_bar_bg']['image']['overlay_options']['yes']['overlay_opacity_image'] ) / 100;
 		if ( $the_core_overlay_bg == 'fw-custom' ) {

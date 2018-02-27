@@ -139,13 +139,6 @@
     clear: left;
   }
 
-  .n2-ss-slide-inner{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 20;
-  }
-
   .n2-ss-showcase-overlay {
     width: 100%;
     height: 100%;

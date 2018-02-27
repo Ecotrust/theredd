@@ -67,9 +67,3 @@
 .header-1.search-in-top-bar .fw-search {
   margin-top: 0 !important;
 }
-
-/* Sticky Header */
-.header-1 .fw-sticky-menu .fw-header-main .fw-container {
-  padding-top: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-padding']); ?>px;
-  padding-bottom: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-padding']); ?>px;
-}

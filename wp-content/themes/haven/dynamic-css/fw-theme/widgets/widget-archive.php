@@ -16,12 +16,6 @@
 .widget_archive ul li a:hover {
   color: <?php echo esc_js($the_core_less_variables['fw-widget-inner-title-hover-color']); ?>;
 }
-.fw-footer-widgets.footer-cols-4 .widget_archive ul li,
-.fw-footer-widgets.footer-cols-5 .widget_archive ul li,
-.fw-footer-widgets.footer-cols-6 .widget_archive ul li {
-  float: none;
-  width: 100%;
-}
 
 @media (min-width: 1200px) {
   .widget_archive ul li {

@@ -2,21 +2,21 @@
 /* If logo is no-retina */
 <?php /* For Header 1 & 4 */ ?>
 <?php if( floatval($the_core_less_variables['fw-menu-logo-height']) > floatval($the_core_less_variables['fw-menu-item-height']) ) : ?>
-  .fw-logo-no-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .primary-navigation,
-  .fw-logo-no-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .primary-navigation {
+  .fw-logo-no-retina.header-1 .primary-navigation,
+  .fw-logo-no-retina.header-5 .primary-navigation {
     margin-top: <?php echo floatval($the_core_less_variables['fw-menu-logo-height'])/2 - floatval($the_core_less_variables['fw-menu-item-height'])/2; ?>px;
   }
-  .fw-logo-no-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .fw-search,
-  .fw-logo-no-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .fw-search {
+  .fw-logo-no-retina.header-1 .fw-search,
+  .fw-logo-no-retina.header-5 .fw-search {
     margin-top: <?php echo floatval($the_core_less_variables['fw-menu-logo-height'])/2 - floatval($the_core_less_variables['fw-header-search-input-height'])/2; ?>px;
   }
-  .fw-logo-no-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .fw-mini-search,
-  .fw-logo-no-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .fw-mini-search {
+  .fw-logo-no-retina.header-1 .fw-mini-search,
+  .fw-logo-no-retina.header-5 .fw-mini-search {
     margin-top: <?php echo floatval($the_core_less_variables['fw-menu-logo-height'])/2 - floatval($the_core_less_variables['fw-header-search-input-icon-font-size'])/2; ?>px;
     top: 0;
   }
-  .fw-logo-no-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .mmenu-link,
-  .fw-logo-no-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .mmenu-link {
+  .fw-logo-no-retina.header-1 .mmenu-link,
+  .fw-logo-no-retina.header-5 .mmenu-link {
     margin-top: <?php echo floatval($the_core_less_variables['fw-menu-logo-height'])/2 - floatval($the_core_less_variables['fw-icon-line-height-mobile-menu'])/2; ?>px;
   }
   .fw-logo-no-retina.header-4 .fw-info-text-header-main .fw-text {
@@ -26,27 +26,27 @@
 
 <?php /* For Header 5 */ ?>
 <?php if( floatval($the_core_less_variables['fw-menu-logo-height']) > floatval($the_core_less_variables['fw-header-5-menu-icon-height']) ) : ?>
-  .fw-logo-no-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .primary-navigation {
+  .fw-logo-no-retina.header-5 .primary-navigation {
     margin-top: 0;
   }
-  .fw-logo-no-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .fw-nav-wrap {
+  .fw-logo-no-retina.header-5 .fw-nav-wrap {
     margin-top: <?php echo floatval($the_core_less_variables['fw-menu-logo-height'])/2 - floatval($the_core_less_variables['fw-header-5-menu-icon-height'])/2; ?>px;
   }
 <?php endif; ?>
 
 <?php /* For Header 1 & 4 */ ?>
 <?php if( floatval($the_core_less_variables['fw-menu-logo-height']) <= floatval($the_core_less_variables['fw-menu-item-height']) ) : ?>
-  .fw-logo-no-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .fw-wrap-logo {
+  .fw-logo-no-retina.header-1 .fw-wrap-logo {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-menu-item-height'])/2 - floatval($the_core_less_variables['fw-menu-logo-height'])/2); ?>px;
   }
-  .fw-logo-no-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .fw-search {
+  .fw-logo-no-retina.header-1 .fw-search {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-menu-item-height'])/2 - floatval($the_core_less_variables['fw-header-search-input-height'])/2); ?>px;
   }
-  .fw-logo-no-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .fw-mini-search {
+  .fw-logo-no-retina.header-1 .fw-mini-search {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-menu-item-height'])/2 - floatval($the_core_less_variables['fw-header-search-input-icon-font-size'])/2); ?>px;
     top: 0;
   }
-  .fw-logo-no-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .mmenu-link {
+  .fw-logo-no-retina.header-1 .mmenu-link {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-menu-item-height'])/2 - floatval($the_core_less_variables['fw-icon-line-height-mobile-menu'])/2); ?>px;
   }
   .fw-logo-no-retina.header-4 .fw-info-text-header-main .fw-text {
@@ -56,17 +56,17 @@
 
 <?php /* For Header 5 */ ?>
 <?php if( floatval($the_core_less_variables['fw-menu-logo-height']) <= floatval($the_core_less_variables['fw-header-5-menu-icon-height']) ) : ?>
-  .fw-logo-no-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .fw-wrap-logo {
+  .fw-logo-no-retina.header-5 .fw-wrap-logo {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-header-5-menu-icon-height'])/2 - floatval($the_core_less_variables['fw-menu-logo-height'])/2); ?>px;
   }
-  .fw-logo-no-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .fw-search {
+  .fw-logo-no-retina.header-5 .fw-search {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-header-5-menu-icon-height'])/2 - floatval($the_core_less_variables['fw-header-search-input-height'])/2); ?>px;
   }
-  .fw-logo-no-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .fw-mini-search {
+  .fw-logo-no-retina.header-5 .fw-mini-search {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-header-5-menu-icon-height'])/2 - floatval($the_core_less_variables['fw-header-search-input-icon-font-size'])/2); ?>px;
     top: 0;
   }
-  .fw-logo-no-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .mmenu-link {
+  .fw-logo-no-retina.header-5 .mmenu-link {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-header-5-menu-icon-height'])/2 - floatval($the_core_less_variables['fw-icon-line-height-mobile-menu'])/2); ?>px;
   }
 <?php endif; ?>
@@ -75,21 +75,21 @@
 <?php $the_core_less_variables['fw-calculate-height-logo-retina'] = (floatval($the_core_less_variables['fw-menu-logo-height'])/2).'px'; ?>
 <?php /* If logo is retina, for Header 1 & 4 */ ?>
 <?php if( floatval($the_core_less_variables['fw-calculate-height-logo-retina']) > floatval($the_core_less_variables['fw-menu-item-height']) ) : ?>
-  .fw-logo-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .primary-navigation,
-  .fw-logo-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .primary-navigation {
+  .fw-logo-retina.header-1 .primary-navigation,
+  .fw-logo-retina.header-5 .primary-navigation {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-calculate-height-logo-retina'])/2 - floatval($the_core_less_variables['fw-menu-item-height'])/2); ?>px;
   }
-  .fw-logo-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .fw-search,
-  .fw-logo-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .fw-search {
+  .fw-logo-retina.header-1 .fw-search,
+  .fw-logo-retina.header-5 .fw-search {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-calculate-height-logo-retina'])/2 - floatval($the_core_less_variables['fw-header-search-input-height'])/2); ?>px;
   }
-  .fw-logo-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .fw-mini-search,
-  .fw-logo-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .fw-mini-search {
+  .fw-logo-retina.header-1 .fw-mini-search,
+  .fw-logo-retina.header-5 .fw-mini-search {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-calculate-height-logo-retina'])/2 - floatval($the_core_less_variables['fw-header-search-input-icon-font-size'])/2); ?>px;
     top: 0;
   }
-  .fw-logo-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .mmenu-link,
-  .fw-logo-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .mmenu-link {
+  .fw-logo-retina.header-1 .mmenu-link,
+  .fw-logo-retina.header-5 .mmenu-link {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-calculate-height-logo-retina'])/2 - floatval($the_core_less_variables['fw-icon-line-height-mobile-menu'])/2); ?>px;
   }
   .fw-logo-retina.header-4 .fw-info-text-header-main .fw-text {
@@ -99,27 +99,27 @@
 
 <?php /* For Header 5 */ ?>
 <?php if( floatval($the_core_less_variables['fw-calculate-height-logo-retina']) > floatval($the_core_less_variables['fw-header-5-menu-icon-height']) ) : ?>
-  .fw-logo-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .primary-navigation {
+  .fw-logo-retina.header-5 .primary-navigation {
     margin-top: 0;
   }
-  .fw-logo-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .fw-nav-wrap {
+  .fw-logo-retina.header-5 .fw-nav-wrap {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-calculate-height-logo-retina'])/2 - floatval($the_core_less_variables['fw-header-5-menu-icon-height'])/2); ?>px;
   }
 <?php endif; ?>
 
 <?php /* For Header 1 & 4 */ ?>
 <?php if( floatval($the_core_less_variables['fw-calculate-height-logo-retina']) <= floatval($the_core_less_variables['fw-menu-item-height']) ) : ?>
-  .fw-logo-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .fw-wrap-logo {
+  .fw-logo-retina.header-1 .fw-wrap-logo {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-menu-item-height'])/2 - floatval($the_core_less_variables['fw-calculate-height-logo-retina'])/2); ?>px;
   }
-  .fw-logo-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .fw-search {
+  .fw-logo-retina.header-1 .fw-search {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-menu-item-height'])/2 - floatval($the_core_less_variables['fw-header-search-input-height'])/2); ?>px;
   }
-  .fw-logo-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .fw-mini-search {
+  .fw-logo-retina.header-1 .fw-mini-search {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-menu-item-height'])/2 - floatval($the_core_less_variables['fw-header-search-input-icon-font-size'])/2); ?>px;
     top: 0;
   }
-  .fw-logo-retina.header-1 .fw-header:not(.fw-header-sticky-new-logo) .mmenu-link {
+  .fw-logo-retina.header-1 .mmenu-link {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-menu-item-height'])/2 - floatval($the_core_less_variables['fw-icon-line-height-mobile-menu'])/2); ?>px;
   }
   .fw-logo-retina.header-4 .fw-info-text-header-main .fw-text {
@@ -129,17 +129,17 @@
 
 <?php /* For Header 5 */ ?>
 <?php if( floatval($the_core_less_variables['fw-calculate-height-logo-retina']) <= floatval($the_core_less_variables['fw-header-5-menu-icon-height']) ) : ?>
-  .fw-logo-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .fw-wrap-logo {
+  .fw-logo-retina.header-5 .fw-wrap-logo {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-header-5-menu-icon-height'])/2 - floatval($the_core_less_variables['fw-calculate-height-logo-retina'])/2); ?>px;
   }
-  .fw-logo-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .fw-search {
+  .fw-logo-retina.header-5 .fw-search {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-header-5-menu-icon-height'])/2 - floatval($the_core_less_variables['fw-header-search-input-height'])/2); ?>px;
   }
-  .fw-logo-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .fw-mini-search {
+  .fw-logo-retina.header-5 .fw-mini-search {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-header-5-menu-icon-height'])/2 - floatval($the_core_less_variables['fw-header-search-input-icon-font-size'])/2); ?>px;
     top: 0;
   }
-  .fw-logo-retina.header-5 .fw-header:not(.fw-header-sticky-new-logo) .mmenu-link {
+  .fw-logo-retina.header-5 .mmenu-link {
     margin-top: <?php echo esc_js( floatval($the_core_less_variables['fw-header-5-menu-icon-height'])/2 - floatval($the_core_less_variables['fw-icon-line-height-mobile-menu'])/2); ?>px;
   }
 <?php endif; ?>

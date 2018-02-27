@@ -38,14 +38,14 @@ jQuery(document).ready(function ($) {
     });
 
     if( screenRes < 1025 ) {
-        $('select[name="archive-dropdown"], select[name="cat"], select[name="monster-widget-just-testing"], .woocommerce-ordering .orderby, .dropdown_product_cat, select.country_select, select.state_select, #calc_shipping_country, .bbpress select, .buddypress select, .give-select, .wpcf7-select, .llms-field-select, .mc4wp-form .mc4wp-form-fields select, .gform_wrapper select').selectize({
+        $('select[name="archive-dropdown"], select[name="cat"], select[name="monster-widget-just-testing"], .woocommerce-ordering .orderby, .dropdown_product_cat, select.country_select, select.state_select, #calc_shipping_country, .bbpress select, .buddypress select, .give-select, .wpcf7-select, .llms-field-select, .mc4wp-form .mc4wp-form-fields select').selectize({
             create: true,
             allowEmptyOption: true,
             plugins: ['selectize_control_input']
         });
     }
     else {
-        $('select[name="archive-dropdown"], select[name="cat"], select[name="monster-widget-just-testing"], .woocommerce-ordering .orderby, .dropdown_product_cat, select.country_select, select.state_select, #calc_shipping_country, .bbpress select, .buddypress select, .give-select, .wpcf7-select, .llms-field-select, .mc4wp-form .mc4wp-form-fields select, .gform_wrapper select').selectize({
+        $('select[name="archive-dropdown"], select[name="cat"], select[name="monster-widget-just-testing"], .woocommerce-ordering .orderby, .dropdown_product_cat, select.country_select, select.state_select, #calc_shipping_country, .bbpress select, .buddypress select, .give-select, .wpcf7-select, .llms-field-select, .mc4wp-form .mc4wp-form-fields select').selectize({
             create: true,
             allowEmptyOption: true
         });
@@ -84,8 +84,8 @@ jQuery(document).ready(function ($) {
         $('input.wpcf7-acceptance').wrap('<span class="wpcf7-list-item"></span>').parent().prepend('<span class="wpcf7-list-item-label acceptance-check"></span>');
     }
 
-    if ($(".input-styled, #ship-to-different-address, .inputs, .create-account, .inline, .bbp_widget_login .bbp-remember-me, .bbpress, .forgetmenot, .buddypress, .give-gateway-option, .give-donation-levels-wrap, .wpcf7-form, .mc4wp-form, .gform_wrapper").length) {
-        $(".input-styled input, #ship-to-different-address input, .inputs input[type='radio'], .inputs input[type='checkbox'], .create-account input, .inline #rememberme, .bbp-remember-me #rememberme, .bbpress input[type='radio'], .bbpress input[type='checkbox'], .forgetmenot #bp-login-widget-rememberme, .buddypress input[type='checkbox'], .buddypress input[type='radio'], .give-gateway-option input[type='radio'], .give-donation-levels-wrap input[type='radio'], .wpcf7 input[type='checkbox'], .wpcf7 input[type='radio'], .mc4wp-form input[type='radio'], .mc4wp-form input[type='checkbox'], .gform_wrapper input[type='radio'], .gform_wrapper input[type='checkbox']").customInput();
+    if ($(".input-styled, #ship-to-different-address, .inputs, .create-account, .inline, .bbp_widget_login .bbp-remember-me, .bbpress, .forgetmenot, .buddypress, .give-gateway-option, .give-donation-levels-wrap, .wpcf7-form, .mc4wp-form").length) {
+        $(".input-styled input, #ship-to-different-address input, .inputs input[type='radio'], .inputs input[type='checkbox'], .create-account input, .inline #rememberme, .bbp-remember-me #rememberme, .bbpress input[type='radio'], .bbpress input[type='checkbox'], .forgetmenot #bp-login-widget-rememberme, .buddypress input[type='checkbox'], .buddypress input[type='radio'], .give-gateway-option input[type='radio'], .give-donation-levels-wrap input[type='radio'], .wpcf7 input[type='checkbox'], .wpcf7 input[type='radio'], .mc4wp-form input[type='radio'], .mc4wp-form input[type='checkbox']").customInput();
     }
 
     // prettyPhoto lightbox, check if <a> has atrr data-rel and hide for Mobiles
@@ -271,12 +271,15 @@ jQuery(document).ready(function ($) {
         var HeaderHeightNormal = 0,
             HeaderHeightSticky = 0;
 
+        // only if is sticky header calculate the headears height for know the offset, in other case the header height is 0
+        if($('.fw-header-sticky').length > 0) {
+            HeaderHeightNormal = $('.fw-header').height(); // Normal Header Height
+            HeaderHeightSticky = $('.fw-header.fw-sticky-menu').height(); // Sticky Header Height
+        }
+
         $('.anchor a[href*="#"], a[href*="#"].anchor').each(function () {
             $(this).click(function (event) {
-                // only if is sticky header calculate the headers height for know the offset, in other case the header height is 0
-                if( $(this).parents('body.fw-header-sticky').find('.fw-sticky-menu').length > 0 && screenRes > 767 ) {
-                    HeaderHeightSticky = $('.fw-header.fw-sticky-menu').height(); // Sticky header height
-
+                if( $(this).parents('.fw-header').hasClass('fw-sticky-menu') && screenRes > 767 ) {
                     var HeaderHeight = HeaderHeightSticky;
                 }
                 else {
@@ -400,6 +403,7 @@ jQuery(document).ready(function ($) {
 
     // Header Type 6
     if(jQuery('.header-6').length > 0) {
+
         // Copy Logo HTML and insert in clone
         var logoHTML = jQuery('.fw-header-main .fw-wrap-logo');
 
@@ -441,33 +445,14 @@ jQuery(document).ready(function ($) {
                 "widescreen",
                 FwPhpVars.effect_panels
             ],
-            offCanvas: {
-                position: FwPhpVars.header_6_position
+            offCanvas	: {
+                position 	: FwPhpVars.header_6_position
             }
         });
 
-        // Calculate logo height and add top position to menu
-        if ( logoHTML.find('img').attr('src') == undefined ) {
-            // if logo is text
-            var logoHeight = jQuery('.fw-wrap-logo').outerHeight(),
-                mmPanels   = jQuery('.mm-panels');
-
-            mmPanels.css({
-                top: logoHeight + 20
-            });
-        }
-        else {
-            var logoImg = new Image();
-            logoImg.src = logoHTML.find('img').attr('src');
-            logoImg.onload = function () {
-                var logoHeight = jQuery('.fw-wrap-logo').outerHeight(),
-                    mmPanels   = jQuery('.mm-panels');
-
-                mmPanels.css({
-                    top: logoHeight + 20
-                });
-            };
-        }
+        // Calculation of height logo and set this height the syle 'top' to menu
+        var logoHeight = jQuery('.fw-wrap-logo').outerHeight();
+        jQuery('.mm-panels').css('top', logoHeight + 20);
 
         // Add keyword "Back" in back button
         jQuery('.mm-btn.mm-prev').html('<span>'+FwPhpVars.back+'</span>');
@@ -508,7 +493,7 @@ jQuery(document).ready(function ($) {
     // Responsive Menu (Mobile Menu for header type 1 -> 4)
     var Mobile_Menu = function () {
         var $menu = jQuery('#mobile-menu'),
-            navPosition = 'bottom';
+            mobileMenuOpenPosition = "left";
 
         $menu.find('.mega-menu-col').each( function(){
             var megaMenuCol = $(this);
@@ -530,46 +515,29 @@ jQuery(document).ready(function ($) {
         $('.linkBlank').removeClass('linkBlank');
         $('.removeItem').removeClass('removeItem');
 
-        // If social variables is empty change nav position
-        if(FwPhpVars.socials === ''){
-            navPosition = 'top';
+        // Positioning the Menu
+        if(jQuery('body.rtl.header-1.fw-top-logo-right').length) {
+            mobileMenuOpenPosition = "left";
+        }
+        else if(jQuery('.header-1.fw-top-logo-left').length || jQuery('body.rtl').length) {
+            mobileMenuOpenPosition = "right";
         }
 
         // Create menu
         $menu.mmenu({
             counters: true,
-            extensions: [
-                "theme-dark",
-                FwPhpVars.effect_panels,
-                FwPhpVars.mobile_menu_page_dim,
-                FwPhpVars.mobile_menu_border_style
-            ],
-            navbars : [
-                {
-                    "add": false,
-                    "position": navPosition,
-                    "content": [ FwPhpVars.socials ]
-                }
-            ],
+            extensions: [ "theme-dark", "effect-listitems-slide" ],
+            navbar: {
+                add: true
+            },
             offCanvas: {
-                position: FwPhpVars.mobile_menu_position
+                position: mobileMenuOpenPosition
             }
         }, {
             classNames: {
                 selected: "current-menu-item"
             }
         });
-
-        // Change Position for .mm-next & counter when menu is aligned center
-        if(jQuery('.mobile-menu-item-align-center').length > 0){
-            jQuery('.mm-listview .menu-item a.mm-next').each(function(){
-                var mmCounter = $(this).parent().find('.mm-counter');
-                jQuery('<div class="mobile-menu-wrap-navigation"></div>').appendTo($(this).parent());
-
-                var mobileMenuWrapNavigation = $(this).parent().find('.mobile-menu-wrap-navigation');
-                mobileMenuWrapNavigation.append(mmCounter, $(this));
-            });
-        }
 
         if( $menu.length == 0 ) {
             return;
@@ -592,86 +560,20 @@ jQuery(document).ready(function ($) {
             $menu.parents('html').removeClass('mm-menu-event-open');
         });
     };
-    if (innerScreenRes <= FwPhpVars.mobile_menu_screen && $('.header-1, .header-2, .header-3, .header-4').length) {
+    if (innerScreenRes <= 1199 && $('.header-1, .header-2, .header-3, .header-4').length) {
         Mobile_Menu();
     }
 
     $(window).on('resize', function(){
         var innerScreenRes = window.innerWidth; // Screen size width minus scrollbar width
-        if(innerScreenRes <= FwPhpVars.mobile_menu_screen && $('.header-1, .header-2, .header-3, .header-4').length){
+        if(innerScreenRes <= 1199 && $('.header-1, .header-2, .header-3, .header-4').length){
             Mobile_Menu();
         }
     });
 
     // Sticky Menu
-    if(jQuery('body.fw-header-sticky').length > 0 && screenRes > FwPhpVars.sticky_resolution) {
+    if(jQuery('body.fw-header-sticky').length > 0 && screenRes > 767) {
         jQuery('.fw-header').clone().addClass('fw-sticky-menu').prependTo('div.site');
-
-
-        // Add sticky logo if this is add in sticky.
-        if(FwPhpVars.sticky_logo !== ''){
-            // Insert new sticky logo in menu
-            $('.fw-header.fw-sticky-menu .fw-wrap-logo').html(FwPhpVars.sticky_logo);
-
-            // Calculate position after logo image is loaded and just for header-1 & header-5.
-            if($('.header-1, .header-5').length) {
-                $('.header-1 .fw-sticky-menu, .header-5 .fw-sticky-menu').addClass('fw-header-sticky-new-logo');
-
-                var stickyLogoImg = new Image();
-                stickyLogoImg.src = $('.fw-header.fw-sticky-menu .fw-wrap-logo').find('img').attr('src');
-                stickyLogoImg.onload = function () {
-                    var logoHeight = jQuery('.fw-header.fw-sticky-menu .fw-wrap-logo').outerHeight(),
-                        menuHeight = parseInt($('.fw-header.fw-sticky-menu .fw-site-navigation > ul > li > a').css('line-height'), 10),
-                        searchHeight = $('.fw-header.fw-sticky-menu .fw-search').outerHeight(),
-                        mobileMenuIconOpen = $('.fw-header.fw-sticky-menu .mmenu-link').outerHeight(),
-                        mobileMenuIconOpenHeader5 = $('.header-5 .fw-header.fw-sticky-menu .fw-nav-wrap').outerHeight();
-
-                    // For Header 1
-                    if (logoHeight > menuHeight && $('.header-1').length) {
-                        $('.header-1 .fw-sticky-menu .primary-navigation').css({
-                            'margin-top': logoHeight / 2 - menuHeight / 2
-                        });
-                        $('.header-1 .fw-sticky-menu .fw-search').css({
-                            'margin-top': logoHeight / 2 - searchHeight / 2
-                        });
-                        $('.header-1 .fw-sticky-menu .mmenu-link').css({
-                            'margin-top': logoHeight / 2 - mobileMenuIconOpen / 2
-                        });
-                    }
-                    // For Header 5
-                    else if (logoHeight > mobileMenuIconOpenHeader5 && $('.header-5').length) {
-                        $('.header-5 .fw-sticky-menu .fw-search').css({
-                            'margin-top': logoHeight / 2 - searchHeight / 2
-                        });
-                        $('.header-5 .fw-sticky-menu .fw-nav-wrap').css({
-                            'margin-top': logoHeight / 2 - mobileMenuIconOpenHeader5 / 2
-                        });
-                    }
-                    // For Header 1
-                    else if (logoHeight <= menuHeight && $('.header-1').length) {
-                        $('.header-1 .fw-sticky-menu .fw-wrap-logo').css({
-                            'margin-top': menuHeight / 2 - logoHeight / 2
-                        });
-                        $('.header-1 .fw-sticky-menu .fw-search').css({
-                            'margin-top': menuHeight / 2 - searchHeight / 2
-                        });
-                        $('.header-1 .fw-sticky-menu .mmenu-link').css({
-                            'margin-top': menuHeight / 2 - mobileMenuIconOpen / 2
-                        });
-                    }
-                    // For Header 5
-                    else if (logoHeight <= mobileMenuIconOpenHeader5 && $('.header-5').length) {
-                        $('.header-5 .fw-sticky-menu .fw-wrap-logo').css({
-                            'margin-top': mobileMenuIconOpenHeader5 / 2 - logoHeight / 2
-                        });
-                        $('.header-5 .fw-sticky-menu .fw-search').css({
-                            'margin-top': mobileMenuIconOpenHeader5 / 2 - searchHeight / 2
-                        });
-                    }
-                };
-            }
-        }
-
         var height_original_header = jQuery('header.fw-header').not('header.fw-header.fw-sticky-menu').outerHeight();
 
         // make anchor form sticky menu with smooth scroll
@@ -723,64 +625,92 @@ jQuery(document).ready(function ($) {
     }
     // Search Icon Button
     var miniSearch = function () {
-        var container_menu_width = jQuery('.fw-header .fw-site-navigation, .header-5 .fw-header .fw-menu-open').parents('.fw-container').width(),
-            wrap_search_form = jQuery('.fw-wrap-search-form');
+        var menu_height = jQuery('.fw-header-main').not('.fw-header.fw-sticky-menu .fw-header-main').outerHeight(),
+            topBar_height = jQuery('.fw-top-bar').outerHeight(),
+            page_width = jQuery('#page').width(),
+            container_menu_width = jQuery('.fw-header .fw-container').width();
+
+        var wrap_search_form = jQuery('.fw-wrap-search-form'),
+            search_input_height = menu_height / 2;
+
+
+        // First remove and append the close button for search form. Because to resize window first and only then to remove and to add button.
+        jQuery('.fw-close-search-form').remove();
+        jQuery('.fw-search-form').append('<a href="#" class="fw-close-search-form"><i class="fa fa-close"></i></a>');
+
+        // No set width/height for search in header type 6
+        if(jQuery('.header-6').length < 1) {
+
+            // Set the style for search form
+            wrap_search_form.css({
+                top: 0,
+                width: page_width,
+                height: menu_height
+            });
+
+            // If topbar is enable
+            if (jQuery('.fw-top-bar-on').length > 0) {
+                wrap_search_form.css({
+                    top: topBar_height
+                });
+            }
+
+            // Set width for input
+            wrap_search_form.children('.fw-search-form').css({
+                width: container_menu_width,
+                marginTop: -(search_input_height / 2)
+            });
+
+            wrap_search_form.children().children('.fw-input-search').css({
+                height: search_input_height,
+                lineHeight: search_input_height + 'px'
+            });
+
+            // If sticky header is enable
+            if (jQuery('.fw-header-sticky').length > 0 && screenRes > 767) {
+                var sticky_menu_height = jQuery('.fw-header.fw-sticky-menu .fw-header-main').outerHeight();
+
+                var sticky_wrap_search_form = jQuery('.fw-header.fw-sticky-menu .fw-wrap-search-form'),
+                    sticky_search_input_height = sticky_menu_height / 2;
+
+                // Set height for search form
+                sticky_wrap_search_form.css({
+                    height: sticky_menu_height
+                });
+
+                // Set position for search form
+                sticky_wrap_search_form.children('.fw-search-form').css({
+                    marginTop: -(sticky_search_input_height / 2)
+                });
+
+                // Set height for input from search form
+                sticky_wrap_search_form.children().children('.fw-input-search').css({
+                    height: sticky_search_input_height,
+                    lineHeight: sticky_search_input_height + 'px'
+                });
+            }
+        }
 
         // Close the search form
-        jQuery('body').on('click', '.fw-close-search-form', function (event) {
+        jQuery('.fw-close-search-form').click(function (event) {
             event.preventDefault();
             jQuery('.fw-wrap-search-form').slideUp(300, function () {
                 wrap_search_form.removeClass('opened');
             });
         });
 
+        // Open the search form
         jQuery('.fw-search-icon').click(function (event) {
             event.preventDefault();
-
-            // No set height for search in header type 6
-            if(jQuery('.header-6').length < 1) {
-                var menu_height = jQuery('.fw-header-main').not('.fw-header.fw-sticky-menu .fw-header-main').outerHeight();
-                    wrap_search_form.css('height', menu_height);
-
-                // Set width for input
-                wrap_search_form.children('.fw-search-form').css({
-                    width: container_menu_width
-                });
-
-                // If topBar is enable
-                if (jQuery('.fw-top-bar-on').length > 0) {
-                    var topBar_height = jQuery('.fw-top-bar').outerHeight();
-
-                    wrap_search_form.css({
-                        top: topBar_height
-                    });
-                }
-                else {
-                    wrap_search_form.css({
-                        top: 0
-                    });
-                }
-
-                // If header is sticky
-                if (jQuery('.fw-header-sticky').length > 0) {
-                    var wrap_search_form_sticky = jQuery('.fw-header.fw-sticky-menu .fw-wrap-search-form'),
-                        menu_height_sticky = jQuery('.fw-header.fw-sticky-menu .fw-header-main').outerHeight();
-
-                    wrap_search_form_sticky.css('height', menu_height_sticky);
-                }
-            }
-
-            // Animation opened form
             jQuery('.fw-wrap-search-form').slideDown(300, function () {
                 wrap_search_form.addClass('opened');
             });
 
-            // Focus on sticky search if you click on icon in sticky menu
-            if(jQuery('.search-in-menu.fw-header-sticky .fw-sticky-menu.fw-sticky-menu-open').length > 0){
-                jQuery('.fw-header.fw-sticky-menu .fw-input-search').on('click').focus();
+            if(jQuery('.search-in-menu.fw-header-sticky') && jQuery(window).scrollTop() > 400 && screenRes > 767){
+                jQuery('.fw-sticky-menu .fw-input-search').on('click').focus();
             }
             else{
-                jQuery('.fw-header .fw-input-search').on('click').focus();
+                jQuery('.fw-input-search').on('click').focus();
             }
         });
 
@@ -796,10 +726,6 @@ jQuery(document).ready(function ($) {
                 });
             }
         });
-
-        // First remove and append the close button for search form. Because to resize window first and only then to remove and to add button.
-        jQuery('.fw-close-search-form').remove();
-        jQuery('.fw-search-form').append('<a href="#" class="fw-close-search-form"><i class="fa fa-close"></i></a>');
     };
 
     if (jQuery('.fw-mini-search').length > 0) {
@@ -1286,4 +1212,3 @@ function start_carousel_portfolio_filter() {
 jQuery(window).resize(function () {
     start_carousel_portfolio_filter();
 });
-

@@ -80,21 +80,8 @@
 .header-4.fw-header-boxed.fw-header-sticky .fw-sticky-menu .fw-nav-wrap .fw-container {
   padding-top: <?php echo floatval($the_core_less_variables['fw-header-padding-top'])*0.75; ?>px;
 }
-
-/* Sticky Header */
-.header-4 .fw-sticky-menu .fw-header-main .fw-wrap-logo-info-text {
+.header-4 .fw-sticky-menu .fw-header-main .fw-wrap-logo-info-text{
   display: none;
-}
-.header-4 .fw-sticky-menu .fw-header-main {
-  padding-top: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-padding']); ?>px;
-  padding-bottom: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-padding']); ?>px;
-}
-.header-4.fw-header-boxed .fw-sticky-menu .fw-header-main {
-  padding: 0;
-}
-.header-4.fw-header-boxed.fw-header-sticky .fw-sticky-menu .fw-nav-wrap .fw-container {
-  padding-top: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-padding']); ?>px;
-  padding-bottom: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-padding']); ?>px;
 }
 
 

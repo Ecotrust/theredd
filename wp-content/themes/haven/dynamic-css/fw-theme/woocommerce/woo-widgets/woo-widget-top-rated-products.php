@@ -15,12 +15,3 @@
 .woocommerce.widget_top_rated_products ul.product_list_widget li a:hover {
   color: <?php echo esc_js($the_core_less_variables['fw-widget-inner-title-hover-color']); ?>;
 }
-
-/* Style for this widget in footer */
-.fw-footer-widgets .woocommerce.widget_top_rated_products ul.product_list_widget li a {
-  color: <?php echo esc_js($the_core_less_variables['fw-footer-widgets-link-color']); ?>;
-}
-.fw-footer-widgets .woocommerce.widget_top_rated_products ul.product_list_widget li a:hover {
-  color: <?php echo the_core_adjustColorLightenDarken($the_core_less_variables['fw-footer-widgets-link-color'], 10); ?>;
-}
-

@@ -649,42 +649,6 @@ if ( ! function_exists( 'the_core_logo' ) ):
 endif;
 
 
-if ( ! function_exists( 'the_core_sticky_logo' ) ):
-	/**
-	 * Display header sticky logo
-	 */
-	function the_core_sticky_logo() {
-		$the_core_sticky_logo = '';
-
-		if ( defined( 'FW' ) ) :
-			$the_core_general_settings = fw_get_db_settings_option();
-			// if enabled sticky header
-			if ( 'fw-header-sticky' == $the_core_general_settings['header_settings']['enable_sticky_header'] ) :
-
-				// if is uploaded an image to sticky
-				if ( ! empty( $the_core_general_settings['header_settings']['sticky_header_styling']['logo'] ) ) :
-					// for header-3 need a wrap container
-					if ( 'header-3' == $the_core_general_settings['header_settings']['header_type_picker']['header_type'] ) :
-						$the_core_sticky_logo .= '<div class="fw-container">';
-					endif;
-
-					$the_core_sticky_logo .= '<a href="' . esc_url( home_url( '/' ) ) . '" class="fw-site-logo">
-							<img src="' . the_core_translate( $the_core_general_settings['header_settings']['sticky_header_styling']['logo']['url'] ) . '" alt="' . esc_url( get_bloginfo( 'name' ) ) . '" />
-						</a>';
-
-					// for header-3 need a wrap container
-					if ( 'header-3' == $the_core_general_settings['header_settings']['header_type_picker']['header_type'] ) :
-						$the_core_sticky_logo .= '</div>';
-					endif;
-				endif;
-			endif;
-		endif;
-
-		return $the_core_sticky_logo;
-	}
-endif;
-
-
 if ( ! function_exists( 'the_core_post_meta' ) ) :
 	/**
 	 * Display post meta (date, category, author)
@@ -1692,7 +1656,7 @@ if ( ! function_exists( 'the_core_footer' ) ) :
 		$show_menu_bar       = isset( $the_core_footer_settings['show_menu_bar']['selected_value'] ) ? $the_core_footer_settings['show_menu_bar']['selected_value'] : 'yes';
 		$copyright_position  = isset( $the_core_footer_settings['copyright_position'] ) ? $the_core_footer_settings['copyright_position'] : 'fw-copyright-center';
 		$footer_socials      = isset( $the_core_footer_settings['footer_socials']['selected_value'] ) ? $the_core_footer_settings['footer_socials']['selected_value'] : 'no';
-		$copyright           = isset( $the_core_footer_settings['copyright'] ) ? $the_core_footer_settings['copyright'] : 'Copyright &copy;2018 <a href="'.$themefuse_link.'" rel="nofollow">ThemeFuse</a>. All Rights Reserved';
+		$copyright           = isset( $the_core_footer_settings['copyright'] ) ? $the_core_footer_settings['copyright'] : 'Copyright &copy;2017 <a href="'.$themefuse_link.'" rel="nofollow">ThemeFuse</a>. All Rights Reserved';
 		?>
 		<?php if ( $show_footer_widgets == 'yes' ) :
 			get_template_part( 'templates/footers/footer-widgets' );
@@ -1744,26 +1708,12 @@ if ( ! function_exists( 'the_core_get_blog_wrap' ) ) :
 	 * @param string $the_core_blog_view
 	 * @param string $the_core_sidebar_position
 	 */
-	function the_core_get_blog_wrap( $the_core_blog_view, $the_core_sidebar_position = null, $the_core_blog_cols = '' ) {
+	function the_core_get_blog_wrap( $the_core_blog_view, $the_core_sidebar_position = null ) {
 		$the_core_wrap_div = array();
 
 		if ( $the_core_blog_view == 'grid' ) {
-			if ( $the_core_blog_cols != '' ) {
-				if( 'fw-portfolio-cols-2' == $the_core_blog_cols ) {
-					$the_core_wrap_div['start'] = '<div class="fw-col-md-6 fw-col-sm-6 postlist-col">';
-				}
-				elseif( 'fw-portfolio-cols-4' == $the_core_blog_cols ) {
-					$the_core_wrap_div['start'] = '<div class="fw-col-md-3 fw-col-sm-6 postlist-col">';
-				}
-				else {
-					$the_core_wrap_div['start'] = '<div class="fw-col-md-4 fw-col-sm-6 postlist-col">';
-				}
-				$the_core_wrap_div['end']   = '</div>';
-			}
-			else {
-				$the_core_wrap_div['start'] = ( $the_core_sidebar_position == null || $the_core_sidebar_position == 'full' ) ? '<div class="fw-col-md-4 fw-col-sm-6 postlist-col">' : '<div class="fw-col-md-6 fw-col-sm-6 postlist-col">';
-				$the_core_wrap_div['end']   = '</div>';
-			}
+			$the_core_wrap_div['start'] = ( $the_core_sidebar_position == null || $the_core_sidebar_position == 'full' ) ? '<div class="fw-col-md-4 fw-col-sm-6 postlist-col">' : '<div class="fw-col-md-6 fw-col-sm-6 postlist-col">';
+			$the_core_wrap_div['end']   = '</div>';
 		} else {
 			$the_core_wrap_div['start'] = '';
 			$the_core_wrap_div['end']   = '';
@@ -2326,8 +2276,7 @@ if ( ! function_exists( 'the_core_get_shortcode_advanced_styles' ) ) :
 					}
 				}
 				else{
-					$post_id = isset( $post->ID ) ? $post->ID : '';
-					update_post_meta( $post_id, 'fw_theme_post_google_fonts', $post_google_fonts_list );
+					update_post_meta( @$post->ID, 'fw_theme_post_google_fonts', $post_google_fonts_list );
 				}
 			}
 		}
@@ -2337,7 +2286,7 @@ if ( ! function_exists( 'the_core_get_shortcode_advanced_styles' ) ) :
 			$advanced_styles .= isset($style['weight']) ? 'font-weight:'.esc_attr($style['weight']).';' : '';
 			/* this code cause a problem when a shortcode has 1 google font, then a simple font */
 			/*if( !isset($atts['general_options']) || !$atts['general_options'] ) {
-				update_post_meta( $post->ID, 'fw_theme_post_google_fonts', array() );
+				update_post_meta( @$post->ID, 'fw_theme_post_google_fonts', array() );
 			}*/
 		}
 
@@ -3831,7 +3780,6 @@ if( ! function_exists( 'the_core_nav_menu_without_mega_menu' ) ) :
 			'menu_class'      => $location.'-fw-mm-menu',
 			'theme_location'  => $location,
 			'walker'          => new The_Core_Mobile_Menu_Walker(),
-			'fallback_cb'     => false,
 		) );
 	}
 endif;
@@ -3895,6 +3843,18 @@ if( !function_exists('the_core_adjustColorLightenDarken') ) :
 		else {
 			return $color_code;
 		}
+	}
+endif;
+
+
+if( !function_exists('the_core_style_file_name') ) :
+	/**
+	 * Return the file name for file that is generated with all theme styles
+	 *
+	 * @return string
+	 */
+	function the_core_style_file_name() {
+		return apply_filters( '_filter_the_core_style_file_name', 'haven-style' );
 	}
 endif;
 

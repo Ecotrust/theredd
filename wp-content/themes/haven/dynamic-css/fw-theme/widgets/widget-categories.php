@@ -76,21 +76,3 @@
 .widget_nav_menu .menu-separator {
   display: none;
 }
-
-/* Style for this widget in footer */
-.fw-footer-widgets .selectize-input > *,
-.fw-footer-widgets .widget_categories ul > li a,
-.fw-footer-widgets .widget_nav_menu ul > li a,
-.fw-footer-widgets .widget_meta ul > li a,
-.fw-footer-widgets .widget_pages ul > li a,
-.fw-footer-widgets .woocommerce.widget_product_categories ul > li a {
-  color: <?php echo esc_js($the_core_less_variables['fw-footer-widgets-link-color']); ?>;
-}
-.fw-footer-widgets .widget_categories ul > li a:hover,
-.fw-footer-widgets .widget_nav_menu ul > li a:hover,
-.fw-footer-widgets .widget_meta ul > li a:hover,
-.fw-footer-widgets .widget_pages ul > li a:hover,
-.fw-footer-widgets .woocommerce.widget_product_categories ul > li a:hover {
-  color: <?php echo the_core_adjustColorLightenDarken($the_core_less_variables['fw-footer-widgets-link-color'], 10); ?>;
-}
-

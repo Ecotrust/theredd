@@ -21,9 +21,6 @@
       <option value="horizontal">Horizontal</option>
       <option value="vertical">Vertical</option>
     </param>
-    <param type="group" label="Alt tags">
-      <param type="text" name="widget-arrow-previous-alt" label="Previous arrow" default="previous arrow"/>
-      <param type="text" name="widget-arrow-next-alt" label="Next arrow" default="next arrow"/></param>
     <param type="mirror" name="widget-arrow-mirror" label="Mirror" class="n2-expert"/>
     <param type="image" name="widget-arrow-next-image" label="Next image" class="n2-expert"/>
     <param type="group" label="Next" class="n2-expert">

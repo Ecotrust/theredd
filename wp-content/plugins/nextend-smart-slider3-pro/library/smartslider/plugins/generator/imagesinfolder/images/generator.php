@@ -11,10 +11,9 @@ class N2GeneratorInFolderimages extends N2GeneratorAbstract {
             $source = substr($source, 1);
             if (!N2Filesystem::existsFolder($source)) {
                 N2Message::error(n2_('Wrong path. This is the default image folder path, so try to navigate from here:') . '<br>*' . $root);
-
                 return null;
             } else {
-                $root = '';
+                $root   = '';
             }
         }
         $folder = N2Filesystem::realpath($root . '/' . ltrim(rtrim($source, '/'), '/'));
@@ -46,19 +45,13 @@ class N2GeneratorInFolderimages extends N2GeneratorAbstract {
                 if ($properties) {
                     foreach ($properties AS $key => $property) {
                         if (!is_array($property) && $property != '' && preg_match('/^[a-zA-Z]+$/', $key)) {
-
-                            preg_match('/([2-9][0-9]*)\/([0-9]+)/', $property, $matches);
-                            if (empty($matches)) {
-                                $data[$i][$key] = $property;
-                            } else {
-                                $data[$i][$key] = round($matches[1] / $matches[2], 2);
-                            }
+                            $data[$i][$key] = $property;
                         }
                     }
                 }
             }
         }
-
+         
         $order = explode("|*|", $this->data->get('order', '0|*|asc'));
         switch ($order[0]) {
             case 1:
@@ -66,27 +59,27 @@ class N2GeneratorInFolderimages extends N2GeneratorAbstract {
                 break;
             case 2:
                 usort($data, 'N2GeneratorInFolderimages::orderByDate_' . $order[1]);
-                break;
+                break;  
             default:
                 break;
         }
-
+        
         return $data;
     }
-
-    public static function asc($a, $b) {
+    
+    public static function asc($a, $b){
         return (strtolower($b['title']) < strtolower($a['title']) ? 1 : -1);
     }
-
-    public static function desc($a, $b) {
+    
+    public static function desc($a, $b){
         return (strtolower($a['title']) < strtolower($b['title']) ? 1 : -1);
     }
-
+    
     public static function orderByDate_asc($a, $b) {
-        return ($b['created'] < $a['created'] ? 1 : -1);
+        return ($b['created'] < $a['created'] ? 1 : -1); 
     }
 
-    public static function orderByDate_desc($a, $b) {
+    public static function orderByDate_desc($a, $b){
         return ($a['created'] < $b['created'] ? 1 : -1);
     }
 }

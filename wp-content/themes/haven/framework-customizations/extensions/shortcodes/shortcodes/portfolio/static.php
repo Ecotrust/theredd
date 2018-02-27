@@ -28,18 +28,3 @@ wp_enqueue_script(
 	$the_core_version,
 	true
 );
-
-wp_enqueue_script(
-	'masonry-theme',
-	$the_core_template_directory . '/js/masonry.pkgd.min.js',
-	array('jquery'),
-	$the_core_version,
-	true
-);
-wp_enqueue_script(
-	'start-masonry',
-	$the_core_template_directory . '/js/start-masonry.js',
-	array('jquery', 'masonry-theme'),
-	$the_core_version,
-	true
-);

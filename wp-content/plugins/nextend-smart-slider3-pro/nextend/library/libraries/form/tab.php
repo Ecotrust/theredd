@@ -33,7 +33,7 @@ class N2Tab {
 
     var $_hide = false;
 
-    public $_tabs = array();
+    public $_tabs;
 
     /**
      * @param $form

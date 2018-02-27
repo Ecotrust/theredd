@@ -85,7 +85,6 @@
     height: 18px;
 }
 
-#edittag > .fw-backend-option-type-multi-picker .fw-backend-option > .fw-backend-option-input.fw-backend-option-input-type-color-palette,
 .fw-backend-option-design-default > .fw-backend-option-input.fw-backend-option-input-type-color-palette.width-type-fixed > .fw-inner{
     width:auto;
 }

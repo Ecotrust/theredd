@@ -59,19 +59,3 @@
 .woocommerce.widget_product_search .woocommerce-product-search .screen-reader-text {
   display: none;
 }
-
-/* Style for this widget in footer */
-.fw-footer-widgets .woocommerce.widget_product_search .woocommerce-product-search .search-field,
-.fw-footer-widgets .woocommerce.widget_product_search .woocommerce-product-search:after {
-  color: <?php echo esc_js($the_core_less_variables['fw-footer-widgets-link-color']); ?>;
-}
-.fw-footer-widgets .woocommerce.widget_product_search .woocommerce-product-search .search-field::-moz-placeholder {
-  color: <?php echo esc_js($the_core_less_variables['fw-footer-widgets-link-color']); ?>;
-}
-.fw-footer-widgets .woocommerce.widget_product_search .woocommerce-product-search .search-field:-ms-input-placeholder {
-  color: <?php echo esc_js($the_core_less_variables['fw-footer-widgets-link-color']); ?>;
-}
-.fw-footer-widgets .woocommerce.widget_product_search .woocommerce-product-search .search-field::-webkit-input-placeholder {
-  color: <?php echo esc_js($the_core_less_variables['fw-footer-widgets-link-color']); ?>;
-}
-

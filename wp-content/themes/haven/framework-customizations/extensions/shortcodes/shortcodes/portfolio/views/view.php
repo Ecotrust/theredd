@@ -56,10 +56,9 @@ $args  = array(
 $query = new WP_Query( $args );
 
 $term = get_term( $term_id, $loop_data['settings']['taxonomy_name'] );
-$slug = isset( $term->slug ) ? $term->slug : '';
 // set special query for loop data
 set_query_var( 'fw_portfolio_loop_data', $loop_data );
-set_query_var( 'term', $slug );
+set_query_var( 'term', @$term->slug );
 set_query_var( 'taxonomy', $loop_data['settings']['taxonomy_name'] );
 
 $filter_enabled = fw_get_db_settings_option( 'enable_portfolio_filter', 'yes' );
@@ -150,6 +149,24 @@ elseif ( $atts['portfolio_style']['selected'] == 'style2' ) {
 		$content_alignment = $portfolio_advanced_style['style2_advanced_styling']['content_alignment'];
 	}
 }
+
+if( isset($term->parent) && $term->parent > 0 ) {
+	$the_core_template_directory_uri = get_template_directory_uri();
+	wp_enqueue_script(
+		'masonry-theme',
+		$the_core_template_directory_uri . '/js/masonry.pkgd.min.js',
+		array('jquery'),
+		'1.0',
+		true
+	);
+	wp_enqueue_script(
+		'start-masonry',
+		$the_core_template_directory_uri . '/js/start-masonry.js',
+		array('jquery', 'masonry-theme'),
+		'1.0',
+		true
+	);
+}
 ?>
 <div class="fw-col-inner">
 	<div class="tf-sh-<?php echo esc_attr( $atts['unique_id'] ); ?> fw-portfolio <?php echo esc_attr($portfolio_columns) . ' ' . esc_attr($content_position) . ' ' . esc_attr($content_alignment); ?> <?php echo esc_attr($atts['class']); ?> <?php echo esc_attr($atts['portfolio_type']); ?>" <?php echo ($data_animation); ?>>
@@ -170,4 +187,4 @@ elseif ( $atts['portfolio_style']['selected'] == 'style2' ) {
 		?>
 	</div><!-- /.fw-portfolio -->
 </div>
-<?php wp_reset_postdata();
+<?php wp_reset_postdata(); ?>

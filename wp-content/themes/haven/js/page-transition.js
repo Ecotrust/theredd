@@ -2,8 +2,7 @@ jQuery(window).load(function ($) {
     "use strict";
 
     var $ = jQuery,
-        screenRes = $(window).width(),
-        is_safari = navigator.userAgent.indexOf("Safari") != -1 && navigator.userAgent.indexOf('Chrome') == -1 &&  navigator.userAgent.indexOf('Android') == -1;
+        screenRes = $(window).width();
 
     // Page Transition
     function pageTransition() {
@@ -29,7 +28,7 @@ jQuery(window).load(function ($) {
 
         // Transition Out
         $(window).on('beforeunload',function(){
-            if (!pageTransitionDiv.hasClass(pageTransitionIn) && !is_safari) {
+            if (!pageTransitionDiv.hasClass(pageTransitionIn)) {
                 pageTransitionDiv.css({'animation-duration' : pageTransitionDurationOut / 1e3 + "s"});
                 pageTransitionDiv.removeClass('pageTransitionEnd').addClass(pageTransitionOut);
                 pageTransitionDiv.css('animation-duration', pageTransitionDurationOut);

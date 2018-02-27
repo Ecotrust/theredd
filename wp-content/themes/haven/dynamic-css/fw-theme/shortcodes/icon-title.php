@@ -23,6 +23,10 @@
   position: relative;
   overflow: hidden;
 }
+.fw-icon-title.fw-icon-title-left .fw-icon-title-icon,
+.fw-icon-title.fw-icon-title-right .fw-icon-title-icon {
+  top: -1px;
+}
 .fw-icon-title .fw-icon-title-text {
   margin: 0;
 }
@@ -94,46 +98,67 @@
 .fw-icon-title .fw-icon-title-name a {
   color: <?php echo esc_js($the_core_less_variables['fw-h4-color']); ?>;
 }
-
-/* Content alignment */
+/* Content align left */
 .fw-icon-title.fw-content-align-left {
   text-align: left;
 }
-.fw-icon-title.fw-content-align-center {
-  text-align: center;
+/* Icon align left */
+.fw-icon-title.fw-content-align-left.fw-icon-title-left .fw-icon-title-icon {
+  margin-right: 12px;
+  float: left;
 }
+.fw-icon-title.fw-content-align-left.fw-icon-title-left .fw-icon-title-text {
+  float: left;
+  max-width: 80%;
+}
+/* Icon align right */
+.fw-icon-title.fw-content-align-left.fw-icon-title-right .fw-icon-title-icon {
+  margin-left: 12px;
+  float: right;
+}
+.fw-icon-title.fw-content-align-left.fw-icon-title-right .fw-icon-title-text {
+  float: right;
+  max-width: 80%;
+}
+/* Content align right */
 .fw-icon-title.fw-content-align-right {
   text-align: right;
 }
-
-/* Icon Position */
-.fw-icon-title.fw-icon-title-left .fw-icon-title-name,
-.fw-icon-title.fw-icon-title-right .fw-icon-title-name {
-  display: inline-block;
-}
-.fw-icon-title.fw-icon-title-left .fw-icon-title-name .fw-icon-title-name-inner,
-.fw-icon-title.fw-icon-title-right .fw-icon-title-name .fw-icon-title-name-inner {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.fw-icon-title.fw-icon-title-left .fw-icon-title-name .fw-icon-title-text,
-.fw-icon-title.fw-icon-title-right .fw-icon-title-name .fw-icon-title-text {
-  flex: 1;
-}
-
-/*-> Icon position left */
-.fw-icon-title.fw-icon-title-left .fw-icon-title-icon {
+/* Icon align left */
+.fw-icon-title.fw-content-align-right.fw-icon-title-left .fw-icon-title-icon {
   margin-right: 12px;
 }
-/*-> Icon position right */
-.fw-icon-title.fw-icon-title-right .fw-icon-title-name .fw-icon-title-name-inner {
-  flex-direction: row-reverse;
+.fw-icon-title.fw-content-align-right.fw-icon-title-left .fw-icon-title-text {
+  float: right;
 }
-.fw-icon-title.fw-icon-title-right .fw-icon-title-icon {
+/* Icon align right */
+.fw-icon-title.fw-content-align-right.fw-icon-title-right .fw-icon-title-icon {
+  margin-left: 12px;
+  float: right;
+}
+.fw-icon-title.fw-content-align-right.fw-icon-title-right .fw-icon-title-text {
+  float: right;
+}
+/* Content align center */
+.fw-icon-title.fw-content-align-center {
+  text-align: center;
+}
+/* Icon align left */
+.fw-icon-title.fw-content-align-center.fw-icon-title-left .fw-icon-title-icon {
+  float: left;
+  margin-right: 12px;
+}
+.fw-icon-title.fw-content-align-center.fw-icon-title-left .fw-icon-title-text {
+  float: right;
+}
+/* Icon align right */
+.fw-icon-title.fw-content-align-center.fw-icon-title-right .fw-icon-title-icon {
+  float: right;
   margin-left: 12px;
 }
-
+.fw-icon-title.fw-content-align-center.fw-icon-title-right .fw-icon-title-text {
+  float: left;
+}
 /* Icon Top & Bottom align */
 /* Icon Top & Bottom */
 .fw-icon-title.fw-content-align-center.fw-icon-title-top .fw-icon-title-name,
@@ -154,4 +179,3 @@
 .fw-icon-title .fw-custom-icon-image {
   overflow: hidden;
 }
-

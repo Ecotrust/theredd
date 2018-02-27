@@ -1,11 +1,6 @@
 /* Content Layout */
 /* -------------------------------------------------- */
 
-/* Wrap col inner */
-.fw-wrap-col-inner {
-  position: relative;
-}
-
 /* z-index for .fw-inner */
 .fw-inner,
 .fw-col-inner{

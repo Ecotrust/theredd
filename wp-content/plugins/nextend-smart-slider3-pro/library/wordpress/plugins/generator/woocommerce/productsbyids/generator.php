@@ -40,13 +40,6 @@ class N2GeneratorWooCommerceProductsByIds extends N2GeneratorAbstract
                     'rating'        => $product->get_average_rating()
                 );
 
-                $post = get_post($id);
-                $seller = get_user_by("id", $post->post_author);
-                if( is_object( $seller ) ){
-                    $data[$i]['seller_display_name'] = $seller->display_name;
-                    $data[$i]['seller_user_nicename'] = $seller->user_nicename;
-                }
-
                 if ($product->is_on_sale()) {
                     $data[$i]['sale_price'] = wc_price($product->get_sale_price());
                 } else {

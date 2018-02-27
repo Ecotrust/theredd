@@ -5,6 +5,8 @@
 class The_Core_Theme_Includes {
 	private static $rel_path = null;
 
+	private static $include_isolated_callable;
+
 	private static $initialized = false;
 
 	public static function init() {
@@ -15,12 +17,16 @@ class The_Core_Theme_Includes {
 		}
 
 		/**
+		 * Include a file isolated, to not have access to current context variables
+		 */
+		self::$include_isolated_callable = create_function( '$path', 'include $path;' );
+
+		/**
 		 * Both frontend and backend
 		 */
 		{
 			self::include_child_first( '/helpers.php' );
 			self::include_child_first( '/hooks.php' );
-			self::include_child_first( '/theme-functions.php' );
 			self::include_all_child_first( '/includes' );
 
 			add_action( 'init', array( __CLASS__, '_action_init' ) );
@@ -94,7 +100,7 @@ class The_Core_Theme_Includes {
 	}
 
 	public static function include_isolated( $path ) {
-		include $path;
+		call_user_func( self::$include_isolated_callable, $path );
 	}
 
 	public static function include_child_first( $rel_path ) {

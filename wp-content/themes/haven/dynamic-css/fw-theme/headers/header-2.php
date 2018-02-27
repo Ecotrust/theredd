@@ -60,12 +60,6 @@
   width: 20%;
 }
 
-/* Sticky Header */
-.header-2 .fw-sticky-menu .fw-header-main .fw-container {
-  padding-top: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-padding']); ?>px;
-  padding-bottom: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-padding']); ?>px;
-}
-
 /*----> Responsive <---- */
 /* Screen 1024px */
 @media (max-width: 1199px) {
@@ -84,4 +78,3 @@
     margin-left: <?php echo floatval($the_core_less_variables['fw-menu-item-margin-left'])/2; ?>px;
   }
 }
-

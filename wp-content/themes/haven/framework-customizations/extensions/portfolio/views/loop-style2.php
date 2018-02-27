@@ -23,7 +23,7 @@ $args      = array(
 	'ratio'    => $ratio
 );
 $image     = the_core_image( get_post_thumbnail_id(), $args );
-$image_url = isset( $image['original_image_url'] ) ? $image['original_image_url'] : '';
+$image_url = @$image['original_image_url'];
 
 if ( ! $image ) {
 	$the_core_template_directory = get_template_directory_uri();

@@ -22,7 +22,7 @@ $args      = array(
 	'ratio'    => $ratio
 );
 $image     = the_core_image( get_post_thumbnail_id(), $args );
-$image_url = isset( $image['original_image_url'] ) ? $image['original_image_url'] : '';
+$image_url = @$image['original_image_url'];
 
 // for original image
 if ( ! $image ) {

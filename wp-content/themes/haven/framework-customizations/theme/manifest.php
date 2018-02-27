@@ -4,9 +4,9 @@
 
 $manifest = array();
 
-$manifest['id']                  = the_core_get_the_theme_id();
+$manifest['id']                  = 'haven';
 $manifest['skin']                = 'main';
-$manifest['name']                = the_core_get_the_theme_name();
+$manifest['name']                = esc_html__( 'Haven', 'the-core' );
 $manifest['requirements']        = array(
 	'wordpress' => array(
 		'min_version' => '4.0',
@@ -43,10 +43,12 @@ $manifest['supported_extensions'] = array(
 	'portfolio'    => array(),
 	'page-builder' => array(),
 	'backups'      => array(),
+	'seo'          => array(),
 	'forms'        => array(),
 	'mailer'       => array(),
 	'slider'       => array(),
 	'events'       => array(),
+	'analytics'    => array(),
 	'megamenu'     => array(),
 	'social'       => array(),
 	'wp-shortcodes' => array(),

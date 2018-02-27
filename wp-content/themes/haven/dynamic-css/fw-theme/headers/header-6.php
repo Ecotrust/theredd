@@ -12,9 +12,6 @@
 .header-6 .mm-slideout {
   width: auto !important;
   margin-left: 0;
-  -webkit-transition: -webkit-transform 0.4s ease;
-  -ms-transition: -ms-transform 0.4s ease;
-  transition: transform 0.4s ease;
 }
 .header-6 .fullwidthbanner-container {
   max-width: 100%;
@@ -109,9 +106,6 @@
   font-style: <?php echo esc_js($the_core_less_variables['fw-menu-font-style']); ?>;
   line-height: <?php echo esc_js($the_core_less_variables['fw-menu-item-height']); ?>;
   letter-spacing: <?php echo esc_js($the_core_less_variables['fw-menu-letter-spacing']); ?>;
-}
-.header-6 #header-menu .mm-panels > .mm-panel > .mm-listview {
-  margin: 0;
 }
 .header-6 #header-menu.mm-menu .mm-listview > li {
   margin-top: <?php echo esc_js($the_core_less_variables['fw-menu-item-margin-left']); ?>;
@@ -439,6 +433,7 @@ html.mm-opening .header-6 .fw-menu-open:after {
   float: right;
 }
 /* WP mobile bar */
+
 
 /*----> Responsive <---- */
 @media(min-width:1199px){

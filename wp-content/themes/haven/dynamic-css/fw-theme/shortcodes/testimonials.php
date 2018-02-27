@@ -84,14 +84,6 @@
   text-indent: -300px;
 }
 
-/* Testimonial rating */
-.fw-testimonials .fw-testimonials-rating {
-  margin-top: 5px;
-}
-.fw-testimonials .fw-testimonials-rating i {
-  color: #f2b827;
-}
-
 /* Testimonials Type 1 */
 .fw-testimonials-1 {
   text-align: center;

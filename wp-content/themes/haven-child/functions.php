@@ -7,7 +7,7 @@ function the_core_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'the_core_theme_enqueue_styles' );
 
-// Allow SVGs
+
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
   return $mimes;

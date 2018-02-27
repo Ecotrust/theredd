@@ -16,10 +16,6 @@ if ( ! function_exists( 'fw_disable_default_shortcodes' ) ) :
 			$to_disabled[] = 'fw_breadcrumbs';
 		}
 
-		if( ! class_exists('RGFormsModel') ) {
-			$to_disabled[] = 'fw_gravityforms';
-		}
-
 		return $to_disabled;
 	}
 

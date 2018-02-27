@@ -78,13 +78,11 @@
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px <?php echo the_core_adjustColorLightenDarken('#fff', -20); ?>;
 }
 .selectize-control.multi .selectize-input.has-items {
-	padding: <?php echo esc_js($the_core_less_variables['input-padding-y']); ?> <?php echo esc_js($the_core_less_variables['input-padding-x']); ?>;
+	padding-left: <?php echo esc_js( floatval($the_core_less_variables['input-padding-x'] ) - 3 ); ?>px;
+	padding-right: <?php echo esc_js( floatval($the_core_less_variables['input-padding-x'] ) - 3 ); ?>px;
 }
 .selectize-control.multi .selectize-input > div {
 	border-radius: <?php echo esc_js($the_core_less_variables['input-border-radius']); ?>;
-}
-.selectize-control.multi .selectize-input > input[type="text"] {
-	display: inline-block !important;
 }
 .selectize-input > * {
 	line-height: <?php echo esc_js($the_core_less_variables['line-height-computed']); ?>;

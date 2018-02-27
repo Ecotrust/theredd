@@ -11,11 +11,11 @@ class N2SmartSlider extends N2SmartSliderAbstract {
         return $slider;
     }
 
-    public static function addCMSFunctions($text) {
+    public function addCMSFunctions($slider) {
 
-        $text = apply_filters('translate_text', do_shortcode(preg_replace('/\[smartslider3 slider=[0-9]+\]/', '', preg_replace('/\[smartslider3 slider="[0-9]+"\]/', '', $text))));
+        $slider = apply_filters('translate_text', do_shortcode(preg_replace('/\[smartslider3 slider=[0-9]+\]/', '', preg_replace('/\[smartslider3 slider="[0-9]+"\]/', '', $slider))));
 
-        return $text;
+        return $slider;
     }
 
 

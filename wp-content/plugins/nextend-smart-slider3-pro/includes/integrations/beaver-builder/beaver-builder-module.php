@@ -27,8 +27,8 @@ FLBuilder::register_module('FLSmartSliderModule', array(
                 'fields' => array(
                     'sliderid' => array(
                         'type'    => 'smart-slider',
-                        'label'   => 'Slider ID or Alias',
-                        'default' => ''
+                        'label'   => 'Slider ID',
+                        'default' => '0'
                     ),
                 )
             )

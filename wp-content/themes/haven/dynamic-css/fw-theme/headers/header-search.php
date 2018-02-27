@@ -106,7 +106,6 @@ input.fw-input-search:active {
 .fw-form-search-full.fw-wrap-search-form {
   display: none;
   position: absolute;
-  width: 100%;
   height: 0;
   overflow: hidden;
   left: 0;
@@ -118,7 +117,6 @@ input.fw-input-search:active {
   display: block;
   margin: 0 auto;
   top: 50%;
-  transform: translateY(-50%);
 }
 .fw-form-search-full.fw-wrap-search-form .fw-search-form .fw-input-search {
   background-color: <?php echo esc_js($the_core_less_variables['fw-form-search-full-input-bg']); ?>;
@@ -131,8 +129,6 @@ input.fw-input-search:active {
   border: <?php echo esc_js($the_core_less_variables['fw-header-search-input-border-size']); ?> solid <?php echo esc_js($the_core_less_variables['fw-header-search-input-border-color']); ?>;
   padding-left: 50px !important;
   padding-right: 50px !important;
-  height: calc(100%/2);
-  line-height: calc(100%/2);
 }
 .fw-form-search-full.fw-wrap-search-form .fw-search-form .fw-input-search::-moz-placeholder {
   color: <?php echo esc_js($the_core_less_variables['fw-form-search-full-placeholder-font-color']); ?>;
@@ -151,14 +147,14 @@ input.fw-input-search:active {
   top: 50%;
   font-size: 20px;
   line-height: normal;
+  margin-top: -26px;
   padding: 15px;
-  transform: translateY(-50%);
 }
 .fw-form-search-full.fw-wrap-search-form .fw-search-form .fw-submit-wrap {
   right: auto;
   left: 10px;
   top: 50%;
-  transform: translateY(-50%);
+  margin-top: -<?php echo floatval($the_core_less_variables['fw-header-search-input-height'])/2; ?>px;
 }
 .fw-form-search-full.fw-wrap-search-form .fw-search-form .fw-submit-wrap:before {
   font-size: 20px;
@@ -168,10 +164,10 @@ input.fw-input-search:active {
   top: 0 !important;
 }
 /* Search in top bar */
-.fw-top-bar-on.search-in-top-bar .fw-header .fw-top-bar .fw-search {
+.fw-top-bar-on.search-in-top-bar .fw-search {
   top: <?php echo ( floatval($the_core_less_variables['fw-top-bar-height']) - floatval($the_core_less_variables['fw-header-search-input-height']) ) / 2; ?>px;
 }
-.fw-top-bar-on.search-in-top-bar .fw-header .fw-top-bar .fw-search.fw-mini-search {
+.fw-top-bar-on.search-in-top-bar .fw-search.fw-mini-search {
   top: <?php echo ( floatval($the_core_less_variables['fw-top-bar-height']) - floatval($the_core_less_variables['fw-top-bar-font-size-text']) ) / 2; ?>px;
 }
 .fw-top-bar-on.search-in-top-bar.fw-top-social-right .fw-top-bar .fw-mini-search {
@@ -200,14 +196,4 @@ input.fw-input-search:active {
 }
 .search-in-top-bar.fw-top-social-left .fw-mini-search {
   margin-left: 10px !important;
-}
-
-/*----> Responsive <---- */
-/*Screen 768px*/
-@media(max-width: 991px){
-  .search-in-top-bar.fw-top-social-right .fw-top-bar .fw-search,
-  .search-in-top-bar.fw-top-social-left .fw-top-bar .fw-search {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
 }

@@ -60,10 +60,10 @@ class N2SmartSliderTypeShowcase extends N2SmartSliderType {
                     ?>
                     <div class="n2-ss-showcase-slides n2-ow"><?php
                         foreach ($this->slider->slides AS $i => $slide) {
-                            echo N2Html::tag('div', N2HTML::mergeAttributes($slide->attributes, array(
+                            echo N2Html::tag('div', $slide->attributes + array(
                                     'class' => 'n2-ss-slide ' . $slide->classes . ' n2-ss-canvas n2-ow',
                                     'style' => $slide->style . $params->get('slide-css')
-                                )), $slide->background . N2Html::tag('div', array('class' => 'n2-ss-slide-inner') + $slide->linkAttributes, $slide->getHTML()) . N2Html::tag('div', array('class' => 'n2-ss-showcase-overlay n2-ow')));
+                                ), $slide->background . $slide->getHTML() . N2Html::tag('div', array('class' => 'n2-ss-showcase-overlay n2-ow')));
                         }
                         ?></div>
                 </div>

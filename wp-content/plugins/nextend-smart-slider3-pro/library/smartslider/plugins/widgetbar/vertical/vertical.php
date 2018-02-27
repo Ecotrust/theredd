@@ -94,7 +94,7 @@ class N2SSPluginWidgetBarVertical extends N2SSPluginWidgetAbstract {
 
             $description = $slider->slides[$i]->getDescription();
             if (!empty($description)) {
-                $slides[$i]['html'] .= N2Html::tag('div', array('class' => $fontDescription . ' n2-ow'), N2SmartSlider::addCMSFunctions(N2Translation::_($description)));
+                $slides[$i]['html'] .= N2Html::tag('div', array('class' => $fontDescription . ' n2-ow'), N2Translation::_($description));
             }
         }
 

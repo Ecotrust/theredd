@@ -87,7 +87,6 @@ $options            = array(
 					'choices' => array(
 						'fw-portfolio-cols-2' => __( '2 columns', 'the-core' ),
 						'fw-portfolio-cols-3' => __( '3 columns', 'the-core' ),
-						'fw-portfolio-cols-4' => __( '4 columns', 'the-core' ),
 					)
 				),
                 'grid_bg_color' => array(

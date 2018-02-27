@@ -84,11 +84,6 @@
 .fw-team.fw-team-member-type-2.fw-content-align-right .fw-block-image-overlay {
   text-align: right;
 }
-.fw-team.fw-team-member-type-2 .fw-team-inner {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: 5px 0;
-}
 .fw-team.fw-team-member-type-2 .fw-team-image {
   margin-bottom: 0;
 }
@@ -101,4 +96,6 @@
 .fw-team.fw-team-member-type-2 .fw-team-socials {
   line-height: 0;
 }
-
+.fw-team.fw-team-member-type-2 .fw-block-image-overlay .fw-icell {
+  padding-top: 20px;
+}

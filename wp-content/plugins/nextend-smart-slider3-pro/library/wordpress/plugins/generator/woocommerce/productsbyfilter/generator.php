@@ -187,12 +187,6 @@ class N2GeneratorWooCommerceProductsByFilter extends N2GeneratorAbstract {
                     'tags'                   => wc_get_product_tag_list($product_id)
                 );
 
-                $seller = get_user_by("id", $posts[$j]->post_author);
-                if( is_object( $seller ) ){
-                    $data[$i]['seller_display_name'] = $seller->display_name;
-                    $data[$i]['seller_user_nicename'] = $seller->user_nicename;
-                }
-
                 if(!class_exists('gpls_woo_rfq_CART')){
                     $data[$i]['add_to_cart_text']= $product->add_to_cart_text();
                 }
@@ -284,48 +278,6 @@ class N2GeneratorWooCommerceProductsByFilter extends N2GeneratorAbstract {
 
                 }
 
-                if (class_exists('acf')) {
-                    $fields = get_fields($product_id);
-                    if (count($fields) && is_array($fields) && !empty($fields)) {
-                        foreach ($fields AS $k => $v) {
-                            $type   = $this->getACFType($k,$product_id);
-                            $k      = str_replace('-', '', $k);
-
-                            while (isset($data[$i][$k])) {
-                                $k  = 'acf_' . $k;
-                            };
-                                
-                            if (!is_array($v) && !is_object($v)) {
-                                if($type['type'] == "image" && is_numeric($type["value"])){
-                                    $thumbnail_meta = wp_get_attachment_metadata($type["value"]);
-                                    $src = wp_get_attachment_image_src($v, $thumbnail_meta['file']);
-                                    $v = $src[0];
-                                }
-                                $data[$i][$k] = $v;
-                            } else if (!is_object($v)) {
-                                if(isset($v['url'])){
-                                    $data[$i][$k] = $v['url'];
-                                } else if(is_array($v)){
-                                    foreach($v AS $v_v => $k_k){
-                                        if(is_array($k_k) && isset($k_k['url'])){
-                                            $data[$i][$k . $v_v] = $k_k['url'];
-                                        }
-                                    }
-                                }
-                            }
-                            if($type['type'] == "image" && (is_numeric($type["value"]) || is_array($type['value']))){
-                                if(is_array($type['value'])){
-                                    $sizes              = $this->getImageSizes($type["value"]["id"], $type["value"]["sizes"], $k);
-                                } else {
-                                    $thumbnail_meta     = wp_get_attachment_metadata($type["value"]);
-                                    $sizes              = $this->getImageSizes($type["value"], $thumbnail_meta['sizes'], $k);
-                                }
-                                $data[$i] = array_merge($data[$i], $sizes);
-                            }
-                        }
-                    }
-                }
-
                 $categories = wp_get_post_terms($product_id, 'product_cat');
 
                 if (!empty($categories) && is_array($categories)) {
@@ -367,28 +319,5 @@ class N2GeneratorWooCommerceProductsByFilter extends N2GeneratorAbstract {
             }
         }
         return $data;
-    }
-
-    protected function getImageSizes($thumbnail_id, $sizes, $prefix = false) {
-        $data = array();
-        if(!$prefix){
-            $prefix = "";
-        } else {
-            $prefix = $prefix . "_";
-        }
-        foreach ($sizes AS $size => $image) {
-            $imageSrc               = wp_get_attachment_image_src($thumbnail_id, $size);
-            $data[$prefix.'image_' . $this->clearSizeName($size)] = $imageSrc[0];
-        }
-        return $data;
-    }
-
-    protected function clearSizeName ($size){
-        return preg_replace("/-/", "_", $size);
-    }
-
-    protected function getACFType($key, $post_id) {
-        $type = get_field_object($key, $post_id);
-        return $type;
     }
 }

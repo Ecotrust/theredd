@@ -65,8 +65,6 @@ class N2GeneratorTwitterTimeline extends N2GeneratorAbstract
                     $record['tweet_author_name']  = $record['author_name'];
                     $record['tweet_author_image'] = $record['author_image'];
                 }
-				
-				$record['created_at'] = date($this->data->get('dateformat', 'Y-m-d'), strtotime($item['created_at']));
 
                 $data[$i] = &$record;
                 unset($record);

@@ -98,12 +98,9 @@ class N2SmartsliderBackendSliderControllerAjax extends N2SmartSliderControllerAj
 
             $slider = $slidersModel->get(N2Request::getInt('sliderid'));
             $this->validateDatabase($slider);
-
-	        $responseData = $slidersModel->save($slider['id'], N2Request::getVar('slider'));
-
-            if ($responseData !== false) {
+            if ($sliderid = $slidersModel->save($slider['id'], N2Request::getVar('slider'))) {
                 N2Message::success(n2_('Slider saved.'));
-                $this->response->respond($responseData);
+                $this->response->respond();
             }
         }
 

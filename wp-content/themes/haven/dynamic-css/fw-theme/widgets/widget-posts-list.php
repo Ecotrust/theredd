@@ -55,15 +55,7 @@
 .fw-side-posts-list li .posts-content .post-date {
   margin-bottom: 0;
 }
-
-/* Style for this widget in footer */
 .fw-footer ul li .post-date {
   color: #fff;
   font-weight: normal;
-}
-.fw-footer-widgets .fw-side-posts-list li .posts-content .post-title {
-  color: <?php echo esc_js($the_core_less_variables['fw-footer-widgets-link-color']); ?>;
-}
-.fw-footer-widgets .fw-side-posts-list li .posts-content .post-title:hover {
-  color: <?php echo the_core_adjustColorLightenDarken($the_core_less_variables['fw-footer-widgets-link-color'], 10); ?>;
 }

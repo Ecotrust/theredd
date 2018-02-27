@@ -111,6 +111,18 @@ class FW_Extension_ThemeFuse_Update extends FW_Extension {
 								$action['data']['type']
 							);
 						break;
+					case 'send-email' :
+						$email_notices = fw_get_db_extension_data( $this->get_name(), 'email_notices' );
+						$message = $action['data'];
+						if ( ! $email_notices[ $id ] || ! empty( $message['force_send'] ) ) {
+							$submitted             = wp_mail( get_option( 'admin_email' ), $message['subject'], $message['message'], ! empty( $message['haeders'] ) ? $message['haeders'] : null );
+							$email_notices[ $id ] = array(
+								'submitted' => $submitted,
+								'last_time' => time()
+							);
+						}
+						fw_set_db_extension_data( $this->get_name(), 'email_notices', $email_notices );
+						break;
 					default:
 						break;
 				}

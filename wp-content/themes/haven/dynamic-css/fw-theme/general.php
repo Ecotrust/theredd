@@ -8,12 +8,10 @@ body {
   background-color: <?php echo esc_js($the_core_less_variables['body-bg']); ?>;
   background-image: url(<?php echo ($the_core_less_variables['body-bg-image']); ?> );
   background-repeat: <?php echo esc_js($the_core_less_variables['body-bg-repeat']); ?>;
-  -webkit-overflow-scrolling: touch;
 }
 html {
   overflow-x: hidden;
   background-color: <?php echo esc_js($the_core_less_variables['body-bg']); ?>;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* wrapper for boxed & full style */

@@ -37,10 +37,6 @@
   -o-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
 }
-.fw-sticky-menu .fw-site-navigation > ul > li > a {
-  color: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-item-color']); ?>;
-}
-
 /* current menu line */
 .fw-site-navigation > ul > li > a:after {
   content: "";
@@ -54,10 +50,6 @@
   -o-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
 }
-.fw-sticky-menu .fw-site-navigation > ul > li > a:after {
-  background: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-item-color']); ?>;
-}
-
 /* hover style */
 .fw-site-navigation > ul > li:hover a:after {
   width: 100%;
@@ -66,10 +58,6 @@
 .fw-site-navigation > ul > li > a:hover {
   color: <?php echo esc_js($the_core_less_variables['fw-top-menu-item-color-hover']); ?>;
 }
-.fw-sticky-menu .fw-site-navigation > ul > li > a:hover {
-  color: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-item-color-hover']); ?>;
-}
-
 /* current menu item */
 .fw-site-navigation > ul > li.current-menu-item a:after,
 .fw-site-navigation > ul > li.current-menu-ancestor a:after {
@@ -79,10 +67,6 @@
 .fw-site-navigation > ul > li.current-menu-item > a {
   color: <?php echo esc_js($the_core_less_variables['fw-top-menu-item-color-hover']); ?>;
 }
-.fw-sticky-menu .fw-site-navigation > ul > li.current-menu-item > a {
-  color: <?php echo esc_js($the_core_less_variables['fw-sticky-menu-item-color-hover']); ?>;
-}
-
 /* Menu Separators */
 .fw-site-navigation > ul > li.menu-separator a:after {
   display: none;
@@ -106,9 +90,6 @@
   text-align: left;
   text-transform: none;
   display: none;
-}
-.fw-site-navigation > ul > li > ul > li:first-child:hover > ul {
-  top: 13px;
 }
 .fw-site-navigation > ul > li ul > li {
   display: block;
@@ -166,6 +147,9 @@
   padding: 0;
   background: none;
   left: <?php echo floatval($the_core_less_variables['fw-dropdown-width'])+1; ?>px;
+}
+.fw-site-navigation > ul > li ul > li:first-child:hover > ul {
+  top: 13px;
 }
 .fw-site-navigation > ul > li ul > li:hover > ul {
   display: block;

@@ -231,9 +231,6 @@ $css .= the_core_render_view( $the_core_dynamic_css_directory . '/buddypress/bud
 $css .= the_core_render_view( $the_core_dynamic_css_directory . '/give/give.php', array( 'the_core_less_variables' => $the_core_less_variables ) );
 $css .= the_core_render_view( $the_core_dynamic_css_directory . '/give/give-widget.php', array( 'the_core_less_variables' => $the_core_less_variables ) );
 
-// Gravity Form
-$css .= the_core_render_view( $the_core_dynamic_css_directory . '/gravityForm/gravityForm.php', array( 'the_core_less_variables' => $the_core_less_variables ) );
-
 // Contact Form 7
 $css .= the_core_render_view( $the_core_dynamic_css_directory . '/contactForm7/contactForm7.php', array( 'the_core_less_variables' => $the_core_less_variables ) );
 
@@ -314,7 +311,7 @@ if( is_rtl() ) {
 }
 
 // general settings advanced styling
-$general_styles             = function_exists( 'the_core_general_styles' ) ? the_core_general_styles() : '';
+$general_styles             = the_core_general_styles();
 $blog_button_styles         = the_core_posts_advanced_styles();
 $the_core_blog_title_styles = the_core_blog_title_styles();
 $responsive_styles          = the_core_responsive_styles();
@@ -324,7 +321,5 @@ $css .= "\n" . $general_styles . "\n" . $blog_button_styles . "\n" . $the_core_b
 
 // first group of css (example after shortcodes, then you can put this code after widgets, after general options)
 if ( ! $wp_filesystem->put_contents( $style_dir . '/'.the_core_style_file_name().'.css', $css ) ) {
-	if ( class_exists('FW_Flash_Messages') && is_user_logged_in() ) {
-		FW_Flash_Messages::add( 'error-writing-css', __( "Could not generate dynamic CSS file.", "the-core" ), 'error' );
-	}
+	FW_Flash_Messages::add('error-writing-css', __( "Could not generate dynamic CSS file.", "the-core" ), 'error');
 }

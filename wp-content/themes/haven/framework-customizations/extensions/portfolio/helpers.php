@@ -110,112 +110,75 @@ if ( ! function_exists( 'fw_theme_portfolio_filter' ) ) :
 			}
 			$template_slug   = $term->slug;
 			$template_parent = $term->parent;
-			if ( empty( $children ) ) {
-				// for categories that have no children
-				$args_terms  = array(
-					'taxonomy' => $taxonomy,
-					'child_of' => $term->parent,
-					'parent'   => $term->parent
-				);
-				$args_parent = array(
-					'taxonomy' => $taxonomy,
-					'include'  => array( $term->parent )
-				);
-			} else {
-				$args_terms  = array( 'taxonomy' => $taxonomy, 'parent' => $term->term_id );
-				$args_parent = array( 'taxonomy' => $taxonomy, 'slug' => $term->slug );
-			}
-			$parent_term = get_terms( $taxonomy, $args_parent );
-			$terms       = get_terms( $taxonomy, $args_terms );
-			$terms       = array_merge( $parent_term, $terms );
+			$args            = array( 'taxonomy' => $taxonomy );
+			$terms           = get_terms( $taxonomy, $args );
+			$the_core_count  = count( $terms );
+			$i               = 0;
 
 			if ( $template_parent == 0 ) {
 				$template_parent = $term_id;
 			}
 
 			echo '<div class="fw-portfolio-filter">
-                <ul id="fw-portfolio-filter-' . $uniqid . '" class="portfolio_filter" data-isotope="' . (int) $isotope . '" data-list-id="fw-portfolio-list-' . $uniqid . '">';
-			if ( count( $terms ) > 0 ) {
-				$term_list             = $term_view_all = '';
-				$taxonomies_with_posts = the_core_return_taxonomies_with_posts( $posts, array( 'taxonomy' => $taxonomy ) );
-
+                <ul id="fw-portfolio-filter-' . $uniqid . '" class="portfolio_filter" data-isotope="'.(int)$isotope.'" data-list-id="fw-portfolio-list-'.$uniqid.'">';
+			if ( $the_core_count > 0 ) {
+                $term_list = $term_view_all = '';
+                $taxonomies_with_posts = the_core_return_taxonomies_with_posts( $posts, array( 'taxonomy' => $taxonomy ) );
 				foreach ( $terms as $term ) {
-					if ( ! empty( $posts ) && ! in_array( $term->term_id, $taxonomies_with_posts ) ) {
-						// for exclude empty taxonomies from the filter
-						continue;
-					}
+					$i ++;
+                    if( !empty($posts) && !in_array( $term->term_id, $taxonomies_with_posts ) ) {
+                        // for exclude empty taxonomies from the filter
+                        continue;
+                    }
 
 					if ( $template_parent != $term->parent ) {
 						if ( $term->slug == $template_slug ) {
-							if ( $isotope ) {
-								$the_core_permalink = '#';
-							} else {
-								$the_core_permalink = get_term_link( $term->slug, $taxonomy );
-							}
+                            if( $isotope ) $the_core_permalink = '#';
+							else $the_core_permalink = get_term_link( $term->slug, $taxonomy );
 							$icon          = '';
 							$category_icon = fw_get_db_term_option( $term->term_id, $taxonomy, 'category_icon', '' );
 							if ( $category_icon != '' ) {
 								$icon = '<i class="' . $category_icon . '"></i>';
 							}
-							$term_view_all .= '<li class="categories-item active" data-category="' . $template_slug . '"><a href="' . $the_core_permalink . '">' . $icon . the_core_translate( $term->name ) . '</a></li>';
-						} else {
-							if ( $isotope ) {
-								$the_core_permalink = '#';
-							} else {
-								$the_core_permalink = get_term_link( $term->slug, $taxonomy );
-							}
+							$term_view_all .= '<li class="categories-item active" data-category="' . $template_slug . '"><a href="' . $the_core_permalink . '">' . $icon . the_core_translate($term->name) . '</a></li>';
+						} elseif ( $template_parent == $term->term_id ) {
+                            if( $isotope ) $the_core_permalink = '#';
+							else $the_core_permalink = get_term_link( $term->slug, $taxonomy );
 							$icon          = '';
 							$category_icon = fw_get_db_term_option( $term->term_id, $taxonomy, 'category_icon', '' );
 							if ( $category_icon != '' ) {
 								$icon = '<i class="' . $category_icon . '"></i>';
 							}
-							$term_view_all .= '<li class="categories-item" data-category="' . $term->slug . '"><a href="' . $the_core_permalink . '">' . $icon . the_core_translate( $term->name ) . '</a></li>';
+							$term_view_all .= '<li class="categories-item" data-category="' . $term->slug . '"><a href="' . $the_core_permalink . '">' . $icon . the_core_translate($term->name) . '</a></li>';
 						}
-					} else {
+					} elseif ( $template_parent == $term->parent ) {
 						if ( $term->slug == $template_slug ) {
-							if ( $isotope ) {
-								$the_core_permalink = '#';
-							} else {
-								$the_core_permalink = get_term_link( $term->slug, $taxonomy );
-							}
+                            if( $isotope ) $the_core_permalink = '#';
+							else $the_core_permalink = get_term_link( $term->slug, $taxonomy );
 							$icon          = '';
 							$category_icon = fw_get_db_term_option( $term->term_id, $taxonomy, 'category_icon', '' );
 							if ( $category_icon != '' ) {
 								$icon = '<i class="' . $category_icon . '"></i>';
 							}
-
-							$intermediate_html = '<li class="categories-item active" data-category="' . $template_slug . '"><a href="' . $the_core_permalink . '">' . $icon . the_core_translate( $term->name ) . '</a></li>';
-							$current_term_children = get_term_children( $term_id, $taxonomy );
-							if ( ! empty( $current_term_children ) ) {
-								// for category that have child (put the Category first in list)
-								$term_view_all .= $intermediate_html;
-							} else {
-								$term_list .= $intermediate_html;
-							}
+							$term_list .= '<li class="categories-item active" data-category="' . $template_slug . '"><a href="' . $the_core_permalink . '">' . $icon . the_core_translate($term->name) . '</a></li>';
 						} else {
-							if ( $isotope ) {
-								$the_core_permalink = '#';
-							} else {
-								$the_core_permalink = get_term_link( $term->slug, $taxonomy );
-							}
+                            if( $isotope ) $the_core_permalink = '#';
+							else $the_core_permalink = get_term_link( $term->slug, $taxonomy );
 							$icon          = '';
 							$category_icon = fw_get_db_term_option( $term->term_id, $taxonomy, 'category_icon', '' );
 							if ( $category_icon != '' ) {
 								$icon = '<i class="' . $category_icon . '"></i>';
 							}
-							$term_list .= '<li class="categories-item" data-category="' . $term->slug . '"><a href="' . $the_core_permalink . '">' . $icon . the_core_translate( $term->name ) . '</a></li>';
+							$term_list .= '<li class="categories-item" data-category="' . $term->slug . '"><a href="' . $the_core_permalink . '">' . $icon . the_core_translate($term->name) . '</a></li>';
 						}
 					}
 				}
-
-				echo( $term_view_all . $term_list );
+				echo ($term_view_all . $term_list);
 			}
 			echo '</ul>
-                <a class="prev" id="fw-portfolio-filter-' . esc_attr( $uniqid ) . '-prev" href="#"><i class="fa"></i></a>
-                <a class="next" id="fw-portfolio-filter-' . esc_attr( $uniqid ) . '-next" href="#"><i class="fa"></i></a>
+                <a class="prev" id="fw-portfolio-filter-' . esc_attr($uniqid) . '-prev" href="#"><i class="fa"></i></a>
+                <a class="next" id="fw-portfolio-filter-' . esc_attr($uniqid) . '-next" href="#"><i class="fa"></i></a>
             </div>';
 		}
 	}
 endif;
-
-

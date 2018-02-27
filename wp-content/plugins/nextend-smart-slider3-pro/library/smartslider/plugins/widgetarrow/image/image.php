@@ -177,20 +177,18 @@ class N2SSPluginWidgetArrowImage extends N2SSPluginWidgetAbstract {
             $image = N2ImageHelper::fixed($image);
         }
 
-        $alt = $params->get(self::$key . $side . '-alt',  $side . ' arrow');
-
         if ($imageHover === null) {
-            $image = N2Html::image($image, $alt, array(
+            $image = N2Html::image($image, 'Arrow', array(
                 'class'        => 'n2-ow',
                 'data-no-lazy' => '1',
                 'data-hack'    => 'data-lazy-src'
             ));
         } else {
-            $image = N2Html::image($image, $alt, array(
+            $image = N2Html::image($image, 'Arrow', array(
                     'class'        => 'n2-arrow-normal-img n2-ow',
                     'data-no-lazy' => '1',
                     'data-hack'    => 'data-lazy-src'
-                )) . N2Html::image($imageHover, $alt, array(
+                )) . N2Html::image($imageHover, 'Arrow', array(
                     'class'        => 'n2-arrow-hover-img n2-ow',
                     'data-no-lazy' => '1',
                     'data-hack'    => 'data-lazy-src'

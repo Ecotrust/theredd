@@ -45,8 +45,8 @@ if (file_exists($upload_dir['basedir'] . '/'.the_core_style_file_name().'.css'))
 	);
 } else {
 	wp_enqueue_style(
-		the_core_get_the_theme_id().'-style',
-		$the_core_template_directory . '/css/'.the_core_get_the_theme_id().'-style.css',
+		'haven-style',
+		$the_core_template_directory . '/css/haven-style.css',
 		array(),
 		$the_core_version
 	);
@@ -89,7 +89,14 @@ if (is_singular() && comments_open() && get_option('thread_comments')) {
 	wp_enqueue_script('comment-reply');
 }
 
-wp_enqueue_script( 'imagesloaded' );
+/** Images Loaded */
+wp_register_script(
+	'imagesloaded',
+	$the_core_template_directory . '/js/imagesloaded.pkgd.min.js',
+	array( 'jquery' ),
+	$the_core_version,
+	false
+);
 
 wp_enqueue_script(
 	'modernizr',
@@ -131,7 +138,7 @@ wp_enqueue_script(
 	true
 );
 
-if ( ( $the_core_blog_view == 'grid' && ( is_category() || is_home() ) ) || ( get_post_type() == 'product' && is_single() ) || ( get_post_type() == 'fw-portfolio' && is_tax() ) || is_post_type_archive('fw-portfolio') ) {
+if ( ($the_core_blog_view == 'grid' && (is_category() || is_home() ) ) || (get_post_type() == 'product' && is_single()) || (get_post_type() == 'fw-portfolio' && is_tax() ) ) {
 	if ( $the_core_blog_view == 'grid' && (is_category() || is_home() ) ) {
 		wp_enqueue_script(
 			'isotope',
@@ -226,8 +233,8 @@ if( !empty($the_core_settings_option) ) {
 	$smooth_scroll = isset($the_core_settings_option['smooth_scroll']) ? $the_core_settings_option['smooth_scroll'] : 'no';
 	if( $smooth_scroll == 'yes' ) :
 		wp_enqueue_script(
-			'easeScroll',
-			$the_core_template_directory . '/js/jquery.easeScroll.js',
+			'speedScroll',
+			$the_core_template_directory . '/js/jQuery.scrollSpeed.js',
 			array('jquery'),
 			$the_core_version,
 			true
@@ -244,7 +251,6 @@ wp_enqueue_script(
 );
 
 $socials = $effect_panels = $effect_listitems_slide = '';
-$mobile_menu_screen = 1199;
 if( function_exists('fw_get_db_settings_option') ) {
 	$header_settings = fw_get_db_settings_option('header_settings');
 	if( $header_settings['header_type_picker']['header_type'] == 'header-5' ) {
@@ -256,54 +262,28 @@ if( function_exists('fw_get_db_settings_option') ) {
 			$socials = the_core_get_socials('header-6-socials');
 		}
 	}
-	elseif( isset( $header_settings['mobile_menu_options'] ) ) {
-		$effect_panels = $header_settings['mobile_menu_options']['effect_panels'];
-		if( 'yes' == $header_settings['mobile_menu_options']['mobile_menu_socials']['selected_value'] ) {
-			$socials = the_core_get_socials('mobile-menu-socials');
-		}
-		if( isset( $header_settings['mobile_menu_options']['mobile_screen'] ) ) {
-			$mobile_menu_screen = (int) $header_settings['mobile_menu_options']['mobile_screen'];
-		}
-	}
 
 	if ($effect_panels == 'mm-effect-panels-left-right') {
 		$effect_listitems_slide = 'effect-listitems-slide';
 	}
 }
 
-$the_core_mobile_menu_border_style = '';
-if ( function_exists( 'fw_get_db_settings_option' ) ) {
-	$mobile_menu_border = fw_get_db_settings_option( 'header_settings/mobile_menu_options/border/selected', 'no' );
-	if ( 'yes' == $mobile_menu_border ) {
-		$the_core_mobile_menu_border_style = fw_get_db_settings_option( 'header_settings/mobile_menu_options/border/yes/border_style', 'indent' );
-	}
-	else {
-		$the_core_mobile_menu_border_style = 'border-none';
-	}
-}
-
 $get_locale = get_locale();
-wp_localize_script( 'general', 'FwPhpVars', array(
-	'back'                   => esc_html__( 'Back', 'the-core' ),
-	'lang'                   => substr( $get_locale, 0, 2 ),
-	'ajax_url'               => admin_url( 'admin-ajax.php' ),
-	'template_directory'     => $the_core_template_directory,
-	'previous'               => esc_html__( 'Previous', 'the-core' ),
-	'next'                   => esc_html__( 'Next', 'the-core' ),
-	'fail_form_error'        => esc_html__( 'Sorry you are an error in ajax, please contact the administrator of the website', 'the-core' ),
-	'smartphone_animations'  => function_exists( 'fw_get_db_settings_option' ) ? fw_get_db_settings_option( 'enable_smartphone_animations', 'no' ) : 'no',
-	'mobile_menu_position'   => function_exists( 'fw_get_db_settings_option' ) ? fw_get_db_settings_option( 'header_settings/mobile_menu_options/menu_align', 'left' ) : 'left',
-	'mobile_menu_page_dim'   => function_exists( 'fw_get_db_settings_option' ) ? fw_get_db_settings_option( 'header_settings/mobile_menu_options/page_dim', 'page-dim-none' ) : 'page-dim-none',
-	'mobile_menu_border_style' => $the_core_mobile_menu_border_style,
-	'header_5_position'      => function_exists( 'fw_get_db_settings_option' ) ? fw_get_db_settings_option( 'header_settings/header_type_picker/header-5/header_5_popup/menu_appear_position', 'left' ) : 'left',
-	'header_6_position'      => function_exists( 'fw_get_db_settings_option' ) ? fw_get_db_settings_option( 'header_settings/header_type_picker/header-6/menu_align', 'left' ) : 'left',
-	'mobile_menu_screen'     => $mobile_menu_screen,
-	'effect_panels'          => $effect_panels,
+wp_localize_script('general', 'FwPhpVars', array(
+	'back' => esc_html__('Back', 'the-core'),
+	'lang' => substr( $get_locale, 0, 2 ),
+	'ajax_url' => admin_url('admin-ajax.php'),
+	'template_directory' => $the_core_template_directory,
+	'previous' => esc_html__('Previous', 'the-core'),
+	'next' => esc_html__('Next', 'the-core'),
+	'smartphone_animations' => function_exists('fw_get_db_settings_option') ? fw_get_db_settings_option('enable_smartphone_animations', 'no') : 'no',
+	'header_5_position' => function_exists('fw_get_db_settings_option') ? fw_get_db_settings_option('header_settings/header_type_picker/header-5/header_5_popup/menu_appear_position', 'left') : 'left',
+	'header_6_position' => function_exists('fw_get_db_settings_option') ? fw_get_db_settings_option('header_settings/header_type_picker/header-6/menu_align', 'left') : 'left',
+	'effect_panels' => $effect_panels,
 	'effect_listitems_slide' => $effect_listitems_slide,
-	'sticky_resolution'      => function_exists( 'fw_get_db_settings_option' ) ? fw_get_db_settings_option( 'header_settings/sticky_header_styling/sticky_screen', 767 ) : 767,
-	'sticky_logo'            => the_core_sticky_logo(),
-	'socials'                => $socials
-) );
+	'fail_form_error' => esc_html__('Sorry you are an error in ajax, please contact the administrator of the website', 'the-core'),
+	'socials' => $socials
+));
 
 // contact form messages
 if (defined('FW') && FW_Form::get_submitted() && !FW_Form::get_submitted()->is_valid()) {

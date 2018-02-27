@@ -31,23 +31,10 @@
   margin-top: 6px;
 }
 /* Logo Retina & No-Retina */
-.fw-logo-retina .fw-site-logo,
-.fw-sticky-logo-retina .fw-header.fw-sticky-menu .fw-site-logo,
-.fw-sticky-logo-no-retina .fw-header.fw-sticky-menu .fw-site-logo {
-  line-height: normal;
-}
 .fw-logo-retina .fw-site-logo {
   width: <?php echo floatval($the_core_less_variables['fw-menu-logo-width'])/2; ?>px;
+  line-height: normal;
 }
-
-/* Logo Retina & No-Retina in Header Sticky */
-.fw-sticky-logo-retina .fw-header.fw-sticky-menu .fw-site-logo {
-  width: <?php echo floatval($the_core_less_variables['fw-menu-sticky-logo-width'])/2; ?>px;
-}
-.fw-sticky-logo-no-retina .fw-header.fw-sticky-menu .fw-site-logo {
-  width: <?php echo floatval($the_core_less_variables['fw-menu-sticky-logo-width']); ?>px;
-}
-
 /* No Logo Set */
 body[class*="header-"].fw-logo-no-set .fw-nav-wrap,
 body[class*="header-"].fw-logo-no-set .fw-nav-wrap .primary-navigation {

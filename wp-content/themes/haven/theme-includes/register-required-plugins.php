@@ -20,13 +20,37 @@ add_action( 'tgmpa_register', 'fw_register_required_plugins' );
  * TGM_Plugin_Activation class constructor.
  */
 function fw_register_required_plugins() {
-	$plugins = the_core_tgm_required_plugins();
+
+	$plugins = array(
+		array(
+			'name'     => esc_html__('Unyson', 'the-core'),
+			'slug'     => 'unyson',
+			'required' => true,
+		),
+		array(
+			'name'     => esc_html__('Revolution Slider', 'the-core'),
+			'slug'     => 'revslider',
+			'source'   => esc_url('http://updates.themefuse.com/plugins/revslider.zip'),
+			'required' => true,
+		),
+		array(
+			'name'     => esc_html__('LayerSlider WP', 'the-core'),
+			'slug'     => 'LayerSlider',
+			'source'   => esc_url('http://updates.themefuse.com/plugins/LayerSlider.zip'),
+			'required' => false,
+		),
+		/*array(
+			'name'     => esc_html__('WooCommerce', 'the-core'),
+			'slug'     => 'woocommerce',
+			'required' => false,
+		),*/
+	);
 
 	$config = array(
 		'domain'       => 'the-core',
 		'dismissable'  => true,
 		'is_automatic' => true
 	);
-
 	tgmpa( $plugins, $config );
+
 }

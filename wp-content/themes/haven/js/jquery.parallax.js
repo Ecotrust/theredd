@@ -1,13 +1,11 @@
 (function ($) {
     // Check if the section has the parallax class.
     if ($('.parallax-section').length) {
-        var parallaxItem = $('.parallax-section'),
-            // IE 11 => return version number
-            isIE11 = !!navigator.userAgent.match(/Trident\/7\./);
+        var parallaxItem = $('.parallax-section');
         $.browser.device = (/Android|iPad|iPhone|iPod|BlackBerry|Windows Phone|opera mini|iemobile/i.test(navigator.userAgent || navigator.vendor || window.opera));
 
         // Check if the browser is IE10 or below.
-        if ($.browser.msie || isIE11 > 0 || $.browser.device) {
+        if ($.browser.msie || $.browser.device) {
             // Remove the parallax scrolling styles and center background image vertically.
             parallaxItem.css({
                 backgroundAttachment: 'scroll',

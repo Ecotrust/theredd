@@ -111,8 +111,7 @@ class N2GeneratorPostsCustomPosts extends N2GeneratorAbstract {
 
             $record['url']         = get_permalink();
             $record['title']       = apply_filters('the_title', get_the_title());
-            $record['content']     = get_the_content();
-            $record['description'] = preg_replace('#\[[^\]]+\]#', '',$record['content']);
+            $record['description'] = $record['content'] = get_the_content();
             $record['author_name'] = $record['author'] = get_the_author();
             $record['author_url']  = get_the_author_meta('url');
             $record['date']        = get_the_date();
@@ -181,7 +180,7 @@ class N2GeneratorPostsCustomPosts extends N2GeneratorAbstract {
                                 $record[$k] = $v['url'];
                             } else if (is_array($v)) {
                                 foreach ($v AS $v_v => $k_k) {
-                                    if (is_array($k_k) && isset($k_k['url'])) {
+                                    if (isset($k_k['url'])) {
                                         $record[$k . $v_v] = $k_k['url'];
                                     }
                                 }

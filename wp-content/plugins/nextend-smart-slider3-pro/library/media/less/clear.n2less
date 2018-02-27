@@ -1,7 +1,5 @@
 (~'@{id}') {
 
-  -webkit-font-smoothing: antialiased;
-
   .n2-ow,
   .n2-ow-all * {
     font-size: inherit;
@@ -312,7 +310,6 @@
     position: absolute;
     left: 0;
     top: 0;
-	z-index: 1;
   }
 
   .n2-ss-layer-group > * {

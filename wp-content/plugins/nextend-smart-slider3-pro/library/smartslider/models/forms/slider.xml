@@ -8,7 +8,6 @@
     <params name="general" type="groupped" label="General">
       <params name="slider" label="Slider settings" hidetitle="1">
         <param name="title" type="text" label="Name" default="Slider" style="width:200px;"/>
-        <param name="alias" type="text" label="Alias" default="" style="width:200px;"/>
         <param label="Controls" type="group">
           <param name="controlsScroll" type="onoff" label="Mouse scroll" default="0"/>
           <param name="controlsDrag" type="onoff" label="Mouse drag" default="1"/>
@@ -290,7 +289,7 @@
             <unit>%</unit>
           </param>
         </param>
-        <param type="group" label="Fadein" tip="When disabled the slider won&apos;t wait for the CSS codes to display the layers where they should be. Instead, they&apos;ll jump into their places after the CSS codes are ready.">
+        <param type="group" label="Fadein">
           <param name="fadeOnLoad" type="onoff" label="on load" default="1"/>
           <param name="fadeOnScroll" type="onoff" label="on scroll" default="0"/></param>
         <param type="imagelistfromfoldervalue" name="spinner" label="Loading animation" folder="$ss$/spinner/" default="simpleWhite" class="n2-white"/>
@@ -335,6 +334,8 @@
         <param name="overflow-hidden-page" type="onoff" label="Hide website&apos;s scrollbar" default="0" tip="You won&apos;t be able to scroll your website anymore."/>
         <param name="scroll-fix" type="onoff" label="Browser scroll fix (Full page)" default="0"/>
         <param name="clear-both" type="onoff" label="Clear both before slider" tip="If your slider doesn&apos;t resize correctly, turn this option on." default="0"/>
+        <param name="remove-spaces-from-parents" type="text" label="Remove spaces from parents" tip="This option removes the margins and paddings from the given parents. Write the Xth number, which parent&apos;s margins and paddings should be removed. You can write multiple numbers separated by commas. Example: 1,2,3" default=""/>
+        <param name="hide-siblings" type="text" label="Hide siblings" tip="This option hides the given siblings. Write the Xth number, which sibling you want to hide. You can write multiple numbers separated by commas. Example: 1,2,3" default=""/>
         <param type="group" label="Background parallax">
           <param name="bg-parallax-tablet" type="onoff" label="Tablet" default="0"/>
           <param name="bg-parallax-mobile" type="onoff" label="Mobile" default="0"/></param>

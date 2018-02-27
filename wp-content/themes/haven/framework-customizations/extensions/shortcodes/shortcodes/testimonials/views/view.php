@@ -97,16 +97,8 @@ if ( $atts['show_in_slider']['selected_value'] == 'yes' ) {
 								<a target="_blank" href="<?php echo esc_url( $testimonial['site_url'] ); ?>"><?php echo esc_attr( $testimonial['site_name'] ); ?></a>
 							</span>
 						<?php endif; ?>
-
-						<?php if( isset($testimonial['rating_enabled']['selected']) && 'yes' == $testimonial['rating_enabled']['selected'] ) : ?>
-							<div class="fw-testimonials-rating">
-								<?php $rating = (int)$testimonial['rating_enabled']['yes']['rating']; ?>
-								<?php for ( $i = 1; $i <= $rating; $i ++ ) : ?>
-									<i class="fa fa-star"></i>
-								<?php endfor; ?>
-							</div>
-						<?php endif; ?>
 					</div>
+
 				</div>
 			</div>
 		<?php endforeach ?>

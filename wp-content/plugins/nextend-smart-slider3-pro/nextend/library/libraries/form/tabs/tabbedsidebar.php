@@ -3,6 +3,8 @@ N2Loader::import('libraries.form.tab');
 
 class N2TabTabbedSidebar extends N2Tab {
 
+    var $_tabs;
+
     function initTabs() {
         if (count($this->_tabs) == 0) {
             foreach ($this->_xml->params as $tab) {

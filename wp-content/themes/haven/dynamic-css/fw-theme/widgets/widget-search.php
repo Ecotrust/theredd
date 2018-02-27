@@ -59,19 +59,3 @@
   right: 10px;
   z-index: 1;
 }
-
-/* Style for this widget in footer */
-.fw-footer-widgets .widget_search .search-field::-moz-placeholder {
-  color: <?php echo esc_js($the_core_less_variables['fw-footer-widgets-link-color']); ?>;
-}
-.fw-footer-widgets .widget_search .search-field:-ms-input-placeholder {
-  color: <?php echo esc_js($the_core_less_variables['fw-footer-widgets-link-color']); ?>;
-}
-.fw-footer-widgets .widget_search .search-field::-webkit-input-placeholder {
-  color: <?php echo esc_js($the_core_less_variables['fw-footer-widgets-link-color']); ?>;
-}
-.fw-footer-widgets .widget_search .search-field,
-.fw-footer-widgets .widget_search label:after {
-  color: <?php echo esc_js($the_core_less_variables['fw-footer-widgets-link-color']); ?>;
-}
-

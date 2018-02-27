@@ -61,10 +61,10 @@ class N2SmartSliderTypeCarousel extends N2SmartSliderType {
                         ?>
                         <?php
                         foreach ($this->slider->slides AS $i => $slide) {
-                            echo N2Html::tag('div', array('class' => 'n2-ss-slide-group n2-ow '), N2Html::tag('div', N2HTML::mergeAttributes($slide->attributes, $slide->linkAttributes, array(
+                            echo N2Html::tag('div', array('class' => 'n2-ss-slide-group n2-ow '), N2Html::tag('div', $slide->attributes + array(
                                     'class' => 'n2-ss-slide ' . $slide->classes . ' n2-ss-canvas n2-ow',
                                     'style' => $slide->style . $params->get('slide-css')
-                                )), $slide->background . $slide->getHTML()));
+                                ), $slide->background . $slide->getHTML()));
                         }
                         ?>
                     </div>
@@ -130,10 +130,10 @@ class N2SmartSliderTypeCarousel extends N2SmartSliderType {
                     <div class="n2-ss-slider-pane-single n2-ow">
                     <div class="n2-ss-slider-pipeline n2-ow"><?php
                         foreach ($this->slider->slides AS $i => $slide) {
-                            echo N2Html::tag('div', N2HTML::mergeAttributes($slide->attributes, $slide->linkAttributes, array(
+                            echo N2Html::tag('div', $slide->attributes + array(
                                     'class' => 'n2-ss-slide ' . $slide->classes . ' n2-ss-canvas n2-ow',
                                     'style' => $slide->style . $params->get('slide-css')
-                                )), $slide->background . $slide->getHTML());
+                                ), $slide->background . $slide->getHTML());
                         }
                         ?></div></div>
                 </div>

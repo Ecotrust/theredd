@@ -42,12 +42,10 @@ class N2SmartSliderTypeBlock extends N2SmartSliderType {
                 echo N2Html::tag('div', array('class' => 'n2-ss-slide-backgrounds'));
 
                 $slide = $this->slider->slides[$this->slider->firstSlideIndex];
-
-
-                echo N2Html::tag('div', N2HTML::mergeAttributes($slide->attributes, $slide->linkAttributes, array(
-	                'class' => 'n2-ss-slide n2-ss-canvas n2-ow ' . $slide->classes,
-	                'style' => $slide->style
-                )), $slide->background . $slide->getHTML());
+                echo N2Html::tag('div', $slide->attributes + array(
+                        'class' => 'n2-ss-slide n2-ss-canvas n2-ow ' . $slide->classes,
+                        'style' => $slide->style
+                    ), $slide->background . $slide->getHTML());
                 ?>
                 <?php
                 $this->renderShapeDividers();
