@@ -21,6 +21,10 @@ Text Domain: the-core
   padding-top: 40vh;
 }
 
+.img-text-link {
+    padding: -4px 0;
+}
+
 .anchor-target {
     padding: 50px 0;
 }
